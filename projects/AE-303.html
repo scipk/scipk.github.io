@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Title - Parham Khodadi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-gray: #2c2c2b;
+            --navy: #00285E;
+            --light-blue: #6CADDF;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--white);
+            background: var(--dark-gray);
+        }
+
+        header {
+            background: var(--dark-gray);
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .back-link {
+            color: var(--navy);
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            border: 2px solid var(--white);
+            border-radius: 5px;
+            transition: all 0.3s;
+            background: var(--white);
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-link:hover {
+            background: var(--light-blue);
+            border-color: var(--light-blue);
+            color: var(--white);
+        }
+
+        .hero {
+            background: rgba(0, 40, 94, 0.5);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom: 2px solid var(--light-blue);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-meta {
+            font-size: 1.1rem;
+            color: var(--light-blue);
+        }
+
+        .project-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .tag {
+            background: var(--light-blue);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .content-section {
+            background: rgba(0, 40, 94, 0.3);
+            padding: 3rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            border: 1px solid rgba(108, 173, 223, 0.3);
+        }
+
+        .content-section h2 {
+            color: var(--white);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--light-blue);
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .content-section ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .media-item {
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid rgba(108, 173, 223, 0.3);
+        }
+
+        .media-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .media-item video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .media-caption {
+            background: rgba(0, 40, 94, 0.5);
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+        }
+
+        .video-embed {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border: 2px solid rgba(108, 173, 223, 0.3);
+        }
+
+        .video-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .code-block {
+            background: rgba(0, 0, 0, 0.5);
+            color: var(--light-blue);
+            padding: 1.5rem;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+            border: 1px solid rgba(108, 173, 223, 0.3);
+        }
+
+        .download-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--white);
+            color: var(--navy);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-weight: 500;
+            border: 2px solid var(--white);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .download-btn:hover {
+            background: var(--light-blue);
+            border-color: var(--light-blue);
+            color: var(--white);
+        }
+
+        .model-viewer {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--light-blue) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            margin: 2rem 0;
+            border: 2px solid rgba(108, 173, 223, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .media-grid {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                padding: 3rem 1rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 0 1rem;
+            }
+
+            .hero {
+                padding: 3rem 1rem;
+            }
+
+            .hero-meta {
+                font-size: 1rem;
+            }
+
+            .project-tags {
+                gap: 0.4rem;
+            }
+
+            .tag {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.85rem;
+            }
+
+            .download-section {
+                flex-direction: column;
+            }
+
+            .download-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .model-viewer {
+                height: 300px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .content-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .content-section p,
+            .content-section li {
+                font-size: 1rem;
+            }
+
+            .back-link {
+                padding: 0.4rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .logo {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Parham Khodadi</div>
+            <a href="../projects.html" class="back-link">← Back to Projects</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Project Title</h1>
+        <p class="hero-meta">Fall 2024 | Aerospace Engineering</p>
+        <div class="project-tags">
+            <span class="tag">SolidWorks</span>
+            <span class="tag">CFD Analysis</span>
+            <span class="tag">MATLAB</span>
+            <span class="tag">Python</span>
+        </div>
+    </div>
+
+    <main>
+        <!-- Overview Section -->
+        <div class="content-section">
+            <h2>Project Overview</h2>
+            <p>
+                Provide a comprehensive overview of your project. What was the goal? What problem were you trying to solve? 
+                What course or personal interest inspired this project?
+            </p>
+            <p>
+                Include context about the project scope, timeline, and any collaboration details if applicable.
+            </p>
+        </div>
+
+        <!-- Objectives Section -->
+        <div class="content-section">
+            <h2>Objectives</h2>
+            <ul>
+                <li>Primary objective 1: Detailed description</li>
+                <li>Primary objective 2: Detailed description</li>
+                <li>Secondary objective 1: Detailed description</li>
+                <li>Analysis and validation requirements</li>
+            </ul>
+        </div>
+
+        <!-- Design & Methodology Section -->
+        <div class="content-section">
+            <h2>Design & Methodology</h2>
+            <p>
+                Describe your design process, methodology, and approach. What tools did you use? What calculations 
+                or simulations did you perform?
+            </p>
+            
+            <div class="media-grid">
+                <div class="media-item">
+                    <img src="design-sketch.jpg" alt="Initial Design Sketch">
+                    <div class="media-caption">Initial design concept and sketches</div>
+                </div>
+                <div class="media-item">
+                    <img src="cad-model.jpg" alt="CAD Model">
+                    <div class="media-caption">3D CAD model in SolidWorks</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3D Model Viewer Section -->
+        <div class="content-section">
+            <h2>3D Model Visualization</h2>
+            <p>Interactive 3D model viewer or rendered images of your SolidWorks design:</p>
+            <div class="model-viewer">
+                3D Model Viewer Placeholder
+                <br>
+                (Upload rendered images or use a viewer like Sketchfab)
+            </div>
+        </div>
+
+        <!-- Analysis & Results Section -->
+        <div class="content-section">
+            <h2>Analysis & Results</h2>
+            <p>
+                Present your analysis results, simulations, and findings. Include graphs, charts, and data visualizations.
+            </p>
+            
+            <div class="media-grid">
+                <div class="media-item">
+                    <img src="cfd-results.jpg" alt="CFD Analysis">
+                    <div class="media-caption">CFD simulation results showing flow patterns</div>
+                </div>
+                <div class="media-item">
+                    <img src="stress-analysis.jpg" alt="Stress Analysis">
+                    <div class="media-caption">Finite element analysis stress distribution</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Demonstration Section -->
+        <div class="content-section">
+            <h2>Video Demonstration</h2>
+            <p>Watch the full project demonstration and explanation:</p>
+            
+            <div class="video-embed">
+                <!-- Replace VIDEO_ID with your YouTube video ID -->
+                <iframe 
+                    src="https://www.youtube.com/embed/VIDEO_ID" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Code Section -->
+        <div class="content-section">
+            <h2>Code & Scripts</h2>
+            <p>Custom MATLAB/Python scripts developed for this project:</p>
+            
+            <div class="code-block">
+% MATLAB Example Code
+function results = aerodynamicAnalysis(velocity, altitude)
+    % Calculate aerodynamic parameters
+    rho = atmosphericDensity(altitude);
+    dynamicPressure = 0.5 * rho * velocity^2;
+    
+    % Your analysis code here
+    results.q = dynamicPressure;
+    results.rho = rho;
+end
+            </div>
+            
+            <div class="download-section">
+                <a href="code/analysis_script.m" class="download-btn" download>Download MATLAB Script</a>
+                <a href="code/simulation.py" class="download-btn" download>Download Python Code</a>
+            </div>
+        </div>
+
+        <!-- Conclusions Section -->
+        <div class="content-section">
+            <h2>Conclusions & Future Work</h2>
+            <p>
+                Summarize your findings, what you learned, and how the project met (or didn't meet) your objectives.
+            </p>
+            <p>
+                Discuss potential improvements, future iterations, or how this project could be extended.
+            </p>
+        </div>
+
+        <!-- Downloads Section -->
+        <div class="content-section">
+            <h2>Project Files</h2>
+            <p>Download project files, reports, and documentation:</p>
+            
+            <div class="download-section">
+                <a href="files/project-report.pdf" class="download-btn" download>📄 Project Report (PDF)</a>
+                <a href="files/cad-files.zip" class="download-btn" download>🔧 SolidWorks Files (ZIP)</a>
+                <a href="files/presentation.pdf" class="download-btn" download>📊 Presentation Slides</a>
+                <a href="files/data.xlsx" class="download-btn" download>📈 Raw Data (Excel)</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
