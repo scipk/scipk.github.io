@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Title - Parham Khodadi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-gray: #2c2c2b;
+            --navy: #00285E;
+            --light-blue: #6CADDF;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--white);
+            background: var(--dark-gray);
+        }
+
+        header {
+            background: var(--dark-gray);
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .back-link {
+            color: var(--navy);
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            border: 2px solid var(--white);
+            border-radius: 5px;
+            transition: all 0.3s;
+            background: var(--white);
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-link:hover {
+            background: var(--light-blue);
+            border-color: var(--light-blue);
+            color: var(--white);
+        }
+
+        .hero {
+            background: rgba(0, 40, 94, 0.5);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom: 2px solid var(--light-blue);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-meta {
+            font-size: 1.1rem;
+            color: var(--light-blue);
+        }
+
+        .project-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .tag {
+            background: var(--light-blue);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .content-section {
+            background: rgba(0, 40, 94, 0.3);
+            padding: 3rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            border: 1px solid rgba(108, 173, 223, 0.3);
+        }
+
+        .content-section h2 {
+            color: var(--white);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--light-blue);
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .content-section ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .media-item {
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid rgba(108, 173, 223, 0.3);
+        }
+
+        .media-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .media-item video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .media-caption {
+            background: rgba(0, 40, 94, 0.5);
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+        }
+
+        .video-embed {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border: 2px solid rgba(108, 173, 223, 0.3);
+        }
+
+        .video-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .code-block {
+            background: rgba(0, 0, 0, 0.5);
+            color: var(--light-blue);
+            padding: 1.5rem;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+            border: 1px solid rgba(108, 173, 223, 0.3);
+        }
+
+        .download-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--white);
+            color: var(--navy);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-weight: 500;
+            border: 2px solid var(--white);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .download-btn:hover {
+            background: var(--light-blue);
+            border-color: var(--light-blue);
+            color: var(--white);
+        }
+
+        .model-viewer {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--light-blue) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            margin: 2rem 0;
+            border: 2px solid rgba(108, 173, 223, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .media-grid {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                padding: 3rem 1rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 0 1rem;
+            }
+
+            .hero {
+                padding: 3rem 1rem;
+            }
+
+            .hero-meta {
+                font-size: 1rem;
+            }
+
+            .project-tags {
+                gap: 0.4rem;
+            }
+
+            .tag {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.85rem;
+            }
+
+            .download-section {
+                flex-direction: column;
+            }
+
+            .download-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .model-viewer {
+                height: 300px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .content-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .content-section p,
+            .content-section li {
+                font-size: 1rem;
+            }
+
+            .back-link {
+                padding: 0.4rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .logo {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Parham Khodadi</div>
+            <a href="../projects.html" class="back-link">← Back to Projects</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Avionics Ground Systems</h1>
+        <p class="hero-meta">Fall 2023 - Fall 2024 | SDSU Rocket Project</p>
+        <div class="project-tags">
+            <span class="tag">Avionics Systems</span>
+            <span class="tag">Data Acquisition (DAQ)</span>
+            <span class="tag">Hardware Integration</span>
+            <span class="tag">3D Modeling & Additive Manufacturing</span>
+            <span class="tag">Embedded Systems</span>
+        </div>
+    </div>
+
+    <main>
+        <!-- Overview Section -->
+        <div class="content-section">
+            <h2>Project Overview</h2>
+            <p>
+                I joined the SDSU Rocket Project as an Avionics team member, contributing to the design and manufacturing of ground systems equipment. Unfortunately, due to team dynamics and project direction changes, my contributions did not culminate in any completed projects.
+                The lack of motivation created from scrapping of all my projects led me to eventually step away from the team.
+            </p>
+            <p>
+                However, the hands on experience I gained in 3D modeling, hardware integration, data acquisition systems, and teamwork has been invaluable for my growth as an engineer.
+            </p>
+        </div>
+
+        <!-- Key Contributions Section -->
+        <div class="content-section">
+            <h2>Key Contributions</h2>
+            <ul>
+            <li>Designed and 3D printed custom sensor mounts in SOLIDWORKS for pressure transducers, thermocouples, and solenoids integrated with National Instruments DAQ systems</li>
+            <li>Assembled Avionics Ground System through sensor soldering, wiring, and bulkhead panel development for sensor and power interfaces</li>
+            <li>Developed thermal-resistant hardware enclosures using ASA/PLA filaments on Bambu Lab 3D printers for electronics protection</li>
+            <li>Researched optimal inlet-to-throat ratios for ethanol-fed Venturi flow meters in Electric Turbopump testing and prototyped Arduino-based pressure differential measurement systems</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+        <h2>Trinity (nicknamed the Blue Box)</h2>
+        <p>
+            Trinity was a metallic trunk housing unit designed to protect sensitive avionics equipment during rocket launches in the heat of the Mojave desert. My role involved designing bulkhead panels and fan mounts in SOLIDWORKS, 3D printing using thermal rersistant filament for enhanced weather resistance, and sanding the old paint to replace it with thermal resistant paint.
+            Although the project was ultimately shelved due to team changes, I gained valuable experience in CAD and additive manufacturing.
+        </p>
+        <div class="media-grid">
+            <div class="media-item">
+                <img src="../images/projects/RocketProject/trinity-bulkhead-panel.jpg" alt="Trinity Box">
+                <div class="media-caption">Bulkhead panel final result. From top to bottom, these are rows of thermocouples, pressure transducers, and solenoids. I designed and partially manufactured this whole interface.</div>
+            </div>
+            <div class="media-item">
+                <img src="../images/projects/RocketProject/trinity-fan-mounts-1.jpg" alt="Trinity Internal">
+                <div class="media-caption">Designed, 3D printed, and attached fan mounts that would shield the fans from dust using a dust screen.</div>
+            </div>
+            <div class="media-item">
+                <img src="../images/projects/RocketProject/trinity-thermal-coating.jpg" alt="Trinity Internal">
+            </div>
+            <div class="media-item">
+                <img src="../images/projects/RocketProject/trinity-fan-mounts-2.jpg" alt="Trinity Internal">
+            </div>
+            <div class="media-item">
+                <img src="../images/projects/RocketProject/trinity-fan-mounts-3.jpg" alt="Trinity Internal">
+            </div>
+            <div class="media-item">
+                <img src="../images/projects/RocketProject/trinity-fan-mounts-4.jpg" alt="Trinity Internal">
+            </div>
+            <div class="media-item">
+                <img src="../images/projects/RocketProject/trinity-sanding.jpg" alt="Trinity Internal">
+                <div class="media-caption">Sanding the old paint off the Trinity box to prepare it for a new coat of thermal resistant paint.</div>
+            </div>
+            <div class="media-item">
+                <img src="../images/projects/RocketProject/trinity-thermal-coating-2.jpg" alt="Trinity Internal">
+            </div>
+            <div class="media-item">
+                <img src="../images/projects/RocketProject/trinity-fan-mounts-3.png" alt="Trinity Internal">
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>Nuclear Footlong (Portable Dual-Monitor PC)</h2>
+        <p>
+            The Nuclear Footlong was a portable dual-monitor PC setup designed for field data analysis during rocket tests at the Friends of Amateur Rocketry launch-site in the Mojave desert. The project was the responsibility of Aus Isaac Al Saka, who primarily designed and built the system.
+            My responsibilities included designing and 3D printing custom I/O panels and cooling fan mounts to ensure minimal dust entering the equipment in the desert conditions.
+            The project was completed, but it was never used. However, I gained hands-on experience in 3D modeling, additive manufacturing, and hardware integration.
+        </p>
+        <div class="media-grid">
+            <div class="media-item">
+                <img src="../images/projects/RocketProject/footlong-fan-mounts-1.jpg" alt="Nuclear Fan">
+                <div class="media-caption">Similar to the Trinity fans, these were meant to have a dust cover screen and would attach from the outside to a cooling fan inside. The fans were placed opposite of each other to create the best cooling flow.</div>
+            </div>
+            <div class="media-item">
+                <img src="../images/projects/RocketProject/footlong-fan-mounts-2.jpg" alt="Nuclear Fan">
+            </div>
+            <div class="media-item">
+                <img src="../images/projects/RocketProject/footlong-fan-mounts-3.jpg" alt="Nuclear Fan">
+            </div>
+            <div class="media-item">
+                <img src="../images/projects/RocketProject/footlong-finished.jpg" alt="Nuclear Done">
+                <div class="media-caption">Final result of the Nuclear Footlong. Image by Aus Isaac Al Saka.</div>
+            </div>
+            <div class="media-item">
+                <img src="../images/projects/RocketProject/footlong-IO-panel-1.jpg" alt="Nuclear I/O Panel">
+                <div class="media-caption">I designed and 3D printed this custom I/O panel to allow for better cable management and protection of the computer components from dust.</div>
+            </div>
+            <div class="media-item">
+                <img src="../images/projects/RocketProject/footlong-IO-panel-2.jpg" alt="Nuclear I/O Panel">
+            </div>
+            <div class="media-item">
+                <img src="../images/projects/RocketProject/footlong-IO-panel-3.jpg" alt="Nuclear I/O Panel">
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>Other Work</h2>
+        <p>
+            Besides the two previously mentioned projects, I also worked on various other ground systems equipment, mainly on housing units & bulkhead interface panels design and manufacturing.
+        </p>
+        <div class="media-grid">
+            <div class="media-item">
+                <img src="../images/projects/RocketProject/3d-printing-1.jpg" alt="3D Printing">
+                <div class="media-caption">3D printing using the in-house Bambu Lab printer was an integral part of my work, both for prototyping and easy manufacturing.</div>
+            </div>
+            <div class="media-item">
+                <img src="../images/projects/RocketProject/3d-printing-2.jpg" alt="3D Printing">
+            </div>
+            <div class="media-item">
+                <img src="../images/projects/RocketProject/3d-printing-3.jpg" alt="3D Printing">
+            </div>
+            <div class="media-item">
+                <img src="../images/projects/RocketProject/ethernet-brute.jpg" alt="ethernet brute">
+            </div>
+            <div class="media-item">
+                <img src="../images/projects/RocketProject/housing-1-1.png" alt="Housing">
+            </div>
+            <div class="media-item">
+                <img src="../images/projects/RocketProject/housing-1-2.png" alt="Housing">
+            </div>
+            <div class="media-item">
+                <img src="../images/projects/RocketProject/housing-2.jpg" alt="Housing">
+            </div>
+            <div class="media-item">
+                <img src="../images/projects/RocketProject/lab-1.jpg" alt="Me">
+            </div>
+            <div class="media-item">
+                <img src="../images/projects/RocketProject/lab-2.jpg" alt="Me">
+            </div>
+            <div class="media-item">
+                <img src="../images/projects/RocketProject/lab-3.jpg" alt="Me">
+                <div class="media-caption">Testing pressure transducers.</div>
+            </div>
+            <div class="media-item">
+                <img src="../images/projects/RocketProject/left-panel.png" alt="Panel">
+            </div>
+            <div class="media-item">
+                <img src="../images/projects/RocketProject/right-panel.png" alt="Panel">
+            </div>
+            <div class="media-item">
+                <img src="../images/projects/RocketProject/panel-1.jpg" alt="Panel">
+            </div>
+            <div class="media-item">
+                <img src="../images/projects/RocketProject/panel-2.jpg" alt="Panel">
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional: Keep if you have lessons learned -->
+    <div class="content-section">
+        <h2>Lessons Learned</h2>
+        <p>
+            What I learned from this experience goes beyond technical skills. I learned the importance of team dynamics and communication in project success. Despite the setbacks, I gained resilience and adaptability, understanding that not all projects reach fruition, but every experience contributes to personal and professional growth.
+        </p>
+    </div>
+</main>
+</body>
+</html>
