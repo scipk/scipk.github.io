@@ -330,13 +330,15 @@
     </header>
 
     <div class="hero">
-        <h1>Project Title</h1>
-        <p class="hero-meta">Fall 2024 | Aerospace Engineering</p>
+        <h1>Undergraduate Drone Autonomy Research</h1>
+        <p class="hero-meta">Fall 2023 - Summer 2024 | SDSU SPACE Lab</p>
         <div class="project-tags">
-            <span class="tag">SolidWorks</span>
-            <span class="tag">CFD Analysis</span>
-            <span class="tag">MATLAB</span>
+            <span class="tag">Autonomous Navigation</span>
             <span class="tag">Python</span>
+            <span class="tag">Computer Vision (OpenCV)</span>
+            <span class="tag">Robotics & UAV Systems</span>
+            <span class="tag">Controls</span>
+            <span class="tag">SLAM (Simultaneous Localization and Mapping)</span>
         </div>
     </div>
 
@@ -345,136 +347,137 @@
         <div class="content-section">
             <h2>Project Overview</h2>
             <p>
-                Provide a comprehensive overview of your project. What was the goal? What problem were you trying to solve? 
-                What course or personal interest inspired this project?
-            </p>
-            <p>
-                Include context about the project scope, timeline, and any collaboration details if applicable.
+                This is where I fell in love with Dynamics and Control. During my time at the SPACE Lab, under the leadership of Professor Ahmad Bani Younes, I worked on developing autonomous navigation algorithms for drones using Python and OpenCV. The project involved enabling drones to navigate paths using QR codes.
+                I left the project in Summer 2024 to focus on a difficult Junior year, but the experience I gained here was invaluable and solidified my passion for aerospace engineering.
+                It is important to note that Dr. Ahmad Bani Younes was on sabbatical in my junior year, which contributed to my decision to leave the project early.
             </p>
         </div>
 
-        <!-- Objectives Section -->
+        <!-- Timeline Section -->
         <div class="content-section">
-            <h2>Objectives</h2>
-            <ul>
-                <li>Primary objective 1: Detailed description</li>
-                <li>Primary objective 2: Detailed description</li>
-                <li>Secondary objective 1: Detailed description</li>
-                <li>Analysis and validation requirements</li>
-            </ul>
+            <h2>Timeline</h2>
+            <table class="timeline-table">
+            <tr>
+            <th style="width: 120px;">Month</th>
+            <th>Milestone</th>
+            </tr>
+            <tr>
+            <td>Nov. 2023</td>
+            <td>Dr. ABY accepted me into his lab and tasked me with self-learning Python.</td>
+            </tr>
+            <tr>
+            <td>Dec. 2023</td>
+            <td>Completed Python basics and used it to send commands to a DJI Tello EDU drone.</td>
+            </tr>
+            <tr>
+            <td>Jan. 2024</td>
+            <td>Developed initial QR code detection and navigation using OpenCV. The drone was able to read commands from the QR code.</td>
+            </tr>
+            <tr>
+            <td>Feb. 2024</td>
+            <td>Developed algorithm to detect QR code shape and size to estimate the position vector of the drone to the QR code.</td>
+            </tr>
+            <tr>
+            <td>Mar. 2024</td>
+            <td>Conducted indoor flight tests and refined navigation algorithms.</td>
+            </tr>
+            <tr>
+            <td>Apr. 2024</td>
+            <td>No progress due to classes.</td>
+            </tr>
+            <tr>
+            <td>May. 2024</td>
+            <td>No progress due to classes.</td>
+            </tr>
+            <tr>
+            <td>Jun. 2024</td>
+            <td>Began learning how to use ORB-SLAM3 software for object mapping. Necessary because the drone had monocular forward vision and 2 downward facing lidars to detect its distance to the floor.</td>
+            </tr>
+            <tr>
+            <td>Jul. 2024</td>
+            <td>Attempted implementing ORB-SLAM3 on the drone; however, the drone's Python package and ORB-SLAM3's Python bindings relied on incompatible Python versions.</td>
+            </tr>
+            <tr>
+            <td>Aug. 2024</td>
+            <td>Left the project to focus on junior year course load.</td>
+            </tr>
+            </table>
         </div>
 
-        <!-- Design & Methodology Section -->
+        <!-- Video Demonstrations Section -->
         <div class="content-section">
-            <h2>Design & Methodology</h2>
+            <h2>Video Demonstrations</h2>
             <p>
-                Describe your design process, methodology, and approach. What tools did you use? What calculations 
-                or simulations did you perform?
+            Short demonstrations and flight tests showcasing autonomous navigation, QR-code based commands, and algorithm behavior.
             </p>
-            
+
             <div class="media-grid">
-                <div class="media-item">
-                    <img src="design-sketch.jpg" alt="Initial Design Sketch">
-                    <div class="media-caption">Initial design concept and sketches</div>
-                </div>
-                <div class="media-item">
-                    <img src="cad-model.jpg" alt="CAD Model">
-                    <div class="media-caption">3D CAD model in SolidWorks</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 3D Model Viewer Section -->
-        <div class="content-section">
-            <h2>3D Model Visualization</h2>
-            <p>Interactive 3D model viewer or rendered images of your SolidWorks design:</p>
-            <div class="model-viewer">
-                3D Model Viewer Placeholder
-                <br>
-                (Upload rendered images or use a viewer like Sketchfab)
-            </div>
-        </div>
-
-        <!-- Analysis & Results Section -->
-        <div class="content-section">
-            <h2>Analysis & Results</h2>
-            <p>
-                Present your analysis results, simulations, and findings. Include graphs, charts, and data visualizations.
-            </p>
-            
-            <div class="media-grid">
-                <div class="media-item">
-                    <img src="cfd-results.jpg" alt="CFD Analysis">
-                    <div class="media-caption">CFD simulation results showing flow patterns</div>
-                </div>
-                <div class="media-item">
-                    <img src="stress-analysis.jpg" alt="Stress Analysis">
-                    <div class="media-caption">Finite element analysis stress distribution</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Video Demonstration Section -->
-        <div class="content-section">
-            <h2>Video Demonstration</h2>
-            <p>Watch the full project demonstration and explanation:</p>
-            
-            <div class="video-embed">
-                <!-- Replace VIDEO_ID with your YouTube video ID -->
-                <iframe 
-                    src="https://www.youtube.com/embed/VIDEO_ID" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
+            <div class="media-item">
+                <div class="video-embed">
+                <iframe
+                    src="https://www.youtube.com/embed/K-fMs4HPjzg"
+                    title="Autonomous Navigation Demo 1"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    loading="lazy">
                 </iframe>
+                </div>
+                <div class="media-caption">Autonomous Navigation — indoor flight test (Nov 2023)</div>
+            </div>
+
+            <div class="media-item">
+                <div class="video-embed">
+                <iframe
+                    src="https://www.youtube.com/embed/VIDEO_ID_2"
+                    title="QR Code Command Demo"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    loading="lazy">
+                </iframe>
+                </div>
+                <div class="media-caption">QR-code based command parsing and execution (Jan 2024)</div>
+            </div>
+
+            <div class="media-item">
+                <div class="video-embed">
+                <iframe
+                    src="https://www.youtube.com/embed/VIDEO_ID_3"
+                    title="ORB-SLAM3 Learning and Tests"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    loading="lazy">
+                </iframe>
+                </div>
+                <div class="media-caption">ORB-SLAM3 experiments and mapping attempts (Jun–Jul 2024)</div>
+            </div>
+
+            <div class="media-item">
+                <div class="video-embed">
+                <iframe
+                    src="https://www.youtube.com/embed/VIDEO_ID_4"
+                    title="Integration & Debugging Walkthrough"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    loading="lazy">
+                </iframe>
+                </div>
+                <div class="media-caption">Integration walkthrough and debugging highlights</div>
+            </div>
             </div>
         </div>
-
-        <!-- Code Section -->
         <div class="content-section">
-            <h2>Code & Scripts</h2>
-            <p>Custom MATLAB/Python scripts developed for this project:</p>
-            
-            <div class="code-block">
-% MATLAB Example Code
-function results = aerodynamicAnalysis(velocity, altitude)
-    % Calculate aerodynamic parameters
-    rho = atmosphericDensity(altitude);
-    dynamicPressure = 0.5 * rho * velocity^2;
-    
-    % Your analysis code here
-    results.q = dynamicPressure;
-    results.rho = rho;
-end
-            </div>
-            
-            <div class="download-section">
-                <a href="code/analysis_script.m" class="download-btn" download>Download MATLAB Script</a>
-                <a href="code/simulation.py" class="download-btn" download>Download Python Code</a>
-            </div>
-        </div>
-
-        <!-- Conclusions Section -->
-        <div class="content-section">
-            <h2>Conclusions & Future Work</h2>
+            <h2>GitHub Repository</h2>
             <p>
-                Summarize your findings, what you learned, and how the project met (or didn't meet) your objectives.
+                All sharable code can be found in the GitHub repository linked below:
             </p>
-            <p>
-                Discuss potential improvements, future iterations, or how this project could be extended.
-            </p>
-        </div>
-
-        <!-- Downloads Section -->
-        <div class="content-section">
-            <h2>Project Files</h2>
-            <p>Download project files, reports, and documentation:</p>
-            
-            <div class="download-section">
-                <a href="files/project-report.pdf" class="download-btn" download>📄 Project Report (PDF)</a>
-                <a href="files/cad-files.zip" class="download-btn" download>🔧 SolidWorks Files (ZIP)</a>
-                <a href="files/presentation.pdf" class="download-btn" download>📊 Presentation Slides</a>
-                <a href="files/data.xlsx" class="download-btn" download>📈 Raw Data (Excel)</a>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="https://github.com/scipk/Undergraduate-Drone-Autonomy" target="_blank" class="download-btn">
+                    View Repository on GitHub →
+                </a>
             </div>
         </div>
     </main>
