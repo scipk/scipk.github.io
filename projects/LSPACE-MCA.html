@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Title - Parham Khodadi</title>
+    <title>NASA L'SPACE MCA - Parham Khodadi</title>
     <style>
         * {
             margin: 0;
@@ -133,9 +133,34 @@
         }
 
         .content-section li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             font-size: 1.1rem;
             color: rgba(255, 255, 255, 0.85);
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .highlight-card {
+            background: rgba(108, 173, 223, 0.15);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--light-blue);
+        }
+
+        .highlight-card h3 {
+            color: var(--light-blue);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .highlight-card p {
+            font-size: 1rem;
+            margin-bottom: 0;
         }
 
         .media-grid {
@@ -227,18 +252,70 @@
             color: var(--white);
         }
 
-        .model-viewer {
+        .specs-table {
             width: 100%;
-            height: 500px;
-            background: linear-gradient(135deg, var(--navy) 0%, var(--light-blue) 100%);
-            border-radius: 10px;
+            border-collapse: collapse;
+            margin-top: 2rem;
+        }
+
+        .specs-table th,
+        .specs-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(108, 173, 223, 0.3);
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .specs-table th {
+            background: rgba(108, 173, 223, 0.2);
+            color: var(--light-blue);
+            font-weight: 600;
+        }
+
+        .badges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .badge-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(108, 173, 223, 0.1);
+            border-radius: 12px;
+            border: 2px solid rgba(108, 173, 223, 0.3);
+            transition: all 0.3s;
+        }
+
+        .badge-card:hover {
+            background: rgba(108, 173, 223, 0.2);
+            border-color: var(--light-blue);
+            transform: translateY(-5px);
+        }
+
+        .badge-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            min-height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--white);
-            font-size: 1.5rem;
-            margin: 2rem 0;
-            border: 2px solid rgba(108, 173, 223, 0.3);
+        }
+
+        .badge-card h3 {
+            color: var(--light-blue);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-card p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
         }
 
         @media (max-width: 768px) {
@@ -250,7 +327,11 @@
                 padding: 1.5rem;
             }
 
-            .media-grid {
+            media-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .highlights-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -290,9 +371,24 @@
                 text-align: center;
             }
 
-            .model-viewer {
-                height: 300px;
-                font-size: 1.2rem;
+            .specs-table th,
+            .specs-table td {
+                padding: 0.75rem;
+                font-size: 0.95rem;
+            }
+
+            .badges-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .badge-icon {
+                font-size: 2.5rem;
+                min-height: 60px;
+            }
+
+            .badge-card h3 {
+                font-size: 1rem;
             }
         }
 
@@ -318,6 +414,10 @@
             .logo {
                 font-size: 1.1rem;
             }
+
+            .highlight-card {
+                padding: 1rem;
+            }
         }
     </style>
 </head>
@@ -330,153 +430,105 @@
     </header>
 
     <div class="hero">
-        <h1>Project Title</h1>
-        <p class="hero-meta">Fall 2024 | Aerospace Engineering</p>
+        <h1>L'SPACE Mission Concept Academy</h1>
+        <p class="hero-meta">May 2022 - September 2022 | NASA</p>
         <div class="project-tags">
-            <span class="tag">SolidWorks</span>
-            <span class="tag">CFD Analysis</span>
-            <span class="tag">MATLAB</span>
-            <span class="tag">Python</span>
+            <span class="tag">NASA</span>
+            <span class="tag">Thermal Engineering</span>
+            <span class="tag">Systems Engineering</span>
+            <span class="tag">Mars Rover Design</span>
+            <span class="tag">CAD (Siemens NX)</span>
+            <span class="tag">Team Leadership</span>
         </div>
     </div>
 
     <main>
         <!-- Overview Section -->
         <div class="content-section">
-            <h2>Project Overview</h2>
+            <h2>Overview</h2>
             <p>
-                Provide a comprehensive overview of your project. What was the goal? What problem were you trying to solve? 
-                What course or personal interest inspired this project?
+                The NASA L'SPACE Mission Concept Academy (MCA) is an intensive five-month program that challenges participants to design and develop a complete mission concept for Mars exploration. From May to September 2022, I served as the Thermal Systems Engineer on a 12-member interdisciplinary team tasked with designing a Mars rover mission targeting lava tube exploration.
             </p>
             <p>
-                Include context about the project scope, timeline, and any collaboration details if applicable.
+                My primary focus was on the thermal management and protection of rover systems and scientific payloads operating in the harsh Martian environment. This involved calculating heat transfer across complex rover subsystems, selecting appropriate materials for passive thermal control, and designing specialized thermal dissipation hardware to meet mission constraints.
             </p>
-        </div>
-
-        <!-- Objectives Section -->
-        <div class="content-section">
-            <h2>Objectives</h2>
-            <ul>
-                <li>Primary objective 1: Detailed description</li>
-                <li>Primary objective 2: Detailed description</li>
-                <li>Secondary objective 1: Detailed description</li>
-                <li>Analysis and validation requirements</li>
-            </ul>
-        </div>
-
-        <!-- Design & Methodology Section -->
-        <div class="content-section">
-            <h2>Design & Methodology</h2>
             <p>
-                Describe your design process, methodology, and approach. What tools did you use? What calculations 
-                or simulations did you perform?
+                Beyond the technical work, the program provided extensive training in critical aerospace engineering disciplines including risk management, project management, and systems engineering—all essential for developing mission-ready concepts.
             </p>
-            
-            <div class="media-grid">
-                <div class="media-item">
-                    <img src="design-sketch.jpg" alt="Initial Design Sketch">
-                    <div class="media-caption">Initial design concept and sketches</div>
-                </div>
-                <div class="media-item">
-                    <img src="cad-model.jpg" alt="CAD Model">
-                    <div class="media-caption">3D CAD model in SolidWorks</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 3D Model Viewer Section -->
-        <div class="content-section">
-            <h2>3D Model Visualization</h2>
-            <p>Interactive 3D model viewer or rendered images of your SolidWorks design:</p>
-            <div class="model-viewer">
-                3D Model Viewer Placeholder
-                <br>
-                (Upload rendered images or use a viewer like Sketchfab)
-            </div>
-        </div>
-
-        <!-- Analysis & Results Section -->
-        <div class="content-section">
-            <h2>Analysis & Results</h2>
             <p>
-                Present your analysis results, simulations, and findings. Include graphs, charts, and data visualizations.
+                Learn more about the L'SPACE program at <a href="https://www.lspace.asu.edu/" target="_blank" rel="noopener noreferrer">L'SPACE</a>.
             </p>
-            
-            <div class="media-grid">
-                <div class="media-item">
-                    <img src="cfd-results.jpg" alt="CFD Analysis">
-                    <div class="media-caption">CFD simulation results showing flow patterns</div>
-                </div>
-                <div class="media-item">
-                    <img src="stress-analysis.jpg" alt="Stress Analysis">
-                    <div class="media-caption">Finite element analysis stress distribution</div>
-                </div>
-            </div>
         </div>
 
-        <!-- Video Demonstration Section -->
+        <!-- Final Submission Section -->
         <div class="content-section">
-            <h2>Video Demonstration</h2>
-            <p>Watch the full project demonstration and explanation:</p>
-            
-            <div class="video-embed">
-                <!-- Replace VIDEO_ID with your YouTube video ID -->
-                <iframe 
-                    src="https://www.youtube.com/embed/VIDEO_ID" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-        </div>
-
-        <!-- Code Section -->
-        <div class="content-section">
-            <h2>Code & Scripts</h2>
-            <p>Custom MATLAB/Python scripts developed for this project:</p>
-            
-            <div class="code-block">
-% MATLAB Example Code
-function results = aerodynamicAnalysis(velocity, altitude)
-    % Calculate aerodynamic parameters
-    rho = atmosphericDensity(altitude);
-    dynamicPressure = 0.5 * rho * velocity^2;
-    
-    % Your analysis code here
-    results.q = dynamicPressure;
-    results.rho = rho;
-end
-            </div>
-            
+            <h2>Final PDR</h2>
+            <p>Final Preliminary Design Review (PDR) Report and Presentation:</p>
             <div class="download-section">
-                <a href="code/analysis_script.m" class="download-btn" download>Download MATLAB Script</a>
-                <a href="code/simulation.py" class="download-btn" download>Download Python Code</a>
+                <a href="../files/LSPACE_MCA_PDR.pdf" class="download-btn" download>Final PDR (PDF)</a>
+                <a href="../files/LSPACE_MCA_PDR_Presentation.pdf" class="download-btn" download>Final PDR Presentation (PDF)</a>
             </div>
         </div>
 
-        <!-- Conclusions Section -->
+        <!-- Certificate Section -->
         <div class="content-section">
-            <h2>Conclusions & Future Work</h2>
-            <p>
-                Summarize your findings, what you learned, and how the project met (or didn't meet) your objectives.
-            </p>
-            <p>
-                Discuss potential improvements, future iterations, or how this project could be extended.
-            </p>
-        </div>
-
-        <!-- Downloads Section -->
-        <div class="content-section">
-            <h2>Project Files</h2>
-            <p>Download project files, reports, and documentation:</p>
-            
+            <h2>Certificate of Completion</h2>
+            <p>NASA L'SPACE Program Certificate:</p>
             <div class="download-section">
-                <a href="files/project-report.pdf" class="download-btn" download>📄 Project Report (PDF)</a>
-                <a href="files/cad-files.zip" class="download-btn" download>🔧 SolidWorks Files (ZIP)</a>
-                <a href="files/presentation.pdf" class="download-btn" download>📊 Presentation Slides</a>
-                <a href="files/data.xlsx" class="download-btn" download>📈 Raw Data (Excel)</a>
+                <a href="../files/LSPACE_MCA.pdf" class="download-btn" download>Certificate (PDF)</a>
             </div>
         </div>
-    </main>
+
+        <!-- Skill Module Badges Section -->
+        <div class="content-section">
+            <h2>Skill Badges & Certifications</h2>
+            <p>
+                Throughout the L'SPACE MCA program, I completed skill modules and earned the following badges on my final certificate (located above), demonstrating expertise across critical aerospace engineering disciplines:
+            </p>
+            
+            <div class="badges-grid">
+                
+                <div class="badge-card">
+                    <div class="badge-icon">🔧</div>
+                    <h3>Siemens NX CAD</h3>
+                    <p>Advanced 3D modeling and design with Siemens NX, including part design, assembly, and technical drawing capabilities</p>
+                </div>
+
+                <div class="badge-card">
+                    <div class="badge-icon">🔥</div>
+                    <h3>Heat Transfer</h3>
+                    <p>Heat transfer analysis, thermal control systems design, and material selection for space environments</p>
+                </div>
+                
+                <div class="badge-card">
+                    <div class="badge-icon">📊</div>
+                    <h3>Systems Engineering</h3>
+                    <p>Requirements definition, interface management, and systems architecture for mission design</p>
+                </div>
+                
+                <div class="badge-card">
+                    <div class="badge-icon">⚠️</div>
+                    <h3>Risk Management</h3>
+                    <p>Risk identification, assessment, and mitigation strategies for aerospace systems</p>
+                </div>
+                
+                <div class="badge-card">
+                    <div class="badge-icon">📋</div>
+                    <h3>Project Management</h3>
+                    <p>Schedule development, resource allocation, and program execution for complex missions</p>
+                </div>
+                
+                <div class="badge-card">
+                    <div class="badge-icon">🎯</div>
+                    <h3>Teaming</h3>
+                    <p>Interdisciplinary collaboration and team leadership on a 12-member mission design team</p>
+                </div>
+                
+            </div>
+
+            <p style="margin-top: 2rem; font-size: 1rem; color: rgba(255, 255, 255, 0.75);">
+                <strong>Siemens NX Training:</strong> Completed all four module assessments in the L'SPACE NX Skill Module, covering fundamentals through advanced CAD techniques. This training provided access to professional Siemens NX software and positioned me for the Siemens Design Associate Certification.
+            </p>
+        </div>
 </body>
 </html>
