@@ -16,6 +16,10 @@
             --navy: #00285E;
             --light-blue: #6CADDF;
             --white: #FFFFFF;
+            --class-project: #8B7FD6;
+            --extracurricular: #4CAF50;
+            --personal: #FF9800;
+            --research: #E91E63;
         }
 
         body {
@@ -82,19 +86,45 @@
             text-align: center;
             color: rgba(255, 255, 255, 1);
             font-size: 1.1rem;
-            margin-bottom: 4rem;
-        }
-
-        .category-section {
-            margin-bottom: 4rem;
-        }
-
-        .category-title {
-            font-size: 2rem;
-            color: var(--white);
             margin-bottom: 2rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid var(--light-blue);
+        }
+
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1.5rem;
+            border: 2px solid var(--light-blue);
+            background: rgba(0, 40, 94, 0.3);
+            color: var(--white);
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover {
+            background: var(--light-blue);
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: var(--light-blue);
+            box-shadow: 0 4px 12px rgba(108, 173, 223, 0.4);
+        }
+
+        .project-card {
+            transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
+        }
+
+        .project-card.hidden {
+            display: none;
         }
 
         .projects-grid {
@@ -153,7 +183,36 @@
         .project-date {
             color: var(--light-blue);
             font-size: 0.9rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-category {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .category-class {
+            background: var(--class-project);
+            color: var(--white);
+        }
+
+        .category-extracurricular {
+            background: var(--extracurricular);
+            color: var(--white);
+        }
+
+        .category-personal {
+            background: var(--personal);
+            color: var(--white);
+        }
+
+        .category-research {
+            background: var(--research);
+            color: var(--white);
         }
 
         .project-content p {
@@ -190,54 +249,26 @@
                 font-size: 2rem;
             }
 
-            .category-title {
-                font-size: 1.5rem;
+            .filter-container {
+                gap: 0.5rem;
+                padding: 0 1rem;
+            }
+
+            .filter-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
             }
 
             .projects-grid {
                 grid-template-columns: 1fr;
             }
 
-            main {
-                padding: 3rem 1rem;
-            }
-
             nav {
-                flex-direction: column;
-                gap: 1rem;
                 padding: 0 1rem;
             }
 
-            .logo {
-                font-size: 1.1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.75rem;
-            }
-
-            .subtitle {
-                font-size: 1rem;
-            }
-
-            .project-image {
-                height: 140px;
-                font-size: 2.4rem;
-            }
-
-            .project-content {
-                padding: 1.25rem;
-            }
-
-            .project-content h3 {
-                font-size: 1.2rem;
-            }
-
-            .back-link {
-                padding: 0.4rem 1rem;
-                font-size: 0.9rem;
+            main {
+                padding: 2rem 1rem;
             }
         }
     </style>
@@ -246,219 +277,250 @@
     <header>
         <nav>
             <div class="logo">Parham Khodadi</div>
-            <a href="./index.html" class="back-link">← Back to Home</a>
+            <a href="index.html" class="back-link">← Back to Home</a>
         </nav>
     </header>
 
     <main>
-        <h1>Projects</h1>
-        <p class="subtitle">A collection of my class, research, extracurricular, and personal projects. Pick a category, click on a project, or go to my github!</p>
+        <h1>My Projects</h1>
+        <p class="subtitle">A collection of my academic, research, and personal projects</p>
 
-        <nav class="category-nav" aria-label="Project categories" style="margin:2rem 0 3rem; text-align:center;">
-            <a href="#class-projects" class="back-link" style="margin:0 0.4rem;">Class Projects</a>
-            <a href="#extracurricular-projects" class="back-link" style="margin:0 0.4rem;">Extracurricular Projects</a>
-            <a href="#personal-projects" class="back-link" style="margin:0 0.4rem;">Personal Projects</a>
-            <a href="#research-projects" class="back-link" style="margin:0 0.4rem;">Research Projects</a>
-            <a href="https://github.com/scipk" target="_blank" class="back-link" style="margin:0 0.4rem;">GitHub →</a>
-        </nav>
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="class">Class Projects</button>
+            <button class="filter-btn" data-filter="extracurricular">Extracurricular</button>
+            <button class="filter-btn" data-filter="personal">Personal</button>
+            <button class="filter-btn" data-filter="research">Research</button>
+        </div>
 
-        <!-- Class Projects -->
-        <div id="class-projects" class="category-section">
-            <h2 class="category-title">Class Projects</h2>
-            <div class="projects-grid">
-                <a href="projects/AE-303.html" class="project-card">
-                    <div class="project-image">
-                        <!-- Replace emoji with: <img src="../images/projects/project1.jpg" alt="Project 1"> -->
-                        ✈️
+        <div class="projects-grid">
+            <!-- Most Relevant: Drone Autonomy - Core GNC skills -->
+            <a href="projects/Drone-Autonomy-SPACE-Lab.html" class="project-card" data-category="extracurricular">
+                <div class="project-image">
+                    <img src="images/projects/SPACE-Lab/Banner.jpg" alt="SPACE Lab Drone Autonomy">
+                </div>
+                <div class="project-content">
+                    <h3>SPACE Lab Drone Autonomy</h3>
+                    <p class="project-date">Fall 2023 - Summer 2024</p>
+                    <span class="project-category category-extracurricular">Extracurricular Project</span>
+                    <p>Drone autonomy programming using Python, OpenCV, and ORB-SLAM3.</p>
+                    <div class="project-tags">
+                        <span class="tag">Autonomous Navigation</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Computer Vision (OpenCV)</span>
+                        <span class="tag">Robotics & UAV Systems</span>
+                        <span class="tag">Controls</span>
+                        <span class="tag">SLAM (Simultaneous Localization and Mapping)</span>
                     </div>
-                    <div class="project-content">
-                        <h3>AE 303 - Experimental Aerodynamics</h3>
-                        <p class="project-date">Fall 2024</p>
-                        <p>Operating characteristics of subsonic and supersonic wind tunnels. Aerodynamic characteristics of wings and bodies. Flow visualization techniques. Force, moment and pressure distribution measurement. Use of hot-wire anemometer and schlieren equipment.</p>
-                        <div class="project-tags">
-                            <span class="tag">CFD</span>
-                            <span class="tag">MATLAB</span>
-                            <span class="tag">Wind Tunnel Testing</span>
-                            <span class="tag">Technical Writing</span>
-                        </div>
-                    </div>
-                </a>
+                </div>
+            </a>
 
-                <a href="projects/AE-460.html" class="project-card">
-                    <div class="project-image">
-                        🛰️
-                    </div>
-                    <div class="project-content">
-                        <h3>AE 460 - Spacecraft Design</h3>
-                        <p class="project-date">Fall 2025 & Spring 2026</p>
-                        <p>Two semester senior design course. Developing the conceptual and preliminary design of a Solar Gravitational Lens spacecraft mission: covering mission
+            <!-- Spacecraft Design - Flight dynamics and orbital mechanics -->
+            <a href="projects/AE-460.html" class="project-card" data-category="class">
+                <div class="project-image">
+                    🛰️
+                </div>
+                <div class="project-content">
+                    <h3>AE 460 - Spacecraft Design</h3>
+                    <p class="project-date">Fall 2025 & Spring 2026</p>
+                    <span class="project-category category-class">Class Project</span>
+                    <p>Two semester senior design course. Developing the conceptual and preliminary design of a Solar Gravitational Lens spacecraft mission: covering mission
 definition, payload integration, systems architecture, and community-impact considerations.</p>
-                        <div class="project-tags">
-                            <span class="tag">Spacecraft Flight Dynamics</span>
-                            <span class="tag">Orbital Mechanics</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">MATLAB</span>
-                            <span class="tag">Spacecraft Design</span>
-                        </div>
+                    <div class="project-tags">
+                        <span class="tag">Spacecraft Flight Dynamics</span>
+                        <span class="tag">Orbital Mechanics</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">MATLAB</span>
+                        <span class="tag">Spacecraft Design</span>
                     </div>
-                </a>
-            </div>
-        </div>
+                </div>
+            </a>
 
-        <!-- Extracurricular Projects -->
-        <div id="extracurricular-projects" class="category-section">
-            <h2 class="category-title">Extracurricular Projects</h2>
-            <div class="projects-grid">
-                <a href="projects/Drone-Autonomy-SPACE-Lab.html" class="project-card">
-                    <div class="project-image">
-                        <img src="images/projects/SPACE-Lab/Banner.jpg" alt="SPACE Lab Drone Autonomy">
+            <!-- Avionics - Embedded systems and hardware -->
+            <a href="projects/RocketProject-Avionics.html" class="project-card" data-category="extracurricular">
+                <div class="project-image">
+                    <img src="images/projects/RocketProject/trinity-sanding.jpg" alt="Avionics Ground Systems">
+                </div>
+                <div class="project-content">
+                    <h3>Avionics Ground Systems</h3>
+                    <p class="project-date">Fall 2023 - Fall 2024</p>
+                    <span class="project-category category-extracurricular">Extracurricular Project</span>
+                    <p>Various work at the SDSU Rocket Project.</p>
+                    <div class="project-tags">
+                        <span class="tag">Avionics Systems</span>
+                        <span class="tag">Data Acquisition (DAQ)</span>
+                        <span class="tag">Hardware Integration</span>
+                        <span class="tag">3D Modeling & Additive Manufacturing</span>
+                        <span class="tag">Embedded Systems</span> 
                     </div>
-                    <div class="project-content">
-                        <h3>SPACE Lab Drone Autonomy</h3>
-                        <p class="project-date">Fall 2023 - Summer 2024</p>
-                        <p>Drone autonomy programming using Python, OpenCV, and ORB-SLAM3.</p>
-                        <div class="project-tags">
-                            <span class="tag">Autonomous Navigation</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">Computer Vision (OpenCV)</span>
-                            <span class="tag">Robotics & UAV Systems</span>
-                            <span class="tag">Controls</span>
-                            <span class="tag">SLAM (Simultaneous Localization and Mapping)</span>
-                        </div>
-                    </div>
-                <a href="projects/RocketProject-Avionics.html" class="project-card">
-                    <div class="project-image">
-                        <img src="images/projects/RocketProject/trinity-sanding.jpg" alt="Avionics Ground Systems">
-                    </div>
-                    <div class="project-content">
-                        <h3>Avionics Ground Systems</h3>
-                        <p class="project-date">Fall 2023 - Fall 2024</p>
-                        <p>Various work at the SDSU Rocket Project.</p>
-                        <div class="project-tags">
-                            <span class="tag">Avionics Systems</span>
-                            <span class="tag">Data Acquisition (DAQ)</span>
-                            <span class="tag">Hardware Integration</span>
-                            <span class="tag">3D Modeling & Additive Manufacturing</span>
-                            <span class="tag">Embedded Systems</span> 
-                        </div>
-                    </div>
-                </a>
-                <a href="projects/LSPACE-NPWEE.html" class="project-card">
-                    <div class="project-image">
-                        📋
-                    </div>
-                    <div class="project-content">
-                        <h3>NASA L'SPACE NPWEE</h3>
-                        <p class="project-date">Spring 2022</p>
-                        <p>NASA Proposal Writing and Evaluation Experience.</p>
-                        <div class="project-tags">
-                            <span class="tag">NASA</span>
-                            <span class="tag">Proposal Writing</span>
-                            <span class="tag">Proposal Evaluation</span>
-                            <span class="tag">Prototyping</span>
-                        </div>
-                    </div>
-                </a>
-                <a href="projects/LSPACE-MCA.html" class="project-card">
-                    <div class="project-image">
-                        🔥
-                    </div>
-                    <div class="project-content">
-                        <h3>NASA L'SPACE MCA</h3>
-                        <p class="project-date">Summer 2022</p>
-                        <p>Mission Concept Academy. Took up the role of Thermal Engineer for a proposed NASA Martian Rover.</p>
-                        <div class="project-tags">
-                            <span class="tag">NASA</span>
-                            <span class="tag">Thermal Engineering</span>
-                            <span class="tag">Systems Engineering</span>
-                            <span class="tag">Mars Rover Design</span>
-                            <span class="tag">CAD (Siemens NX)</span>
-                            <span class="tag">Team Leadership</span>
-                        </div>
-                    </div>
-                </a>
-                <a href="projects/NCAS.html" class="project-card">
-                    <div class="project-image">
-                        🔧
-                    </div>
-                    <div class="project-content">
-                        <h3>NCAS Mission 3 at NASA AFRC</h3>
-                        <p class="project-date">Summer 2022</p>
-                        <p>NASA Community College Aerospace Scholars at the Armstrong Flight Research Center.</p>
-                        <div class="project-tags">
-                            <div class="tag">NASA</div>
-                            <div class="tag">STEM Education</div>
-                            <div class="tag">eVTOL Accessibility</div>
-                            <div class="tag">Shadowing</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
+                </div>
+            </a>
 
-        <!-- Personal Projects -->
-        <div id="personal-projects" class="category-section">
-            <h2 class="category-title">Personal Projects</h2>
-            <div class="projects-grid">
-                <a href="projects/mpd-thruster.html" class="project-card">
-                    <div class="project-image">
-                        <img src="images/projects/mpd-thruster.png" alt="MPD Thruster">
+            <!-- Experimental Aerodynamics - Testing and analysis -->
+            <a href="projects/AE-303.html" class="project-card" data-category="class">
+                <div class="project-image">
+                    ✈️
+                </div>
+                <div class="project-content">
+                    <h3>AE 303 - Experimental Aerodynamics</h3>
+                    <p class="project-date">Fall 2024</p>
+                    <span class="project-category category-class">Class Project</span>
+                    <p>Operating characteristics of subsonic and supersonic wind tunnels. Aerodynamic characteristics of wings and bodies. Flow visualization techniques. Force, moment and pressure distribution measurement. Use of hot-wire anemometer and schlieren equipment.</p>
+                    <div class="project-tags">
+                        <span class="tag">CFD</span>
+                        <span class="tag">MATLAB</span>
+                        <span class="tag">Wind Tunnel Testing</span>
+                        <span class="tag">Technical Writing</span>
                     </div>
-                    <div class="project-content">
-                        <h3>Magnetoplasmadynamic Thruster</h3>
-                        <p class="project-date">Fall 2024</p>
-                        <p>Magnetoplasmadynamic Thruster built using a 1s Lipo battery, DC 3V → 400kV transformer, nickel strips, and an empty soda can for a YouTube video.</p>
-                        <div class="project-tags">
-                            <span class="tag">Electromagnetism</span>
-                            <span class="tag">Soldering</span>
-                            <span class="tag">Circuit Design</span>
-                            <span class="tag">SolidWorks CAD</span>
-                        </div>
-                    </div>
-                </a>
+                </div>
+            </a>
 
-                <a href="projects/SciPK-YouTube.html" class="project-card">
-                    <div class="project-image">
-                        <img src="images/projects/SciPK/SciPK-Banner.png" alt="SciPK YouTube Channel">
+            <!-- NASA MCA - Systems engineering -->
+            <a href="projects/LSPACE-MCA.html" class="project-card" data-category="extracurricular">
+                <div class="project-image">
+                    🔥
+                </div>
+                <div class="project-content">
+                    <h3>NASA L'SPACE MCA</h3>
+                    <p class="project-date">Summer 2022</p>
+                    <span class="project-category category-extracurricular">Extracurricular Project</span>
+                    <p>Mission Concept Academy. Took up the role of Thermal Engineer for a proposed NASA Martian Rover.</p>
+                    <div class="project-tags">
+                        <span class="tag">NASA</span>
+                        <span class="tag">Thermal Engineering</span>
+                        <span class="tag">Systems Engineering</span>
+                        <span class="tag">Mars Rover Design</span>
+                        <span class="tag">CAD (Siemens NX)</span>
+                        <span class="tag">Team Leadership</span>
                     </div>
-                    <div class="project-content">
-                        <h3>YouTube Channel & Videography</h3>
-                        <p class="project-date">Officially since 2022 | Unofficially since 7 years old</p>
-                        <p>Born out of the combination of my love for Engineering, Videography, and Communication.</p>
-                        <div class="project-tags">
-                            <span class="tag">Science Communication</span>
-                            <span class="tag">Content Creation</span>
-                            <span class="tag">Videography</span>
-                            <span class="tag">Video Editing</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
+                </div>
+            </a>
 
-        <!-- Research Projects -->
-        <div id="research-projects" class="category-section">
-            <h2 class="category-title">Research Projects</h2>
-            <div class="projects-grid">
-                <a href="projects/AIAA-SDSU-History.html" class="project-card">
-                    <div class="project-image">
-                        <img src="images/projects/AIAA-SDSU.jpg" alt="AIAA SDSU History">
+            <!-- Research Project -->
+            <a href="projects/AIAA-SDSU-History.html" class="project-card" data-category="research">
+                <div class="project-image">
+                    <img src="images/projects/AIAA-SDSU.jpg" alt="AIAA SDSU History">
+                </div>
+                <div class="project-content">
+                    <h3>AIAA SDSU Student Branch History</h3>
+                    <p class="project-date">Summer & Fall 2025 - SciTech 2026</p>
+                    <span class="project-category category-research">Research Project</span>
+                    <p>Historical documentation of the AIAA student branch at SDSU from 1963 to present.</p>
+                    <div class="project-tags">
+                        <span class="tag">Research</span>
+                        <span class="tag">Publication</span>
+                        <span class="tag">History</span>
+                        <span class="tag">Interviewing</span>
+                        <span class="tag">Presentation</span>
                     </div>
-                    <div class="project-content">
-                        <h3>AIAA SDSU Student Branch History</h3>
-                        <p class="project-date">Summer & Fall 2025 - SciTech 2026</p>
-                        <p>Historical documentation of the AIAA student branch at SDSU from 1963 to present.</p>
-                        <div class="project-tags">
-                            <span class="tag">Research</span>
-                            <span class="tag">Publication</span>
-                            <span class="tag">History</span>
-                            <span class="tag">Interviewing</span>
-                            <span class="tag">Presentation</span>
-                        </div>
+                </div>
+            </a>
+
+            <!-- MPD Thruster - Hands-on technical -->
+            <a href="projects/mpd-thruster.html" class="project-card" data-category="personal">
+                <div class="project-image">
+                    <img src="images/projects/mpd-thruster.png" alt="MPD Thruster">
+                </div>
+                <div class="project-content">
+                    <h3>Magnetoplasmadynamic Thruster</h3>
+                    <p class="project-date">Fall 2024</p>
+                    <span class="project-category category-personal">Personal Project</span>
+                    <p>Magnetoplasmadynamic Thruster built using a 1s Lipo battery, DC 3V → 400kV transformer, nickel strips, and an empty soda can for a YouTube video.</p>
+                    <div class="project-tags">
+                        <span class="tag">Electromagnetism</span>
+                        <span class="tag">Soldering</span>
+                        <span class="tag">Circuit Design</span>
+                        <span class="tag">SolidWorks CAD</span>
                     </div>
-                </a>
-            </div>
+                </div>
+            </a>
+
+            <!-- NASA NPWEE - Proposal writing -->
+            <a href="projects/LSPACE-NPWEE.html" class="project-card" data-category="extracurricular">
+                <div class="project-image">
+                    📋
+                </div>
+                <div class="project-content">
+                    <h3>NASA L'SPACE NPWEE</h3>
+                    <p class="project-date">Spring 2022</p>
+                    <span class="project-category category-extracurricular">Extracurricular Project</span>
+                    <p>NASA Proposal Writing and Evaluation Experience.</p>
+                    <div class="project-tags">
+                        <span class="tag">NASA</span>
+                        <span class="tag">Proposal Writing</span>
+                        <span class="tag">Proposal Evaluation</span>
+                        <span class="tag">Prototyping</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- YouTube - Communication -->
+            <a href="projects/SciPK-YouTube.html" class="project-card" data-category="personal">
+                <div class="project-image">
+                    <img src="images/projects/SciPK/SciPK-Banner.png" alt="SciPK YouTube Channel">
+                </div>
+                <div class="project-content">
+                    <h3>YouTube Channel & Videography</h3>
+                    <p class="project-date">Officially since 2022 | Unofficially since 7 years old</p>
+                    <span class="project-category category-personal">Personal Project</span>
+                    <p>Born out of the combination of my love for Engineering, Videography, and Communication.</p>
+                    <div class="project-tags">
+                        <span class="tag">Science Communication</span>
+                        <span class="tag">Content Creation</span>
+                        <span class="tag">Videography</span>
+                        <span class="tag">Video Editing</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- NCAS - Educational experience -->
+            <a href="projects/NCAS.html" class="project-card" data-category="extracurricular">
+                <div class="project-image">
+                    🔧
+                </div>
+                <div class="project-content">
+                    <h3>NCAS Mission 3 at NASA AFRC</h3>
+                    <p class="project-date">Summer 2022</p>
+                    <span class="project-category category-extracurricular">Extracurricular Project</span>
+                    <p>NASA Community College Aerospace Scholars at the Armstrong Flight Research Center.</p>
+                    <div class="project-tags">
+                        <div class="tag">NASA</div>
+                        <div class="tag">STEM Education</div>
+                        <div class="tag">eVTOL Accessibility</div>
+                        <div class="tag">Shadowing</div>
+                    </div>
+                </div>
+            </a>
         </div>
     </main>
+
+    <script>
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filterValue === 'all') {
+                        card.classList.remove('hidden');
+                    } else {
+                        if (card.getAttribute('data-category') === filterValue) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
