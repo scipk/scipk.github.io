@@ -4,26 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parham Khodadi</title>
+    <meta name="description" content="Parham Khodadi – Aerospace Engineering student at San Diego State University specializing in dynamics and control engineering.">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://scipk.github.io/">
+    <meta property="og:title" content="Parham Khodadi">
+    <meta property="og:description" content="Parham Khodadi – Aerospace Engineering student at San Diego State University specializing in dynamics and control engineering.">
+    <meta property="og:image" content="https://scipk.github.io/images/headshot.jpg">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Parham Khodadi">
+    <meta name="twitter:description" content="Parham Khodadi – Aerospace Engineering student at San Diego State University specializing in dynamics and control engineering.">
+    <meta name="twitter:image" content="https://scipk.github.io/images/headshot.jpg">
     <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --dark-gray: #2c2c2b;
-            --navy: #00285E;
-            --light-blue: #6CADDF;
-            --white: #FFFFFF;
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.7;
-            color: var(--white);
-            background: var(--dark-gray);
             max-width: 1400px;
             margin: 0 auto;
             padding: 3rem 2rem;
@@ -63,18 +60,18 @@
 
         .social-links {
             display: flex;
-            gap: 0.75rem;
+            gap: 1.125rem;
             margin-bottom: 1.5rem;
             flex-wrap: wrap;
         }
 
         .social-links a {
-            padding: 0.5rem 1rem;
+            padding: 0.75rem 1.5rem;
             background: var(--light-blue);
             color: var(--white);
             text-decoration: none;
-            font-size: 0.85rem;
-            border-radius: 5px;
+            font-size: 1.275rem;
+            border-radius: 7.5px;
             transition: all 0.3s;
             border: 2px solid var(--light-blue);
             font-weight: 500;
@@ -84,8 +81,8 @@
         }
 
         .social-links a img {
-            width: 16px;
-            height: 16px;
+            width: 24px;
+            height: 24px;
             filter: brightness(0) invert(1) !important;
         }
 
@@ -100,11 +97,11 @@
         }
 
         .quick-link {
-            padding: 0.6rem 1.5rem;
+            padding: 1.2rem 3rem;
             background: var(--white);
             color: var(--navy);
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 1.9rem;
             border-radius: 6px;
             font-weight: 500;
             transition: all 0.3s;
@@ -163,19 +160,6 @@
 
         .bio a:hover {
             color: var(--white);
-        }
-
-        /* Mission Cards */
-        .mission-cards {
-            display: none;
-        }
-
-        .mission-card {
-            display: none;
-        }
-
-        .mission-icon {
-            display: none;
         }
 
         /* Contact Section */
@@ -317,40 +301,6 @@
             font-size: 1rem;
         }
 
-        /* Coursework */
-        .course-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-
-        .course-item {
-            padding: 1rem;
-            background: rgba(0, 40, 94, 0.3);
-            border-radius: 8px;
-            border-left: 3px solid var(--light-blue);
-            border: 1px solid rgba(108, 173, 223, 0.3);
-            border-left: 3px solid var(--light-blue);
-        }
-
-        .course-code {
-            color: var(--light-blue);
-            font-weight: 700;
-            font-size: 0.9rem;
-        }
-
-        .course-item h3 {
-            font-size: 1rem;
-            color: var(--white);
-            margin: 0.25rem 0;
-        }
-
-        .course-description {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
-            margin-top: 0.25rem;
-        }
-
         /* YouTube Section */
         .youtube-grid {
             display: grid;
@@ -391,15 +341,6 @@
 
         .channel-link:hover {
             background: #CC0000;
-        }
-
-        footer {
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            text-align: center;
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
         }
 
         /* Responsive */
@@ -446,8 +387,6 @@
             }
 
             .youtube-grid,
-            .course-grid,
-            .mission-cards,
             .contact-grid {
                 grid-template-columns: 1fr;
             }
@@ -466,27 +405,27 @@
                 Parham Khodadi
             </h1>
             <p class="subtitle">Aerospace Engineering Student • San Diego State University</p>
-            <div class="social-links" style="gap: 1.125rem;">
-                <a href="/cdn-cgi/l/email-protection#c1aaa9aea5a0a5a8b1a0b3a9a0ac81a6aca0a8adefa2aeac" style="padding: 0.75rem 1.5rem; font-size: 1.275rem; border-radius: 7.5px;">
-                    <img src="icons/email-icon.svg" alt="Email" style="width:24px;height:24px;">
+            <div class="social-links">
+                <a href="mailto:khodadiparham@gmail.com">
+                    <img src="icons/email-icon.svg" alt="Email" loading="lazy">
                     Email
                 </a>
-                <a href="https://github.com/scipk" target="_blank" style="padding: 0.75rem 1.5rem; font-size: 1.275rem; border-radius: 7.5px;">
-                    <img src="icons/github.svg" alt="GitHub" style="width:24px;height:24px;">
+                <a href="https://github.com/scipk" target="_blank">
+                    <img src="icons/github.svg" alt="GitHub" loading="lazy">
                     GitHub
                 </a>
-                <a href="https://linkedin.com/in/parham-khodadi" target="_blank" style="padding: 0.75rem 1.5rem; font-size: 1.275rem; border-radius: 7.5px;">
-                    <img src="icons/linkedin.svg" alt="LinkedIn" style="width:24px;height:24px;">
+                <a href="https://linkedin.com/in/parham-khodadi" target="_blank">
+                    <img src="icons/linkedin.svg" alt="LinkedIn" loading="lazy">
                     LinkedIn
                 </a>
-                <a href="https://www.youtube.com/@scipk" target="_blank" style="padding: 0.75rem 1.5rem; font-size: 1.275rem; border-radius: 7.5px;">
-                    <img src="icons/youtube.svg" alt="YouTube" style="width:24px;height:24px;">
+                <a href="https://www.youtube.com/@scipk" target="_blank">
+                    <img src="icons/youtube.svg" alt="YouTube" loading="lazy">
                     YouTube
                 </a>
             </div>
             <div class="quick-links">
-                <a href="projects.html" class="quick-link" style="padding: 1.2rem 3rem; font-size: 1.9rem;">Projects</a>
-                <a href="cv.pdf" class="quick-link" target="_blank" style="padding: 1.2rem 3rem; font-size: 1.9rem;">CV</a>
+                <a href="projects.html" class="quick-link">Projects</a>
+                <a href="cv.pdf" class="quick-link" target="_blank">CV</a>
             </div>
         </div>
         <img src="images/headshot.jpg" alt="Parham Khodadi" class="profile-image">
@@ -508,21 +447,21 @@
             <div class="contact-grid">
                 <div class="contact-item">
                     <div class="contact-icon">
-                        <img src="icons/home.svg" alt="Home">
+                        <img src="icons/home.svg" alt="Home" loading="lazy">
                     </div>
                     <div class="contact-label">Hometown</div>
                     <div class="contact-value">Los Angeles, CA</div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">
-                        <img src="icons/location.svg" alt="Location">
+                        <img src="icons/location.svg" alt="Location" loading="lazy">
                     </div>
                     <div class="contact-label">Current Location</div>
                     <div class="contact-value">San Diego, CA</div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">
-                        <img src="icons/email.svg" alt="Email">
+                        <img src="icons/email.svg" alt="Email" loading="lazy">
                     </div>
                     <div class="contact-label">Email</div>
                     <div class="contact-value"><a href="mailto:khodadiparham@gmail.com">khodadiparham@gmail.com</a></div>
@@ -538,12 +477,12 @@
             <h2>Publications</h2>
             <div class="publication-item">
             <span class="publication-venue">
-                <img src="icons/calendar.svg" alt="Conference">
+                <img src="icons/calendar.svg" alt="Conference" loading="lazy">
                 AIAA SciTech 2026
             </span>
             <a href="./projects/AIAA-SDSU-History.html" class="publication-title">AIAA SDSU Student Branch History</a>
             <p class="publication-authors">
-                <img src="icons/users.svg" alt="Authors">
+                <img src="icons/users.svg" alt="Authors" loading="lazy">
                 Parham Khodadi, Ava Cook, Yuichiro Tobita, and Xiaofeng Liu
             </p>
             <p class="publication-description">
@@ -564,18 +503,30 @@
                 <div class="youtube-embed">
                     <iframe 
                         src="https://www.youtube.com/embed/w2OuJgLzhCE" 
+                        title="Embedded YouTube video: Magnetoplasmadynamic Thruster – SciPK"
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
+                        allowfullscreen
+                        loading="lazy">
                     </iframe>
                 </div>
                 <div class="youtube-embed">
                     <iframe 
                         src="https://www.youtube.com/embed/vrn4BuFm0WY" 
+                        title="Embedded YouTube video: Aerospace Engineering at SDSU – SciPK"
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
+                        allowfullscreen
+                        loading="lazy">
                     </iframe>
                 </div>
             </div>
-            <a href="https://www.youtube.com/@sci
+            <a href="https://www.youtube.com/@scipk" target="_blank" class="channel-link">🎬 Visit my YouTube Channel</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Parham Khodadi. All rights reserved.</p>
+    </footer>
+</body>
+</html>

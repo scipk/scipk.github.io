@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Parham Khodadi</title>
+    <meta name="description" content="Projects portfolio of Parham Khodadi – academic, research, and personal aerospace engineering projects.">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://scipk.github.io/projects.html">
+    <meta property="og:title" content="Projects - Parham Khodadi">
+    <meta property="og:description" content="Projects portfolio of Parham Khodadi – academic, research, and personal aerospace engineering projects.">
+    <meta property="og:image" content="https://scipk.github.io/images/logo.png">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Projects - Parham Khodadi">
+    <meta name="twitter:description" content="Projects portfolio of Parham Khodadi – academic, research, and personal aerospace engineering projects.">
+    <meta name="twitter:image" content="https://scipk.github.io/images/logo.png">
     <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         :root {
-            --dark-gray: #2c2c2b;
-            --navy: #00285E;
-            --light-blue: #6CADDF;
-            --white: #FFFFFF;
             --class-project: #8B7FD6;
             --extracurricular: #4CAF50;
             --personal: #FF9800;
@@ -24,10 +27,7 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: var(--white);
-            background: var(--dark-gray);
         }
 
         header {
@@ -48,25 +48,6 @@
         .logo {
             font-size: 1.3rem;
             font-weight: 700;
-            color: var(--white);
-        }
-
-        .back-link {
-            color: var(--white);
-            text-decoration: none;
-            padding: 0.5rem 1.5rem;
-            border: 2px solid var(--white);
-            border-radius: 5px;
-            transition: all 0.3s;
-            background: var(--white);
-            color: var(--navy);
-            font-weight: 500;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        .back-link:hover {
-            background: var(--light-blue);
-            border-color: var(--light-blue);
             color: var(--white);
         }
 
@@ -228,14 +209,6 @@
             gap: 0.4rem;
         }
 
-        .tag {
-            background: var(--light-blue);
-            color: var(--white);
-            padding: 0.2rem 0.6rem;
-            border-radius: 12px;
-            font-size: 0.75rem;
-        }
-
         .category-nav .back-link {
             background: rgba(255,255,255,0.95);
             color: var(--navy);
@@ -298,7 +271,7 @@
             <!-- Baseball Avoidance Multirotor (BAM) -->
             <a href="projects/AE-403W.html" class="project-card" data-category="class">
                 <div class="project-image">
-                    <img src="images/projects/AE403W/thumbnail.png" alt="Baseball Avoidance Multirotor (BAM)">
+                    <img src="images/projects/AE403W/thumbnail.png" alt="Baseball Avoidance Multirotor (BAM)" loading="lazy">
                 </div>
                 <div class="project-content">
                     <h3>AE 403W - Baseball Avoidance Multirotor (BAM)</h3>
@@ -319,7 +292,7 @@
             <!-- Most Relevant: Drone Autonomy - Core GNC skills -->
             <a href="projects/Drone-Autonomy-SPACE-Lab.html" class="project-card" data-category="extracurricular">
                 <div class="project-image">
-                    <img src="images/projects/SPACE-Lab/Banner.jpg" alt="SPACE Lab Drone Autonomy">
+                    <img src="images/projects/SPACE-Lab/Banner.jpg" alt="SPACE Lab Drone Autonomy" loading="lazy">
                 </div>
                 <div class="project-content">
                     <h3>SPACE Lab Drone Autonomy</h3>
@@ -362,7 +335,7 @@ definition, payload integration, systems architecture, and community-impact cons
             <!-- Avionics - Embedded systems and hardware -->
             <a href="projects/RocketProject-Avionics.html" class="project-card" data-category="extracurricular">
                 <div class="project-image">
-                    <img src="images/projects/RocketProject/trinity-sanding.jpg" alt="Avionics Ground Systems">
+                    <img src="images/projects/RocketProject/trinity-sanding.jpg" alt="Avionics Ground Systems" loading="lazy">
                 </div>
                 <div class="project-content">
                     <h3>Avionics Ground Systems</h3>
@@ -401,7 +374,7 @@ definition, payload integration, systems architecture, and community-impact cons
             <!-- Numerical Matrix Analysis -->
             <a href="projects/MATH-543.html" class="project-card" data-category="class">
                 <div class="project-image">
-                    <img src="images/projects/math-543.jpg" alt="Numerical Matrix Analysis">
+                    <img src="images/projects/math-543.jpg" alt="Numerical Matrix Analysis" loading="lazy">
                 </div>
                 <div class="project-content">
                     <h3>MATH 543 - Numerical Matrix Analysis</h3>
@@ -421,7 +394,7 @@ definition, payload integration, systems architecture, and community-impact cons
             <!-- Research Project -->
             <a href="projects/AIAA-SDSU-History.html" class="project-card" data-category="research">
                 <div class="project-image">
-                    <img src="images/projects/AIAA-SDSU.jpg" alt="AIAA SDSU History">
+                    <img src="images/projects/AIAA-SDSU.jpg" alt="AIAA SDSU History" loading="lazy">
                 </div>
                 <div class="project-content">
                     <h3>AIAA SDSU Student Branch History</h3>
@@ -462,7 +435,7 @@ definition, payload integration, systems architecture, and community-impact cons
             <!-- MPD Thruster - Hands-on technical -->
             <a href="projects/mpd-thruster.html" class="project-card" data-category="personal">
                 <div class="project-image">
-                    <img src="images/projects/mpd-thruster.png" alt="MPD Thruster">
+                    <img src="images/projects/mpd-thruster.png" alt="MPD Thruster" loading="lazy">
                 </div>
                 <div class="project-content">
                     <h3>Magnetoplasmadynamic Thruster</h3>
@@ -500,7 +473,7 @@ definition, payload integration, systems architecture, and community-impact cons
             <!-- YouTube - Communication -->
             <a href="projects/SciPK-YouTube.html" class="project-card" data-category="personal">
                 <div class="project-image">
-                    <img src="images/projects/SciPK/SciPK-Banner.png" alt="SciPK YouTube Channel">
+                    <img src="images/projects/SciPK/SciPK-Banner.png" alt="SciPK YouTube Channel" loading="lazy">
                 </div>
                 <div class="project-content">
                     <h3>YouTube Channel & Videography</h3>
@@ -527,15 +500,19 @@ definition, payload integration, systems architecture, and community-impact cons
                     <span class="project-category category-extracurricular">Extracurricular Project</span>
                     <p>NASA Community College Aerospace Scholars at the Armstrong Flight Research Center.</p>
                     <div class="project-tags">
-                        <div class="tag">NASA</div>
-                        <div class="tag">STEM Education</div>
-                        <div class="tag">eVTOL Accessibility</div>
-                        <div class="tag">Shadowing</div>
+                        <span class="tag">NASA</span>
+                        <span class="tag">STEM Education</span>
+                        <span class="tag">eVTOL Accessibility</span>
+                        <span class="tag">Shadowing</span>
                     </div>
                 </div>
             </a>
         </div>
     </main>
+
+    <footer>
+        <p>© 2025 Parham Khodadi. All rights reserved.</p>
+    </footer>
 
     <script>
         // Filter functionality
