@@ -121,6 +121,13 @@
             border-bottom: 3px solid var(--light-blue);
         }
 
+        .content-section h3 {
+            color: var(--light-blue);
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
         .content-section p {
             font-size: 1.1rem;
             margin-bottom: 1rem;
@@ -228,18 +235,12 @@
             color: var(--white);
         }
 
-        .model-viewer {
-            width: 100%;
-            height: 500px;
-            background: linear-gradient(135deg, var(--navy) 0%, var(--light-blue) 100%);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1.5rem;
-            margin: 2rem 0;
-            border: 2px solid rgba(108, 173, 223, 0.3);
+        .highlight-box {
+            background: rgba(108, 173, 223, 0.1);
+            border-left: 4px solid var(--light-blue);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 5px;
         }
 
         @media (max-width: 768px) {
@@ -290,11 +291,6 @@
                 width: 100%;
                 text-align: center;
             }
-
-            .model-viewer {
-                height: 300px;
-                font-size: 1.2rem;
-            }
         }
 
         @media (max-width: 480px) {
@@ -331,11 +327,12 @@
     </header>
 
     <div class="hero">
-        <h1>AE 460 - Spacecraft Design</h1>
+        <h1>AE 460 - Solar Gravitational Lens Mission (Destiny)</h1>
         <p class="hero-meta">Fall 2025 & Spring 2026 | San Diego State University</p>
         <div class="project-tags">
-            <span class="tag">Spacecraft Flight Dynamics</span>
+            <span class="tag">Flight Dynamics</span>
             <span class="tag">Orbital Mechanics</span>
+            <span class="tag">Trajectory Design</span>
             <span class="tag">AGI Systems Tool Kit (STK)</span>
             <span class="tag">MATLAB</span>
             <span class="tag">Spacecraft Design</span>
@@ -347,8 +344,184 @@
         <div class="content-section">
             <h2>Project Overview</h2>
             <p>
-                In-progress class. Will add details later.
+                <strong>Destiny</strong> is a senior capstone mission concept to reach 650 AU and use the Sun as a gravitational lens for deep-space imaging. The design covers spacecraft architecture, trajectory planning, and long-term operations for a 57-year mission.
             </p>
+            <p>
+                The plan combines a methalox bipropellant system for early maneuvers with a 410 m × 410 m solar sail for the long cruise. An RTG powers the spacecraft through the decades-long journey, with round-trip communications delayed by over 10 days at the far end.
+            </p>
+        </div>
+
+        <!-- My Role Section -->
+        <div class="content-section">
+            <h2>My Role: Flight Dynamics Lead</h2>
+            <p>
+                I led the flight dynamics work, defining the trajectory, validating the mission timeline, and estimating the ΔV needed for each phase.
+            </p>
+            <h3>Key Responsibilities:</h3>
+            <ul>
+                <li><strong>Trajectory Design</strong> - Built the three-leg mission plan in AGI STK Astrogator, including Earth-to-Jupiter, Jupiter gravity assist with plane change, and a Solar Oberth burn.</li>
+                <li><strong>ΔV Budget</strong> - Estimated 57.7 km/s total ΔV using Lambert solutions, down from a 65 km/s baseline.</li>
+                <li><strong>Simulation Setup</strong> - Configured Sun-centered STK scenarios with gravity, solar radiation pressure, and perturbation models for long-term propagation.</li>
+                <li><strong>Timeline Planning</strong> - Mapped the mission from launch in 2049 through imaging operations at 650-900 AU after 2096.</li>
+                <li><strong>Orbital Analysis</strong> - Evaluated Jupiter assist effectiveness, Solar Oberth dynamics, and long-duration coast segment stability.</li>
+                <li><strong>Verification</strong> - Checked maneuver sequences and convergence, and coordinated requirements with propulsion and thermal teams.</li>
+                <li><strong>MATLAB Support</strong> - Created a flight dynamics calculator for initial architecture estimates.</li>
+            </ul>
+        </div>
+
+        <!-- Mission Schedule Section -->
+        <div class="content-section">
+            <h2>Mission Schedule</h2>
+            <p>
+                Jupiter's 11.86-year window drives the mission timing. The schedule spans mission development, launch, key maneuvers, and the long cruise to the focal region.
+            </p>
+            <div class="highlight-box">
+                <strong>Phase Milestones:</strong><br/>
+                2025-2026: Mission design<br/>
+                2026-2028: Design finalization<br/>
+                2028-2030: Funding and contracting<br/>
+                2030-2049: Manufacturing and testing<br/>
+                2049: Launch and Earth escape<br/>
+                2054: Jupiter flyby<br/>
+                2056: Solar sail deployment and solar flyby<br/>
+                2058: 30 AU pass and sail detachment<br/>
+                2058-2096: Cruise to 650 AU<br/>
+                2096: Reach 650 AU and begin imaging<br/>
+                2096+: Continue toward 900 AU
+            </div>
+        </div>
+
+        <!-- Flight Dynamics Section -->
+        <div class="content-section">
+            <h2>Flight Dynamics Analysis</h2>
+            
+            <h3>Trajectory Design</h3>
+            <p>
+                The mission was modeled in a Sun-centered STK Astrogator scenario with three sequential legs: Earth to Jupiter, Jupiter to the Sun, and Solar Oberth escape to 650 AU.
+            </p>
+
+            <h3>Three-Leg Architecture</h3>
+            <ul>
+                <li><strong>Earth to Jupiter:</strong> GEO escape into a heliocentric transfer, then a 5-year coast to Jupiter.</li>
+                <li><strong>Jupiter to Sun:</strong> A plane change at close perijove directs the spacecraft toward the solar perihelion target.</li>
+                <li><strong>Sun to 650 AU:</strong> A Solar Oberth burn at 0.14 AU sends Destiny onto a hyperbolic escape trajectory.</li>
+            </ul>
+
+            <h3>ΔV Budget</h3>
+            <p>
+                Initial transfer solutions were generated with STK's Lambert Solver, which estimates the velocity changes needed for each leg.
+            </p>
+            <div class="highlight-box">
+                <strong>ΔV Budget Summary:</strong><br/>
+                • GEO Escape: 12.5 km/s<br/>
+                • Jupiter Plane Change: 3.6 km/s<br/>
+                • Solar Oberth: 41.6 km/s<br/>
+                • Cruise Spiral: 4.8 km/s<br/>
+                <strong>Total: 57.7 km/s</strong>
+            </div>
+
+            <h3>Tools & Methodology</h3>
+            <p>
+                STK Astrogator was used for high-fidelity propagation, maneuver targeting, and visualization.
+            </p>
+            <ul>
+                <li>Force models: solar gravity, solar radiation pressure, relativistic perturbations</li>
+                <li>Maneuver targeting with differential correctors and Lambert solvers</li>
+                <li>Constraint solving for mission legs and rendezvous conditions</li>
+                <li>Visualization in heliocentric, Jupiter-centric, and solar-centric frames</li>
+            </ul>
+
+            <h3>Current Status</h3>
+            <p>
+                The current model optimizes each leg independently, so it does not yet guarantee the final trajectory is aimed precisely at anti-Proxima Centauri b. The overall architecture is promising, but end-to-end optimization remains to be completed.
+            </p>
+        </div>
+
+        <!-- Gallery Section -->
+        <div class="content-section">
+            <h2>Mission Visualizations</h2>
+            <p>
+                STK trajectory images show key mission phases from launch through Solar Oberth escape to 650 AU.
+            </p>
+            <div class="media-grid">               
+                <div class="media-item">
+                    <img src="../images/projects/AE460/launch.png" alt="Earth GEO Escape">
+                    <div class="media-caption">Earth GEO Escape</div>
+                </div>
+                <div class="media-item">
+                    <img src="../images/projects/AE460/jupiter_flyby.png" alt="Jupiter Gravity Assist">
+                    <div class="media-caption">Jupiter Gravity Assist</div>
+                </div>
+                <div class="media-item">
+                    <img src="../images/projects/AE460/650au.png" alt="Solar Oberth Escape">
+                    <div class="media-caption">Solar Oberth Escape</div>
+                </div>
+            </div>
+            <p>
+                Note: the current trajectory still needs a full end-to-end optimization to hit the target direction accurately.
+            </p>
+        </div>
+
+        <!-- Project Poster -->
+        <div class="content-section">
+            <h2>Project Poster</h2>
+            <p>
+                This poster was presented at SDSU Senior Design Day. I contributed the mission timeline and flight dynamics content.
+            </p>
+
+            <div class="media-grid">
+                <div class="media-item">
+                    <img src="../images/projects/AE460/AE460_Poster.png" alt="AE 460 Project Poster">
+                    <div class="media-caption">Senior Design Day Poster</div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="https://aerospace.sdsu.edu/design-day/design-day-2026#:~:text=Project%20Name%3A%20Destiny" target="_blank" class="download-btn">
+                    View Project on SDSU Design Day Website
+                </a>
+            </div>
+        </div>
+
+        <!-- Video Presentation Section -->
+        <div class="content-section">
+            <h2>Final Presentation</h2>
+            <p>
+                Watch the senior design day presentation for this mission.
+            </p>
+            <div class="video-embed">
+                <iframe 
+                    src="https://www.youtube.com/embed/OZTh6yZOad4" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Final Paper Section -->
+        <div class="content-section">
+            <h2>Final Paper</h2>
+            <p>
+                Read the full paper covering the Destiny mission design, flight dynamics, operations, and spacecraft architecture.
+            </p>
+            
+            <div class="download-section">
+                <a href="../files/AE460_Final_Paper.pdf" class="download-btn" target="_blank">📄 AE460 Final Paper (PDF)</a>
+            </div>
+        </div>
+
+        <!-- GitHub Repository Section -->
+        <div class="content-section">
+            <h2>GitHub Repository</h2>
+            <p>
+                The project code and documentation are available on GitHub.
+            </p>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="https://github.com/wyattowelch/AE460-Solar-Gravitational-Lens" target="_blank" class="download-btn">
+                    View Repository on GitHub →
+                </a>
+            </div>
         </div>
 
     </main>
