@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codecademy Projects - Parham Khodadi</title>
+    <link rel="icon" href="../images/logo.png" type="image/png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-gray: #2c2c2b;
+            --navy: #00285E;
+            --light-blue: #6CADDF;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--white);
+            background: var(--dark-gray);
+        }
+
+        header {
+            background: var(--dark-gray);
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .back-link {
+            color: var(--navy);
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            border: 2px solid var(--white);
+            border-radius: 5px;
+            transition: all 0.3s;
+            background: var(--white);
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-link:hover {
+            background: var(--light-blue);
+            border-color: var(--light-blue);
+            color: var(--white);
+        }
+
+        .hero {
+            background: rgba(0, 40, 94, 0.5);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom: 2px solid var(--light-blue);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-meta {
+            font-size: 1.1rem;
+            color: var(--light-blue);
+        }
+
+        .project-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .tag {
+            background: var(--light-blue);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .content-section {
+            background: rgba(0, 40, 94, 0.3);
+            padding: 3rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            border: 1px solid rgba(108, 173, 223, 0.3);
+        }
+
+        .content-section h2 {
+            color: var(--white);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--light-blue);
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .content-section ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .certification-card {
+            background: rgba(0, 40, 94, 0.5);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(108, 173, 223, 0.5);
+            transition: all 0.3s;
+        }
+
+        .certification-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--light-blue);
+            box-shadow: 0 4px 12px rgba(108, 173, 223, 0.2);
+        }
+
+        .certification-card h3 {
+            color: var(--light-blue);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .certification-card p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .cert-status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .cert-completed {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .cert-upcoming {
+            background: #FF9800;
+            color: white;
+        }
+
+        .download-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--white);
+            color: var(--navy);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-weight: 500;
+            border: 2px solid var(--white);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .download-btn:hover {
+            background: var(--light-blue);
+            border-color: var(--light-blue);
+            color: var(--white);
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--white);
+            color: var(--navy);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+            font-weight: 500;
+            border: 2px solid var(--white);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .github-link:hover {
+            background: var(--light-blue);
+            border-color: var(--light-blue);
+            color: var(--white);
+        }
+
+        .linkedin-link {
+            color: #0077B5;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .linkedin-link:hover {
+            color: var(--light-blue);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .certifications-grid {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                padding: 3rem 1rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 0 1rem;
+            }
+
+            .hero {
+                padding: 3rem 1rem;
+            }
+
+            .hero-meta {
+                font-size: 1rem;
+            }
+
+            .project-tags {
+                gap: 0.4rem;
+            }
+
+            .tag {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.85rem;
+            }
+
+            .download-section {
+                flex-direction: column;
+            }
+
+            .download-btn,
+            .github-link {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .content-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .content-section p,
+            .content-section li {
+                font-size: 1rem;
+            }
+
+            .back-link {
+                padding: 0.4rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .logo {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Parham Khodadi</div>
+            <a href="../projects.html" class="back-link">← Back to Projects</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Codecademy Projects</h1>
+        <p class="hero-meta">Self-Directed Learning in C++ and Python</p>
+        <div class="project-tags">
+            <span class="tag">C++</span>
+            <span class="tag">Python</span>
+            <span class="tag">Object-Oriented Programming</span>
+            <span class="tag">Software Development</span>
+            <span class="tag">Programming Fundamentals</span>
+        </div>
+    </div>
+
+    <main>
+        <!-- Overview Section -->
+        <div class="content-section">
+            <h2>Project Overview</h2>
+            <p>
+                This collection represents my self-directed learning journey through <a href="https://www.codecademy.com/profiles/SciPK" class="linkedin-link">Codecademy's comprehensive programming courses</a>. 
+                While pursuing my aerospace engineering degree, I dedicated time to strengthen my software development foundations, focusing on C++ for systems programming and Python for rapid prototyping and data analysis.
+            </p>
+            <p>
+                These projects demonstrate my commitment to continuous learning and my ability to master programming concepts that are essential for developing robust software systems in aerospace applications. The skills acquired here directly support my work in autonomous systems, data processing, and embedded software development across my other projects.
+            </p>
+        </div>
+
+        <!-- Completed Certifications -->
+        <div class="content-section">
+            <h2>Completed Certifications</h2>
+            <p>The following Codecademy certifications represent my journey in mastering object-oriented programming and C++ fundamentals:</p>
+            
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <h3>Learn Object-Oriented Programming (OOP) with C++</h3>
+                    <p>Comprehensive understanding of OOP principles including inheritance, polymorphism, encapsulation, and abstraction. Essential for writing maintainable and scalable C++ code.</p>
+                    <span class="cert-status cert-completed">✓ Completed</span>
+                </div>
+
+                <div class="certification-card">
+                    <h3>C++ for Programmers</h3>
+                    <p>Advanced C++ concepts for developers with existing programming experience. Covers modern C++ practices and efficient programming techniques.</p>
+                    <span class="cert-status cert-completed">✓ Completed</span>
+                </div>
+
+                <div class="certification-card">
+                    <h3>Learn C++: References and Pointers</h3>
+                    <p>Deep dive into memory management, pointer arithmetic, and reference semantics—critical for performance-critical aerospace software.</p>
+                    <span class="cert-status cert-completed">✓ Completed</span>
+                </div>
+
+                <div class="certification-card">
+                    <h3>Learn C++: Classes and Objects</h3>
+                    <p>Mastery of class design, object instantiation, constructors, destructors, and managing object lifecycle in C++.</p>
+                    <span class="cert-status cert-completed">✓ Completed</span>
+                </div>
+
+                <div class="certification-card">
+                    <h3>Learn C++: Functions</h3>
+                    <p>Understanding function design, overloading, parameter passing, and the creation of reusable code components.</p>
+                    <span class="cert-status cert-completed">✓ Completed</span>
+                </div>
+
+                <div class="certification-card">
+                    <h3>Linear Algebra</h3>
+                    <p>Mathematical foundations in vectors, matrices, transformations, and eigenvalues—fundamental for control systems and flight dynamics.</p>
+                    <span class="cert-status cert-completed">✓ Completed</span>
+                </div>
+
+                <div class="certification-card">
+                    <h3>Learn C++: Vectors</h3>
+                    <p>Mastery of the STL vector container, dynamic arrays, and vector operations for efficient data structure management.</p>
+                    <span class="cert-status cert-completed">✓ Completed</span>
+                </div>
+
+                <div class="certification-card">
+                    <h3>Learn C++: Loops</h3>
+                    <p>Control flow fundamentals including for loops, while loops, and loop optimization techniques.</p>
+                    <span class="cert-status cert-completed">✓ Completed</span>
+                </div>
+
+                <div class="certification-card">
+                    <h3>Learn C++: Introduction</h3>
+                    <p>Foundational concepts in C++ including syntax, data types, variables, and basic operations.</p>
+                    <span class="cert-status cert-completed">✓ Completed</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Upcoming Certifications -->
+        <div class="content-section">
+            <h2>Currently Pursuing</h2>
+            <p>I'm expanding my technical skillset with the following certifications to enhance my capabilities in software engineering and systems design:</p>
+            
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <h3>Learn Git: Introduction</h3>
+                    <p>Version control fundamentals for collaborative software development and project management.</p>
+                    <span class="cert-status cert-upcoming">→ In Progress</span>
+                </div>
+
+                <div class="certification-card">
+                    <h3>Using Git for DevOps: Using Git Effectively</h3>
+                    <p>Advanced Git workflows and DevOps practices for continuous integration and deployment pipelines.</p>
+                    <span class="cert-status cert-upcoming">→ In Progress</span>
+                </div>
+
+                <div class="certification-card">
+                    <h3>Learn Intermediate C++</h3>
+                    <p>Intermediate C++ concepts including templates, smart pointers, and modern C++ features.</p>
+                    <span class="cert-status cert-upcoming">→ In Progress</span>
+                </div>
+
+                <div class="certification-card">
+                    <h3>Learn Advanced C++</h3>
+                    <p>Advanced C++ programming for expert-level software engineering and system design.</p>
+                    <span class="cert-status cert-upcoming">→ In Progress</span>
+                </div>
+
+                <div class="certification-card">
+                    <h3>Learn Python 3</h3>
+                    <p>Comprehensive Python programming for scripting, data analysis, and scientific computing.</p>
+                    <span class="cert-status cert-upcoming">→ In Progress</span>
+                </div>
+
+                <div class="certification-card">
+                    <h3>Learn SQL</h3>
+                    <p>Database design and querying for data management in aerospace applications.</p>
+                    <span class="cert-status cert-upcoming">→ In Progress</span>
+                </div>
+
+                <div class="certification-card">
+                    <h3>Analyze Data with SQL</h3>
+                    <p>Advanced SQL techniques for data analysis and insight generation.</p>
+                    <span class="cert-status cert-upcoming">→ In Progress</span>
+                </div>
+
+                <div class="certification-card">
+                    <h3>Certified Associate in Project Management (CAPM)® Certification Prep</h3>
+                    <p>Project management fundamentals and best practices for leading engineering teams.</p>
+                    <span class="cert-status cert-upcoming">→ In Progress</span>
+                </div>
+
+                <div class="certification-card">
+                    <h3>Associate Systems Engineer to Principal Systems Engineer</h3>
+                    <p>Systems engineering principles and career progression in complex technical environments.</p>
+                    <span class="cert-status cert-upcoming">→ In Progress</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Code Section -->
+        <div class="content-section">
+            <h2>Project Repository</h2>
+            <p>
+                All completed Codecademy projects are stored in my GitHub repository, organized by course and language. 
+                This repository serves as a reference for my programming work and demonstrates my practical application of the concepts learned through Codecademy.
+            </p>
+            <p>
+                The repository includes:
+            </p>
+            <ul>
+                <li><strong>C++ Projects:</strong> Object-oriented design implementations, data structure exercises, and algorithmic solutions (83.2% of repository)</li>
+                <li><strong>Python Projects:</strong> Scripting exercises, data processing, and automation tasks (16.8% of repository)</li>
+                <li><strong>Documentation:</strong> Comments and explanations for complex algorithms and design patterns</li>
+                <li><strong>Progression:</strong> From foundational syntax to advanced OOP principles</li>
+            </ul>
+
+            <div class="download-section">
+                <a href="https://github.com/scipk/CodecademyProjects" class="github-link" target="_blank">
+                    🔗 View on GitHub
+                </a>
+            </div>
+        </div>
+
+        <!-- Skills & Learning Outcomes -->
+        <div class="content-section">
+            <h2>Skills & Learning Outcomes</h2>
+            <p>Through these Codecademy courses, I've developed proficiency in:</p>
+            <ul>
+                <li><strong>C++ Programming:</strong> Object-oriented design, memory management, STL containers, and modern C++ practices</li>
+                <li><strong>Python Development:</strong> Rapid prototyping, data handling, and scripting for scientific computing</li>
+                <li><strong>Software Engineering Fundamentals:</strong> Code structure, design patterns, and best practices</li>
+                <li><strong>Problem Solving:</strong> Algorithmic thinking and implementation of computational solutions</li>
+                <li><strong>Version Control:</strong> Git workflows for collaborative development</li>
+                <li><strong>Data Management:</strong> Database design and SQL querying (in progress)</li>
+            </ul>
+        </div>
+
+        <!-- LinkedIn Credentials -->
+        <div class="content-section">
+            <h2>Verified Credentials</h2>
+            <p>
+                My Codecademy achievements are verified and displayed on my professional profile. You can view my complete certification history and learning progression on 
+                <a href="https://www.codecademy.com/profiles/SciPK" class="linkedin-link" target="_blank">my Codecademy profile</a>.
+            </p>
+            <p>
+                On my LinkedIn, I've highlighted the most relevant certifications for professional development:
+            </p>
+            <ul>
+                <li>Learn Object-Oriented Programming (OOP) with C++</li>
+                <li>C++ for Programmers</li>
+            </ul>
+        </div>
+
+        <!-- Conclusions Section -->
+        <div class="content-section">
+            <h2>Commitment to Continuous Learning</h2>
+            <p>
+                These Codecademy courses represent my dedication to continuous professional development and mastery of programming fundamentals. 
+                In the fast-paced aerospace industry, the ability to quickly learn new technologies and programming paradigms is essential.
+            </p>
+            <p>
+                My engagement with Codecademy demonstrates my proactive approach to skill development, my ability to work independently on learning objectives, 
+                and my commitment to becoming a well-rounded engineer capable of contributing to all levels of aerospace software systems—from embedded firmware to high-level mission planning tools.
+            </p>
+        </div>
+    </main>
+</body>
+</html>
