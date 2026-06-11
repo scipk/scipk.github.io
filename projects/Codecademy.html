@@ -141,65 +141,38 @@
 
         .certifications-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
         }
 
         .certification-card {
+            display: block;
             background: rgba(0, 40, 94, 0.5);
-            padding: 1.5rem;
+            padding: 1.1rem 1.4rem;
             border-radius: 8px;
             border: 1px solid rgba(108, 173, 223, 0.5);
-            transition: all 0.3s;
+            transition: all 0.25s;
+            text-decoration: none;
         }
 
         .certification-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-3px);
             border-color: var(--light-blue);
-            box-shadow: 0 4px 12px rgba(108, 173, 223, 0.2);
+            box-shadow: 0 6px 16px rgba(108, 173, 223, 0.25);
+            background: rgba(0, 40, 94, 0.75);
         }
 
         .certification-card h3 {
             color: var(--light-blue);
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .certification-card p {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-        }
-
-        .cert-status {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            border-radius: 5px;
-            font-size: 0.85rem;
+            font-size: 1rem;
             font-weight: 600;
-        }
-
-        .cert-completed {
-            background: #4CAF50;
-            color: white;
-        }
-
-        .cert-upcoming {
-            background: #FF9800;
-            color: white;
-        }
-
-        .download-section {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 2rem;
+            line-height: 1.4;
         }
 
         .download-btn {
             display: inline-block;
-            padding: 1rem 2rem;
+            padding: 0.75rem 1.75rem;
             background: var(--white);
             color: var(--navy);
             text-decoration: none;
@@ -216,111 +189,33 @@
             color: var(--white);
         }
 
-        .github-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            background: var(--white);
-            color: var(--navy);
-            text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s;
-            font-weight: 500;
-            border: 2px solid var(--white);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        .github-link:hover {
-            background: var(--light-blue);
-            border-color: var(--light-blue);
-            color: var(--white);
-        }
-
-        .linkedin-link {
-            color: #0077B5;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .linkedin-link:hover {
-            color: var(--light-blue);
+        .btn-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .content-section {
-                padding: 1.5rem;
-            }
-
-            .certifications-grid {
-                grid-template-columns: 1fr;
-            }
-
-            main {
-                padding: 3rem 1rem;
-            }
-
-            nav {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 0 1rem;
-            }
-
-            .hero {
-                padding: 3rem 1rem;
-            }
-
-            .hero-meta {
-                font-size: 1rem;
-            }
-
-            .project-tags {
-                gap: 0.4rem;
-            }
-
-            .tag {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.85rem;
-            }
-
-            .download-section {
-                flex-direction: column;
-            }
-
-            .download-btn,
-            .github-link {
-                width: 100%;
-                text-align: center;
-            }
+            .hero h1 { font-size: 2rem; }
+            .content-section { padding: 1.5rem; }
+            .certifications-grid { grid-template-columns: 1fr; }
+            main { padding: 3rem 1rem; }
+            nav { flex-direction: column; gap: 1rem; padding: 0 1rem; }
+            .hero { padding: 3rem 1rem; }
+            .hero-meta { font-size: 1rem; }
+            .project-tags { gap: 0.4rem; }
+            .tag { padding: 0.4rem 0.8rem; font-size: 0.85rem; }
+            .btn-row { flex-direction: column; }
+            .download-btn { width: 100%; text-align: center; }
         }
 
         @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 1.75rem;
-            }
-
-            .content-section h2 {
-                font-size: 1.5rem;
-            }
-
-            .content-section p,
-            .content-section li {
-                font-size: 1rem;
-            }
-
-            .back-link {
-                padding: 0.4rem 1rem;
-                font-size: 0.9rem;
-            }
-
-            .logo {
-                font-size: 1.1rem;
-            }
+            .hero h1 { font-size: 1.75rem; }
+            .content-section h2 { font-size: 1.5rem; }
+            .content-section p, .content-section li { font-size: 1rem; }
+            .back-link { padding: 0.4rem 1rem; font-size: 0.9rem; }
+            .logo { font-size: 1.1rem; }
         }
     </style>
 </head>
@@ -333,230 +228,103 @@
     </header>
 
     <div class="hero">
-        <h1>Codecademy Projects</h1>
+        <h1>Codecademy</h1>
         <p class="hero-meta">Self-Directed Learning in C++ and Python</p>
         <div class="project-tags">
             <span class="tag">C++</span>
             <span class="tag">Python</span>
-            <span class="tag">Object-Oriented Programming</span>
-            <span class="tag">Software Development</span>
-            <span class="tag">Programming Fundamentals</span>
+            <span class="tag">Git</span>
+            <span class="tag">Linux</span>
+            <span class="tag">Linear Algebra</span>
         </div>
     </div>
 
     <main>
-        <!-- Overview Section -->
+        <!-- Overview -->
         <div class="content-section">
-            <h2>Project Overview</h2>
-            <p>
-                This collection represents my self-directed learning journey through Codecademy's comprehensive programming courses. 
-                While pursuing my aerospace engineering degree, I dedicated time to strengthen my software development foundations, focusing on C++ for systems programming and Python for rapid prototyping and data analysis, as well as other related courses in software engineering, version control, and data management.
-            </p>
-            <p>
-                These projects demonstrate my commitment to continuous learning and my ability to master programming concepts that are essential for developing robust software systems in aerospace applications. The skills acquired here directly support my work.
-            </p>
-            <h2>Codecademy Profile</h2>
-            <p>
-                You can view my Codecademy profile and completed courses here:
-            </p>
-            <div style="text-align: center; margin-top: 2rem;">
-                <a href="https://www.codecademy.com/profiles/SciPK" target="_blank" class="download-btn">
-                    View Codecademy Profile →
-                </a>
+            <h2>Overview</h2>
+            <p>Self-directed programming coursework taken mostly in the summer after graduating from SDSU (May-June 2026) — focused on C++ for systems work and Python for scripting and data analysis, with supporting coursework in Git, Linux, and linear algebra.</p>
+            <div class="btn-row">
+                <a href="https://www.codecademy.com/profiles/SciPK" target="_blank" class="download-btn">Codecademy Profile →</a>
+                <a href="https://github.com/scipk/CodecademyProjects" target="_blank" class="download-btn">GitHub Repo →</a>
             </div>
         </div>
 
-        <!-- Project Code Section -->
+        <!-- Skills -->
         <div class="content-section">
-            <h2>Projects Repository</h2>
-            <p>
-                All completed Codecademy projects are stored in my GitHub repository, organized by course and language. 
-                This repository serves as a reference for my programming work and demonstrates my practical application of the concepts learned through Codecademy.
-            </p>
-            
-            <div style="text-align: center; margin-top: 2rem;">
-                <a href="https://github.com/scipk/CodecademyProjects" target="_blank" class="download-btn">
-                    View Projects Repo on GitHub →
-                </a>
-            </div>
-        </div>
-
-        <!-- Skills & Learning Outcomes -->
-        <div class="content-section">
-            <h2>Skills & Learning Outcomes</h2>
-            <p>Through these Codecademy courses, I've developed proficiency in:</p>
+            <h2>Skills</h2>
             <ul>
-                <li><strong>C++ Programming:</strong> Object-oriented design, memory management, STL containers, and modern C++ practices</li>
-                <li><strong>Python Development:</strong> Rapid prototyping, data handling, and scripting for scientific computing</li>
-                <li><strong>Software Engineering Fundamentals:</strong> Code structure, design patterns, and best practices</li>
-                <li><strong>Problem Solving:</strong> Algorithmic thinking and implementation of computational solutions</li>
-                <li><strong>Version Control:</strong> Git workflows for collaborative development</li>
-                <li><strong>Data Management:</strong> Database design and SQL querying</li>
+                <li><strong>C++:</strong> OOP, memory management, STL containers, templates, smart pointers, modern practices</li>
+                <li><strong>Python:</strong> Scripting, data handling, rapid prototyping for scientific computing</li>
+                <li><strong>Git:</strong> Version control and collaborative workflows</li>
+                <li><strong>Linux:</strong> CLI navigation and environment management</li>
+                <li><strong>Linear Algebra:</strong> Vectors, matrices, transformations, eigenvalues</li>
             </ul>
         </div>
 
-        <!-- Completed Certifications -->
+        <!-- Certifications -->
         <div class="content-section">
-            <h2>Completed Certifications</h2>
-            <p>The following are my Codecademy certifications, you can view them by clicking on the box:</p>
-            
+            <h2>Certifications</h2>
+            <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-bottom: 0;">Click any card to view the certificate.</p>
             <div class="certifications-grid">
-                <div class="certification-card">
-                    <h3>Learn Object-Oriented Programming (OOP) with C++</h3>
-                    <p>Comprehensive understanding of OOP principles including inheritance, polymorphism, encapsulation, and abstraction. Essential for writing maintainable and scalable C++ code.</p>
-                    <p><a href="https://www.codecademy.com/profiles/SciPK/certificates/2a55279781274c7d873439633177ecbf" target="_blank" rel="noopener" style="color: #6cabdd;">View Certificate</a></p>
-                    <span class="cert-status cert-completed">✓ Completed</span>
-                </div>
 
-                <div class="certification-card">
+                <a class="certification-card" href="https://www.codecademy.com/profiles/SciPK/certificates/2a55279781274c7d873439633177ecbf" target="_blank" rel="noopener">
+                    <h3>Learn OOP with C++</h3>
+                </a>
+
+                <a class="certification-card" href="https://www.codecademy.com/profiles/SciPK/certificates/ddc94032dd07fd43ee02f994e8f72af9" target="_blank" rel="noopener">
                     <h3>C++ for Programmers</h3>
-                    <p>Advanced C++ concepts for developers with existing programming experience. Covers modern C++ practices and efficient programming techniques.</p>
-                    <p><a href="https://www.codecademy.com/profiles/SciPK/certificates/ddc94032dd07fd43ee02f994e8f72af9" target="_blank" rel="noopener" style="color: #6cabdd;">View Certificate</a></p>
-                    <span class="cert-status cert-completed">✓ Completed</span>
-                </div>
+                </a>
 
-                <div class="certification-card">
-                    <h3>Learn C++: References and Pointers</h3>
-                    <p>Deep dive into memory management, pointer arithmetic, and reference semantics—critical for performance-critical aerospace software.</p>
-                    <p><a href="https://www.codecademy.com/profiles/SciPK/certificates/66b188947bf947bca3a7c811ff9b51b5" target="_blank" rel="noopener" style="color: #6cabdd;">View Certificate</a></p>
-                    <span class="cert-status cert-completed">✓ Completed</span>
-                </div>
-
-                <div class="certification-card">
-                    <h3>Learn C++: Classes and Objects</h3>
-                    <p>Mastery of class design, object instantiation, constructors, destructors, and managing object lifecycle in C++.</p>
-                    <p><a href="https://www.codecademy.com/profiles/SciPK/certificates/673043efde0445f3af62466be6544679" target="_blank" rel="noopener" style="color: #6cabdd;">View Certificate</a></p>
-                    <span class="cert-status cert-completed">✓ Completed</span>
-                </div>
-
-                <div class="certification-card">
-                    <h3>Learn C++: Functions</h3>
-                    <p>Understanding function design, overloading, parameter passing, and the creation of reusable code components.</p>
-                    <p><a href="https://www.codecademy.com/profiles/SciPK/certificates/284f66fe8c5745f886598714a6d9938b" target="_blank" rel="noopener" style="color: #6cabdd;">View Certificate</a></p>
-                    <span class="cert-status cert-completed">✓ Completed</span>
-                </div>
-
-                <div class="certification-card">
-                    <h3>Linear Algebra</h3>
-                    <p>Mathematical foundations in vectors, matrices, transformations, and eigenvalues—fundamental for control systems and flight dynamics.</p>
-                    <p><a href="https://www.codecademy.com/profiles/SciPK/certificates/34c14a8d82ce7e5eb8077bd356946169" target="_blank" rel="noopener" style="color: #6cabdd;">View Certificate</a></p>
-                    <span class="cert-status cert-completed">✓ Completed</span>
-                </div>
-
-                <div class="certification-card">
-                    <h3>Learn C++: Vectors</h3>
-                    <p>Mastery of the STL vector container, dynamic arrays, and vector operations for efficient data structure management.</p>
-                    <p><a href="https://www.codecademy.com/profiles/SciPK/certificates/67907c97d4e04faabfb6dc06e6459139" target="_blank" rel="noopener" style="color: #6cabdd;">View Certificate</a></p>
-                    <span class="cert-status cert-completed">✓ Completed</span>
-                </div>
-
-                <div class="certification-card">
-                    <h3>Learn C++: Loops</h3>
-                    <p>Control flow fundamentals including for loops, while loops, and loop optimization techniques.</p>
-                    <p><a href="https://www.codecademy.com/profiles/SciPK/certificates/3de27fdca0a541318be302cd5f0ab55d" target="_blank" rel="noopener" style="color: #6cabdd;">View Certificate</a></p>
-                    <span class="cert-status cert-completed">✓ Completed</span>
-                </div>
-
-                <div class="certification-card">
-                    <h3>Learn C++: Introduction</h3>
-                    <p>Foundational concepts in C++ including syntax, data types, variables, and basic operations.</p>
-                    <p><a href="https://www.codecademy.com/profiles/SciPK/certificates/edc9d8b145f845159ba1a10533c3b074" target="_blank" rel="noopener" style="color: #6cabdd;">View Certificate</a></p>
-                    <span class="cert-status cert-completed">✓ Completed</span>
-                </div>
-
-                <div class="certification-card">
-                    <h3>Learn Git: Introduction</h3>
-                    <p>Version control fundamentals for collaborative software development and project management.</p>
-                    <p><a href="https://www.codecademy.com/profiles/SciPK/certificates/53f1ee480e524cd7b329b5854507c089" target="_blank" rel="noopener" style="color: #6cabdd;">View Certificate</a></p>
-                    <span class="cert-status cert-completed">✓ Completed</span>
-                </div>
-
-                <div class="certification-card">
+                <a class="certification-card" href="https://www.codecademy.com/profiles/SciPK/certificates/214fd9535e024b808ce7ddc8c6d50ae3" target="_blank" rel="noopener">
                     <h3>Learn Intermediate C++</h3>
-                    <p>Intermediate C++ concepts including templates, smart pointers, and modern C++ features.</p>
-                    <p><a href="https://www.codecademy.com/profiles/SciPK/certificates/214fd9535e024b808ce7ddc8c6d50ae3" target="_blank" rel="noopener" style="color: #6cabdd;">View Certificate</a></p>
-                    <span class="cert-status cert-completed">✓ Completed</span>
-                </div>
-                
-                <div class="certification-card">
+                </a>
+
+                <a class="certification-card" href="https://www.codecademy.com/profiles/SciPK/certificates/310a1e2137024ab6a2f0eee85f27ce36" target="_blank" rel="noopener">
                     <h3>Learn Advanced C++</h3>
-                    <p>Advanced C++ programming for expert-level software engineering and system design.</p>
-                    <p><a href="https://www.codecademy.com/profiles/SciPK/certificates/310a1e2137024ab6a2f0eee85f27ce36" target="_blank" rel="noopener" style="color: #6cabdd;">View Certificate</a></p>
-                    <span class="cert-status cert-completed">✓ Completed</span>
-                </div>
-            </div>
-        </div>
+                </a>
 
-        <!-- Upcoming Certifications -->
-        <div class="content-section">
-            <h2>Currently Pursuing</h2>
-            <p>I'm expanding my technical skillset with the following certifications to enhance my capabilities in software engineering and systems design:</p>
-            
-            <div class="certifications-grid">
-                <div class="certification-card">
-                    <h3>Learn the Command Line</h3>
-                    <p>Command-line skills for navigating files, managing systems, and automating workflows.</p>
-                    <p><a href="https://www.codecademy.com/learn/learn-the-command-line" target="_blank" rel="noopener" style="color: #6cabdd;">View Course</a></p>
-                    <span class="cert-status cert-upcoming">→ In Progress</span>
-                </div>
+                <a class="certification-card" href="https://www.codecademy.com/profiles/SciPK/certificates/66b188947bf947bca3a7c811ff9b51b5" target="_blank" rel="noopener">
+                    <h3>Learn C++: References and Pointers</h3>
+                </a>
 
-                <div class="certification-card">
-                    <h3>GitHub Copilot Certification</h3>
-                    <p>Training on GitHub Copilot for AI-assisted coding and development productivity.</p>
-                    <p><a href="https://www.codecademy.com/learn/paths/github-copilot-certification" target="_blank" rel="noopener" style="color: #6cabdd;">View Course</a></p>
-                    <span class="cert-status cert-upcoming">→ In Progress</span>
-                </div>
+                <a class="certification-card" href="https://www.codecademy.com/profiles/SciPK/certificates/673043efde0445f3af62466be6544679" target="_blank" rel="noopener">
+                    <h3>Learn C++: Classes and Objects</h3>
+                </a>
 
-                <div class="certification-card">
-                    <h3>Computer Science | Career Path</h3>
-                    <p>Core computer science fundamentals and career-ready skills in programming and algorithms.</p>
-                    <p><a href="https://www.codecademy.com/learn/paths/computer-science" target="_blank" rel="noopener" style="color: #6cabdd;">View Course</a></p>
-                    <span class="cert-status cert-upcoming">→ In Progress</span>
-                </div>
+                <a class="certification-card" href="https://www.codecademy.com/profiles/SciPK/certificates/67907c97d4e04faabfb6dc06e6459139" target="_blank" rel="noopener">
+                    <h3>Learn C++: Vectors</h3>
+                </a>
 
-                <div class="certification-card">
-                    <h3>Introduction to Linux</h3>
-                    <p>Linux fundamentals for system administration, shell scripting, and open-source workflows.</p>
-                    <p><a href="https://www.codecademy.com/learn/introduction-to-linux" target="_blank" rel="noopener" style="color: #6cabdd;">View Course</a></p>
-                    <span class="cert-status cert-upcoming">→ In Progress</span>
-                </div>
+                <a class="certification-card" href="https://www.codecademy.com/profiles/SciPK/certificates/284f66fe8c5745f886598714a6d9938b" target="_blank" rel="noopener">
+                    <h3>Learn C++: Functions</h3>
+                </a>
 
-                <div class="certification-card">
+                <a class="certification-card" href="https://www.codecademy.com/profiles/SciPK/certificates/3de27fdca0a541318be302cd5f0ab55d" target="_blank" rel="noopener">
+                    <h3>Learn C++: Loops</h3>
+                </a>
+
+                <a class="certification-card" href="https://www.codecademy.com/profiles/SciPK/certificates/edc9d8b145f845159ba1a10533c3b074" target="_blank" rel="noopener">
+                    <h3>Learn C++: Introduction</h3>
+                </a>
+
+                <a class="certification-card" href="https://www.codecademy.com/profiles/SciPK/certificates/6c152bd262967f8c941c9707ed636bda" target="_blank" rel="noopener">
                     <h3>Learn Python 3</h3>
-                    <p>Comprehensive Python programming for scripting, data analysis, and scientific computing.</p>
-                    <p><a href="https://www.codecademy.com/learn/learn-python-3" target="_blank" rel="noopener" style="color: #6cabdd;">View Course</a></p>
-                    <span class="cert-status cert-upcoming">→ In Progress</span>
-                </div>
+                </a>
 
-                <div class="certification-card">
-                    <h3>Data Scientist: Machine Learning Specialist</h3>
-                    <p>Machine learning and data science specialization with practical model-building skills.</p>
-                    <p><a href="https://www.codecademy.com/learn/paths/data-science" target="_blank" rel="noopener" style="color: #6cabdd;">View Course</a></p>
-                    <span class="cert-status cert-upcoming">→ In Progress</span>
-                </div>
+                <a class="certification-card" href="https://www.codecademy.com/profiles/SciPK/certificates/53f1ee480e524cd7b329b5854507c089" target="_blank" rel="noopener">
+                    <h3>Learn Git: Introduction</h3>
+                </a>
 
-                <div class="certification-card">
-                    <h3>Data and Programming Foundations for AI</h3>
-                    <p>Foundation courses in data science and programming for AI and machine learning workflows.</p>
-                    <p><a href="https://www.codecademy.com/learn/paths/machine-learning-ai-engineering-foundations" target="_blank" rel="noopener" style="color: #6cabdd;">View Course</a></p>
-                    <span class="cert-status cert-upcoming">→ In Progress</span>
-                </div>
+                <a class="certification-card" href="https://www.codecademy.com/profiles/SciPK/certificates/54de574543f242baaf263227f82073bf" target="_blank" rel="noopener">
+                    <h3>Introduction to Linux</h3>
+                </a>
 
-                <div class="certification-card">
-                    <h3>Learn SQL</h3>
-                    <p>Database design and querying for data management in aerospace applications.</p>
-                    <p><a href="https://www.codecademy.com/learn/learn-sql" target="_blank" rel="noopener" style="color: #6cabdd;">View Course</a></p>
-                    <span class="cert-status cert-upcoming">→ In Progress</span>
-                </div>
+                <a class="certification-card" href="https://www.codecademy.com/profiles/SciPK/certificates/34c14a8d82ce7e5eb8077bd356946169" target="_blank" rel="noopener">
+                    <h3>Linear Algebra</h3>
+                </a>
 
-                <div class="certification-card">
-                    <h3>Analyze Data with SQL</h3>
-                    <p>Advanced SQL techniques for data analysis and insight generation.</p>
-                    <p><a href="https://www.codecademy.com/learn/paths/analyze-data-with-sql" target="_blank" rel="noopener" style="color: #6cabdd;">View Course</a></p>
-                    <span class="cert-status cert-upcoming">→ In Progress</span>
-                </div>
             </div>
-        </div>
         </div>
     </main>
 </body>
