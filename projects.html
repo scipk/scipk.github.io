@@ -3,19 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Parham Khodadi</title>
-    <meta name="description" content="Projects portfolio of Parham Khodadi – academic, research, and personal aerospace engineering projects.">
+    <meta name="description" content="Portfolio of aerospace engineering projects by Parham Khodadi - spanning spacecraft design, autonomous navigation, control systems, robotics, and research. See class projects, personal work, and extracurricular achievements.">
+    <meta name="keywords" content="aerospace projects, spacecraft design, autonomous navigation, drone, control systems, SLAM, robotics, aerospace portfolio, class projects, research">
+    <meta name="author" content="Parham Khodadi">
+    <meta name="robots" content="index, follow">
+    
+    <title>Projects Portfolio - Parham Khodadi | Aerospace Engineering</title>
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://scipk.github.io/projects.html">
+    
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://scipk.github.io/projects.html">
     <meta property="og:title" content="Projects - Parham Khodadi">
-    <meta property="og:description" content="Projects portfolio of Parham Khodadi – academic, research, and personal aerospace engineering projects.">
+    <meta property="og:description" content="Aerospace engineering projects portfolio including spacecraft design, autonomous systems, control engineering, and research.">
     <meta property="og:image" content="https://scipk.github.io/images/logo.png">
+    <meta property="og:site_name" content="Parham Khodadi - Aerospace Engineer">
+    
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Projects - Parham Khodadi">
-    <meta name="twitter:description" content="Projects portfolio of Parham Khodadi – academic, research, and personal aerospace engineering projects.">
+    <meta name="twitter:description" content="Aerospace engineering projects portfolio.">
     <meta name="twitter:image" content="https://scipk.github.io/images/logo.png">
+    
+    <!-- JSON-LD Structured Data for CollectionPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Aerospace Engineering Projects",
+      "description": "Portfolio of aerospace engineering projects including spacecraft design, autonomous navigation, control systems, and research.",
+      "url": "https://scipk.github.io/projects.html",
+      "creator": {
+        "@type": "Person",
+        "name": "Parham Khodadi",
+        "url": "https://scipk.github.io/"
+      },
+      "mainEntity": [
+        {
+          "@type": "CreativeWork",
+          "name": "AE 460 - Spacecraft Design",
+          "url": "https://scipk.github.io/projects/AE-460.html",
+          "description": "Designed a Solar Gravitational Lens spacecraft mission with emphasis on guidance, navigation, and control architecture.",
+          "keywords": "Spacecraft Flight Dynamics, Orbital Mechanics, MATLAB"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "AE 403W - Baseball Avoidance Multirotor (BAM)",
+          "url": "https://scipk.github.io/projects/AE-403W.html",
+          "description": "Autonomous real-time guidance and avoidance system for a quadrotor with perception and trajectory prediction.",
+          "keywords": "Autonomous Navigation, Drone Programming, Computer Vision"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "SPACE Lab Drone Autonomy",
+          "url": "https://scipk.github.io/projects/Drone-Autonomy-SPACE-Lab.html",
+          "description": "Developed drone autonomy capabilities with Python, OpenCV, and ORB-SLAM3.",
+          "keywords": "SLAM, Autonomous Navigation, Python"
+        }
+      ]
+    }
+    </script>
+    
     <link rel="icon" href="images/logo.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <style>
@@ -271,14 +321,13 @@
             <!-- Spacecraft Design - Flight dynamics and orbital mechanics -->
             <a href="projects/AE-460.html" class="project-card" data-category="class">
                 <div class="project-image">
-                    <img src="images/projects/AE460/thumbnail.png" alt="AE 460 - Spacecraft Design" loading="lazy">
+                    <img src="images/projects/AE460/thumbnail.png" alt="Spacecraft Design - AE 460" loading="lazy">
                 </div>
                 <div class="project-content">
-                    <h3>AE 460 - Spacecraft Design</h3>
+                    <h3>Spacecraft Design - AE 460</h3>
                     <p class="project-date">Fall 2025 & Spring 2026</p>
                     <span class="project-category category-class">Class Project</span>
-                    <p>Two semester senior design course. Developing the conceptual and preliminary design of a Solar Gravitational Lens spacecraft mission: covering mission
-definition, payload integration, systems architecture, and community-impact considerations.</p>
+                    <p>Designed a Solar Gravitational Lens spacecraft mission with a strong emphasis on guidance, navigation, and control architecture, orbit dynamics, payload integration, and system engineering.</p>
                     <div class="project-tags">
                         <span class="tag">Spacecraft Flight Dynamics</span>
                         <span class="tag">Orbital Mechanics</span>
@@ -289,16 +338,35 @@ definition, payload integration, systems architecture, and community-impact cons
                 </div>
             </a>
 
+            <!-- Systems Tool Kit (STK) -->
+            <a href="projects/STK.html" class="project-card" data-category="class">
+                <div class="project-image">
+                    <img src="images/projects/STK/Ansys-Logo.jpg" alt="AE 460 - Spacecraft Design" loading="lazy">
+                </div>
+                <div class="project-content">
+                    <h3>Systems Tool Kit (STK)</h3>
+                    <p class="project-date">Summer 2026</p>
+                    <span class="project-category category-class">Class Project</span>
+                    <p>Received Certification in Ansys STK, due to my high usage of the software for my Master's research at UCLA and AE 460 course at SDSU.</p>
+                    <div class="project-tags">
+                        <span class="tag">STK</span>
+                        <span class="tag">Flight Dynamics</span>
+                        <span class="tag">Mission Architecture</span>
+                        <span class="tag">GNC</span>
+                    </div>
+                </div>
+            </a>
+
             <!-- Baseball Avoidance Multirotor (BAM) -->
             <a href="projects/AE-403W.html" class="project-card" data-category="class">
                 <div class="project-image">
                     <img src="images/projects/AE403W/thumbnail.png" alt="Baseball Avoidance Multirotor (BAM)" loading="lazy">
                 </div>
                 <div class="project-content">
-                    <h3>AE 403W - Baseball Avoidance Multirotor (BAM)</h3>
+                    <h3>Baseball Avoidance Multirotor (BAM) - AE 403W</h3>
                     <p class="project-date">Spring 2026</p>
                     <span class="project-category category-class">Class Project</span>
-                    <p>One semester senior project course. Design and demonstrate an autonomous, real-time collision-avoidance capability for a quadrotor that can detect, predict, and avoid baseballs on collision course while maintaining stable flight and controllability.</p>
+                    <p>Designed and demonstrated an autonomous real-time guidance and avoidance system for a quadrotor, integrating perception, trajectory prediction, and control logic to detect and evade threats.</p>
                     <div class="project-tags">
                         <span class="tag">Autonomous Navigation</span>
                         <span class="tag">Drone programming</span>
@@ -319,7 +387,7 @@ definition, payload integration, systems architecture, and community-impact cons
                     <h3>SPACE Lab Drone Autonomy</h3>
                     <p class="project-date">Fall 2023 - Summer 2024</p>
                     <span class="project-category category-extracurricular">Extracurricular Project</span>
-                    <p>Drone autonomy programming using Python, OpenCV, and ORB-SLAM3.</p>
+                    <p>Developed drone autonomy capabilities with Python, OpenCV, and ORB-SLAM3, focusing on real-time state estimation, sensor fusion, and guidance for reliable aerial navigation.</p>
                     <div class="project-tags">
                         <span class="tag">Autonomous Navigation</span>
                         <span class="tag">Python</span>
@@ -337,10 +405,10 @@ definition, payload integration, systems architecture, and community-impact cons
                     🧮
                 </div>
                 <div class="project-content">
-                    <h3>MATH 543 - Numerical Matrix Analysis</h3>
+                    <h3>Numerical Matrix Analysis - MATH 543</h3>
                     <p class="project-date">Spring 2026</p>
                     <span class="project-category category-class">Class Project</span>
-                    <p>Numerical methods for matrix analysis, including singular value decomposition (SVD), eigenvalue problems, and the QR algorithm. Applications in engineering and scientific computing.</p>
+                    <p>Applied numerical matrix analysis to state estimation and control problems, using SVD, eigenvalue analysis, and QR algorithms to support robust GNC modeling and scientific computing.</p>
                     <div class="project-tags">
                         <span class="tag">Linear Algebra</span>
                         <span class="tag">SVD</span>
@@ -360,7 +428,7 @@ definition, payload integration, systems architecture, and community-impact cons
                     <h3>Avionics Ground Systems</h3>
                     <p class="project-date">Fall 2023 - Fall 2024</p>
                     <span class="project-category category-extracurricular">Extracurricular Project</span>
-                    <p>Various work at the SDSU Rocket Project.</p>
+                    <p>Supported avionics system integration, sensor data acquisition, and control hardware testing for flight operations, enhancing embedded systems development and feedback loop validation.</p>
                     <div class="project-tags">
                         <span class="tag">Avionics Systems</span>
                         <span class="tag">Data Acquisition (DAQ)</span>
@@ -377,10 +445,10 @@ definition, payload integration, systems architecture, and community-impact cons
                     ✈️
                 </div>
                 <div class="project-content">
-                    <h3>AE 303 - Experimental Aerodynamics</h3>
+                    <h3>Experimental Aerodynamics - AE 303</h3>
                     <p class="project-date">Fall 2024</p>
                     <span class="project-category category-class">Class Project</span>
-                    <p>Operating characteristics of subsonic and supersonic wind tunnels. Aerodynamic characteristics of wings and bodies. Flow visualization techniques. Force, moment and pressure distribution measurement. Use of hot-wire anemometer and schlieren equipment.</p>
+                    <p>Collected and analyzed wind tunnel data to characterize subsonic and supersonic vehicle aerodynamics, supporting flight stability evaluation and control surface design for aerospace vehicles.</p>
                     <div class="project-tags">
                         <span class="tag">CFD</span>
                         <span class="tag">MATLAB</span>
@@ -399,7 +467,7 @@ definition, payload integration, systems architecture, and community-impact cons
                     <h3>NASA L'SPACE MCA</h3>
                     <p class="project-date">Summer 2022</p>
                     <span class="project-category category-extracurricular">Extracurricular Project</span>
-                    <p>Mission Concept Academy. Took up the role of Thermal Engineer for a proposed NASA Martian Rover.</p>
+                    <p>Performed thermal systems analysis and heat transfer modeling for a Mars rover concept, ensuring subsystem performance aligned with mission navigation constraints and surface operations.</p>
                     <div class="project-tags">
                         <span class="tag">NASA</span>
                         <span class="tag">Thermal Engineering</span>
@@ -420,7 +488,7 @@ definition, payload integration, systems architecture, and community-impact cons
                     <h3>Tripoli L1 High Power Rocketry Certification</h3>
                     <p class="project-date">Spring 2026</p>
                     <span class="project-category category-extracurricular">Extracurricular Project</span>
-                    <p>Hands-on high power rocketry certification work focused on launch operations, vehicle integration, and safe flight readiness execution.</p>
+                    <p>Led high-power rocketry launch operations and vehicle integration with an emphasis on trajectory planning, system readiness, and flight safety to support dependable flight operations.</p>
                     <div class="project-tags">
                         <span class="tag">High Power Rocketry</span>
                         <span class="tag">Vehicle Integration</span>
@@ -439,7 +507,7 @@ definition, payload integration, systems architecture, and community-impact cons
                     <h3>NASA L'SPACE NPWEE</h3>
                     <p class="project-date">Spring 2022</p>
                     <span class="project-category category-extracurricular">Extracurricular Project</span>
-                    <p>NASA Proposal Writing and Evaluation Experience.</p>
+                    <p>Developed NASA proposal and evaluation materials for aerospace mission concepts, emphasizing technical feasibility, requirements definition, and subsystem tradeoffs relevant to mission success.</p>
                     <div class="project-tags">
                         <span class="tag">NASA</span>
                         <span class="tag">Proposal Writing</span>
@@ -458,7 +526,7 @@ definition, payload integration, systems architecture, and community-impact cons
                     <h3>Magnetoplasmadynamic Thruster</h3>
                     <p class="project-date">Fall 2024</p>
                     <span class="project-category category-personal">Personal Project</span>
-                    <p>Magnetoplasmadynamic Thruster built using a 1s Lipo battery, DC 3V → 400kV transformer, nickel strips, and an empty soda can for a YouTube video.</p>
+                    <p>Built and tested a magnetoplasmadynamic thruster prototype, gaining hands-on experience in high-voltage propulsion, current control, and electromagnetic behavior relevant to advanced propulsion systems.</p>
                     <div class="project-tags">
                         <span class="tag">Electromagnetism</span>
                         <span class="tag">Soldering</span>
@@ -477,7 +545,7 @@ definition, payload integration, systems architecture, and community-impact cons
                     <h3>AIAA SDSU Student Branch History</h3>
                     <p class="project-date">Summer & Fall 2025 - SciTech 2026</p>
                     <span class="project-category category-research">Research Project</span>
-                    <p>Historical documentation of the AIAA student branch at SDSU from 1963 to present.</p>
+                    <p>Researched and documented the history of SDSU's AIAA student branch, demonstrating strong technical communication and storytelling skills for interdisciplinary aerospace engineering audiences.</p>
                     <div class="project-tags">
                         <span class="tag">Research</span>
                         <span class="tag">Publication</span>
@@ -497,7 +565,7 @@ definition, payload integration, systems architecture, and community-impact cons
                     <h3>YouTube Channel & Videography</h3>
                     <p class="project-date">Officially since 2022 | Unofficially since 7 years old</p>
                     <span class="project-category category-personal">Personal Project</span>
-                    <p>Born out of the combination of my love for Engineering, Videography, and Communication.</p>
+                    <p>Created engineering-focused communication content that explains aerospace systems, flight dynamics, and control concepts clearly for diverse audiences, strengthening technical presentation skills.</p>
                     <div class="project-tags">
                         <span class="tag">Science Communication</span>
                         <span class="tag">Content Creation</span>
@@ -516,7 +584,7 @@ definition, payload integration, systems architecture, and community-impact cons
                     <h3>Codecademy Projects</h3>
                     <p class="project-date">Self-Directed Learning Programming</p>
                     <span class="project-category category-personal">Personal Project</span>
-                    <p>Various coding projects completed as part of Codecademy courses for Certifications.</p>
+                    <p>Completed coding projects in C++, Python, and SQL to build strong software engineering foundations for GNC algorithm development, data processing, and automation.</p>
                     <div class="project-tags">
                         <span class="tag">C++</span>
                         <span class="tag">Python</span>
@@ -535,7 +603,7 @@ definition, payload integration, systems architecture, and community-impact cons
                     <h3>NCAS Mission 3 at NASA AFRC</h3>
                     <p class="project-date">Summer 2022</p>
                     <span class="project-category category-extracurricular">Extracurricular Project</span>
-                    <p>NASA Community College Aerospace Scholars at the Armstrong Flight Research Center.</p>
+                    <p>Participated in NASA aerospace scholarship activities that deepened understanding of flight research, vehicle systems, and mission design principles relevant to navigation and guidance engineering.</p>
                     <div class="project-tags">
                         <span class="tag">NASA</span>
                         <span class="tag">STEM Education</span>
