@@ -19,16 +19,14 @@ dilutes the GNC signal gets relocated, never deleted.
 
 Five items, no dropdowns. The logo returns to the home page.
 
-### Launch gating
+### Launch gating — cleared
 
-Two of these ship empty. Build them on the branch, but **do not add them to the
-nav** until they meet the bar below. A visible-but-empty nav item makes the site
-look half-built at the exact moment it gets linked on job applications.
+Both Sims and Log are live in the nav.
 
-| Item | Bar to clear before it enters the nav |
+| Item | Status |
 |---|---|
-| Sims | One working demo. First one: CW/Hill's equations rendezvous with LQR. |
-| Log  | Three published entries. |
+| Sims | SIM-01, the two-body orbit sketch. Any further solver must be one Parham built himself — no generated simulations. |
+| Log  | Three entries, authored from `log.json`. See §8. |
 
 ---
 
@@ -40,14 +38,13 @@ look half-built at the exact moment it gets linked on job applications.
 |---|---|
 | `/index.html` | Rebuild. See §4. |
 | `/projects.html` | Rebuild as a 7-entry grid. See §3. |
-| `/cv.pdf` | Keep. Untouched. |
+| `/cv.pdf` | Keep. Untouched. The Résumé button on the home page links straight to it — there is no HTML résumé. |
 
 ### New pages
 
 | Path | Contents |
 |---|---|
 | `/about.html` | Bio, credentials table, publications, CV download, contact. Personal interests (travel, soccer, Man City, Lakers) live here. |
-| `/resume.html` | HTML résumé. Built as a skills-to-evidence table: GNC competency in one column, the project page proving it linked in the next. This is the 20-second recruiter surface. Linked from home and About. |
 | `/sims.html` | Interactive simulation index. |
 | `/log.html` | Writing/updates feed, reverse chronological. Ships with an RSS feed at `/feed.xml`. |
 | `/scipk.html` | Channel embed, best 4 videos, what the channel is about. |
@@ -55,7 +52,7 @@ look half-built at the exact moment it gets linked on job applications.
 
 ---
 
-## 3. Projects grid — 7 entries
+## 3. Projects grid — 6 entries
 
 Ordered by GNC relevance, not by date.
 
@@ -67,7 +64,10 @@ Ordered by GNC relevance, not by date.
 | 4 | SPACE Lab Drone Autonomy | `/projects/Drone-Autonomy-SPACE-Lab.html` | **Rewrite required.** See §5. |
 | 5 | Avionics Ground Systems | `/projects/RocketProject-Avionics.html` | Restyle only. Add a photo of the DAQ setup if one exists. |
 | 6 | MPD Thruster | `/projects/mpd-thruster.html` | Restyle only. Earns its place by being unassigned personal work. |
-| 7 | Numerical Matrix Analysis — MATH 543 | `/projects/MATH-543.html` | **Conditional.** Keep in the grid only if it can show code and output plots. If the only artifact is a report PDF, demote to a coursework line in About. |
+
+**Resolved:** MATH 543 left the grid. It is listed on the About page under
+Highlighted Courses; its page stays live at `/projects/MATH-543.html`.
+The grid ships with 6 entries.
 
 ### Project detail page template
 
@@ -116,7 +116,7 @@ Compact rows. No individual detail pages needed, though existing ones stay live.
 | Item | Existing path |
 |---|---|
 | AGI Systems Tool Kit (STK) Level 3 | `/projects/STK.html` |
-| Codecademy — C++, Python, SQL | `/projects/Codecademy.html` |
+| Codecademy — C++, Python, Git, Linux, Linear Algebra | `/projects/Codecademy.html` |
 | NASA L'SPACE MCA | `/projects/LSPACE-MCA.html` |
 | NASA L'SPACE NPWEE | `/projects/LSPACE-NPWEE.html` |
 | NASA NCAS ×3 | `/projects/NCAS.html` (site currently shows only one of the three — list all) |
@@ -137,15 +137,16 @@ because it is not engineering work and dilutes a grid that should read as pure G
 |---|---|
 | SciPK YouTube Channel | `/projects/SciPK-YouTube.html` |
 
-### → About, coursework line
+### → About, “Highlighted Courses” table
 
 | Item | Existing path |
 |---|---|
 | Experimental Aerodynamics — AE 303 | `/projects/AE-303.html` |
+| Numerical Matrix Analysis — MATH 543 | `/projects/MATH-543.html` |
 
-Wind tunnel labs are standard curriculum and read as filler in a GNC portfolio.
+Name, school, and term only — no descriptions.
 
-**Net effect:** 15 grid entries → 7. Zero pages deleted.
+**Net effect:** 15 grid entries → 6. Zero pages deleted.
 
 ---
 
@@ -179,3 +180,29 @@ tooling incompatibility. That is a legitimate engineering account and costs noth
 - One page per commit. Commit, do not push.
 - Three templates only: home, index grid, detail page. Every other page derives
   from one of them.
+
+---
+
+## 8. Log workflow
+
+`log.json` is the only place a log entry exists. `log.html` and `feed.xml` are
+both generated from it, so an entry is never written twice and the page and the
+feed can never drift apart.
+
+**To add an entry:**
+
+```bash
+python3 tools/log.py
+```
+
+A form opens in the browser: date and message are required, title and tags are
+optional. Submitting writes the entry into `log.json` and rebuilds both
+`log.html` and `feed.xml`. Then commit and push.
+
+`python3 tools/log.py --rebuild` regenerates both files without the form — use it
+after hand-editing `log.json`.
+
+**Never edit `log.html` or `feed.xml` directly.** Everything between the
+`LOG:ENTRIES` and `LOG:ITEMS` marker comments is overwritten on every rebuild.
+Everything outside those markers — the page chrome, the channel metadata — is
+yours to edit and is left alone.
