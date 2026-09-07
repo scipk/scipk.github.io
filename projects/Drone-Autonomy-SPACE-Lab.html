@@ -1,474 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drone Autonomy @ Space Lab - Parham Khodadi</title>
-    <link rel="icon" href="../images/logo.png" type="image/png">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --dark-gray: #2c2c2b;
-            --navy: #00285E;
-            --light-blue: #6CADDF;
-            --white: #FFFFFF;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: var(--white);
-            background: var(--dark-gray);
-        }
-
-        header {
-            background: var(--dark-gray);
-            padding: 1.5rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--white);
-        }
-
-        .back-link {
-            color: var(--navy);
-            text-decoration: none;
-            padding: 0.5rem 1.5rem;
-            border: 2px solid var(--white);
-            border-radius: 5px;
-            transition: all 0.3s;
-            background: var(--white);
-            font-weight: 500;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        .back-link:hover {
-            background: var(--light-blue);
-            border-color: var(--light-blue);
-            color: var(--white);
-        }
-
-        .hero {
-            background: rgba(0, 40, 94, 0.5);
-            color: var(--white);
-            padding: 4rem 2rem;
-            text-align: center;
-            border-bottom: 2px solid var(--light-blue);
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero-meta {
-            font-size: 1.1rem;
-            color: var(--light-blue);
-        }
-
-        .project-tags {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .tag {
-            background: var(--light-blue);
-            color: var(--white);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .content-section {
-            background: rgba(0, 40, 94, 0.3);
-            padding: 3rem;
-            margin-bottom: 2rem;
-            border-radius: 10px;
-            border: 1px solid rgba(108, 173, 223, 0.3);
-        }
-
-        .content-section h2 {
-            color: var(--white);
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid var(--light-blue);
-        }
-
-        .content-section p {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.85);
-        }
-
-        .content-section ul {
-            margin-left: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .content-section li {
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.85);
-        }
-
-        .media-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .media-item {
-            border-radius: 10px;
-            overflow: hidden;
-            border: 2px solid rgba(108, 173, 223, 0.3);
-        }
-
-        .media-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .media-item video {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .media-caption {
-            background: rgba(0, 40, 94, 0.5);
-            padding: 1rem;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.8);
-            text-align: center;
-        }
-
-        .video-embed {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 10px;
-            margin: 2rem 0;
-            border: 2px solid rgba(108, 173, 223, 0.3);
-        }
-
-        .video-embed iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .code-block {
-            background: rgba(0, 0, 0, 0.5);
-            color: var(--light-blue);
-            padding: 1.5rem;
-            border-radius: 10px;
-            overflow-x: auto;
-            margin: 1.5rem 0;
-            font-family: 'Courier New', monospace;
-            font-size: 0.95rem;
-            border: 1px solid rgba(108, 173, 223, 0.3);
-        }
-
-        .download-section {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .download-btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: var(--white);
-            color: var(--navy);
-            text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s;
-            font-weight: 500;
-            border: 2px solid var(--white);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        .download-btn:hover {
-            background: var(--light-blue);
-            border-color: var(--light-blue);
-            color: var(--white);
-        }
-
-        .model-viewer {
-            width: 100%;
-            height: 500px;
-            background: linear-gradient(135deg, var(--navy) 0%, var(--light-blue) 100%);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1.5rem;
-            margin: 2rem 0;
-            border: 2px solid rgba(108, 173, 223, 0.3);
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .content-section {
-                padding: 1.5rem;
-            }
-
-            .media-grid {
-                grid-template-columns: 1fr;
-            }
-
-            main {
-                padding: 3rem 1rem;
-            }
-
-            nav {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 0 1rem;
-            }
-
-            .hero {
-                padding: 3rem 1rem;
-            }
-
-            .hero-meta {
-                font-size: 1rem;
-            }
-
-            .project-tags {
-                gap: 0.4rem;
-            }
-
-            .tag {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.85rem;
-            }
-
-            .download-section {
-                flex-direction: column;
-            }
-
-            .download-btn {
-                width: 100%;
-                text-align: center;
-            }
-
-            .model-viewer {
-                height: 300px;
-                font-size: 1.2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 1.75rem;
-            }
-
-            .content-section h2 {
-                font-size: 1.5rem;
-            }
-
-            .content-section p,
-            .content-section li {
-                font-size: 1rem;
-            }
-
-            .back-link {
-                padding: 0.4rem 1rem;
-                font-size: 0.9rem;
-            }
-
-            .logo {
-                font-size: 1.1rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPACE Lab — Drone Autonomy | Parham Khodadi</title>
+<meta name="description" content="QR-fiducial detection and relative pose estimation on a DJI Tello EDU, in Python with OpenCV. Undergraduate research in the SDSU SPACE Lab.">
+<meta name="author" content="Parham Khodadi">
+<link rel="canonical" href="https://scipk.com/projects/Drone-Autonomy-SPACE-Lab.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://scipk.com/projects/Drone-Autonomy-SPACE-Lab.html">
+<meta property="og:title" content="SPACE Lab — Drone Autonomy | Parham Khodadi">
+<meta property="og:description" content="QR-fiducial detection and relative pose estimation on a DJI Tello EDU, in Python with OpenCV. Undergraduate research in the SDSU SPACE Lab.">
+<meta property="og:image" content="https://scipk.com/images/projects/SPACE-Lab/Banner.jpg">
+<meta property="og:site_name" content="Parham Khodadi — Guidance, Navigation &amp; Control">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SPACE Lab — Drone Autonomy | Parham Khodadi">
+<meta name="twitter:description" content="QR-fiducial detection and relative pose estimation on a DJI Tello EDU, in Python with OpenCV. Undergraduate research in the SDSU SPACE Lab.">
+<meta name="twitter:image" content="https://scipk.com/images/projects/SPACE-Lab/Banner.jpg">
+<link rel="icon" href="../images/logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&amp;family=IBM+Plex+Sans:wght@400&amp;display=swap">
+<link rel="stylesheet" href="../styles.css">
+<link rel="alternate" type="application/rss+xml" title="SciPK Log" href="https://scipk.com/feed.xml">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Parham Khodadi</div>
-            <a href="../projects.html" class="back-link">← Back to Projects</a>
-        </nav>
-    </header>
+<header class="site-header">
+<div class="shell">
+<a class="brand" href="../index.html"><img src="../assets/scipk-logo.png" alt=""><span>SCIPK</span></a>
+<nav class="site-nav" aria-label="Primary">
+<a class="mono" href="../projects.html" aria-current="page">PROJECTS</a>
+<a class="mono" href="../sims.html">SIMS</a>
+<a class="mono" href="../scipk.html">SCIPK</a>
+<a class="mono" href="../about.html">ABOUT</a>
+</nav>
+<div class="social">
+<a href="https://github.com/scipk" aria-label="GitHub" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+<a class="is-linkedin" href="https://linkedin.com/in/parham-khodadi" aria-label="LinkedIn" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+<a class="is-youtube" href="https://www.youtube.com/@scipk" aria-label="YouTube" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor" stroke="none"></polygon></svg></a>
+</div>
+</div>
+</header>
+<section class="hero hero-detail">
+<div class="hero-ornament"><svg viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+  <g stroke="currentColor" stroke-width="1" opacity="0.4" stroke-dasharray="4 5">
+    <line x1="0" y1="10" x2="1200" y2="10"></line><line x1="0" y1="50" x2="1200" y2="50"></line>
+    <line x1="0" y1="90" x2="1200" y2="90"></line>
+  </g>
+  <g stroke="currentColor" stroke-width="1" opacity="0.28">
+    <line x1="200" y1="0" x2="200" y2="100"></line><line x1="500" y1="0" x2="500" y2="100"></line>
+    <line x1="800" y1="0" x2="800" y2="100"></line><line x1="1100" y1="0" x2="1100" y2="100"></line>
+  </g>
+  <path d="M0 10 C 260 10 340 16 460 44 C 560 68 640 86 900 90 L1200 90" stroke="currentColor" stroke-width="1.4" fill="none"></path>
+</svg></div>
+<div class="shell">
+<a class="back-link mono" href="../projects.html">&larr; ALL PROJECTS</a>
+<div class="stack">
+<div class="telemetry telemetry-plain"><span><span class="code">SPACE LAB</span> &middot; FA23&ndash;SU24 &middot; DRONE AUTONOMY &middot; PYTHON / OPENCV</span></div>
+<h1>Undergraduate Drone Autonomy Research</h1>
+<p>SDSU SPACE Lab, under Professor Ahmad Bani Younes. Fall 2023 &ndash; Summer 2024.</p>
+<div class="tags"><span class="tag">AUTONOMOUS NAVIGATION</span><span class="tag">PYTHON</span><span class="tag">COMPUTER VISION (OPENCV)</span><span class="tag">POSE ESTIMATION</span><span class="tag">ROBOTICS &amp; UAV SYSTEMS</span><span class="tag">CONTROLS</span></div>
+</div>
+</div>
+</section>
 
-    <div class="hero">
-        <h1>Undergraduate Drone Autonomy Research</h1>
-        <p class="hero-meta">Fall 2023 - Summer 2024 | SDSU SPACE Lab</p>
-        <div class="project-tags">
-            <span class="tag">Autonomous Navigation</span>
-            <span class="tag">Python</span>
-            <span class="tag">Computer Vision (OpenCV)</span>
-            <span class="tag">Robotics & UAV Systems</span>
-            <span class="tag">Controls</span>
-            <span class="tag">SLAM (Simultaneous Localization and Mapping)</span>
-        </div>
-    </div>
-
-    <main>
-        <!-- Overview Section -->
-        <div class="content-section">
-            <h2>Project Overview</h2>
-            <p>
-                This is where I fell in love with Dynamics and Control. During my time at the SPACE Lab, under the leadership of Professor Ahmad Bani Younes, I worked on developing autonomous navigation algorithms for drones using Python and OpenCV. The project involved enabling drones to navigate paths using QR codes.
-                I left the project in Summer 2024 to focus on a difficult Junior year, but the experience I gained here was invaluable and solidified my passion for aerospace engineering.
-                It is important to note that Dr. Ahmad Bani Younes was on sabbatical in my junior year, which contributed to my decision to leave the project early.
-            </p>
-        </div>
-
-        <!-- Video Demonstrations Section -->
-        <div class="content-section">
-            <h2>Video Demonstrations</h2>
-            <p>
-            Short demonstrations and flight tests showcasing autonomous navigation, QR-code based commands, and algorithm behavior.
-            </p>
-
-            <div class="media-grid" style="grid-template-columns: 1fr;">
-            <div class="media-item">
-            <div class="video-embed">
-            <iframe
-                src="https://www.youtube.com/embed/K-fMs4HPjzg"
-                title="Basic Drone Maneuvering with Python"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                loading="lazy">
-            </iframe>
-            </div>
-            <div class="media-caption">Basic Drone Maneuvering with Python (December, 2023)</div>
-            </div>
-
-            <div class="media-item">
-            <div class="video-embed">
-            <iframe
-                src="https://www.youtube.com/embed/VKuMW9-A5LQ"
-                title="Implementing OpenCV on Python"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                loading="lazy">
-            </iframe>
-            </div>
-            <div class="media-caption">Learning OpenCV and implementing it in the drone. (February, 2024)</div>
-            </div>
-
-            <div class="media-item">
-            <div class="video-embed">
-            <iframe
-                src="https://www.youtube.com/embed/HsCx4OP-uHg"
-                title="Drone QR Code Detection and Running Commands"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                loading="lazy">
-            </iframe>
-            </div>
-            <div class="media-caption">The drone attempting to reach a certain distance to the QR-code before executing its command. (March, 2024)</div>
-            </div>
-            </div>
-        </div>
-
-        <!-- GitHub Repository Section -->
-        <div class="content-section">
-            <h2>GitHub Repository</h2>
-            <p>
-                All sharable code can be found in the GitHub repository linked below:
-            </p>
-            <div style="text-align: center; margin-top: 2rem;">
-                <a href="https://github.com/scipk/Undergraduate-Drone-Autonomy" target="_blank" class="download-btn">
-                    View Repository on GitHub →
-                </a>
-            </div>
-        </div>
-
-        <!-- Timeline Section -->
-        <div class="content-section">
-            <h2>Timeline</h2>
-            <table class="timeline-table">
-            <tr>
-            <th style="width: 120px;">Month</th>
-            <th>Milestone</th>
-            </tr>
-            <tr>
-            <td>Nov. 2023</td>
-            <td>Dr. ABY accepted me into his lab and tasked me with self-learning Python.</td>
-            </tr>
-            <tr>
-            <td>Dec. 2023</td>
-            <td>Completed Python basics and used it to send commands to a DJI Tello EDU drone.</td>
-            </tr>
-            <tr>
-            <td>Jan. 2024</td>
-            <td>Developed initial QR code detection and navigation using OpenCV. The drone was able to read commands from the QR code.</td>
-            </tr>
-            <tr>
-            <td>Feb. 2024</td>
-            <td>Developed algorithm to detect QR code shape and size to estimate the position vector of the drone to the QR code.</td>
-            </tr>
-            <tr>
-            <td>Mar. 2024</td>
-            <td>Conducted indoor flight tests and refined navigation algorithms.</td>
-            </tr>
-            <tr>
-            <td>Apr. 2024</td>
-            <td>No progress due to classes.</td>
-            </tr>
-            <tr>
-            <td>May. 2024</td>
-            <td>No progress due to classes.</td>
-            </tr>
-            <tr>
-            <td>Jun. 2024</td>
-            <td>Began learning how to use ORB-SLAM3 software for object mapping. Necessary because the drone had monocular forward vision and 2 downward facing lidars to detect its distance to the floor.</td>
-            </tr>
-            <tr>
-            <td>Jul. 2024</td>
-            <td>Attempted implementing ORB-SLAM3 on the drone; however, the drone's Python package and ORB-SLAM3's Python bindings relied on incompatible Python versions.</td>
-            </tr>
-            <tr>
-            <td>Aug. 2024</td>
-            <td>Left the project to focus on junior year course load.</td>
-            </tr>
-            </table>
-        </div>
-    </main>
+<main class="shell page">
+<section class="row">
+<h2>Problem</h2>
+<div class="row-body">
+<p>A DJI Tello EDU has a single forward-facing monocular camera and two downward lidars for height. It has no external positioning of any kind. The problem was getting that platform to navigate relative to a visual fiducial &mdash; to find a QR code in the camera stream, work out where it is relative to the drone, close to a commanded distance from it, and then execute the instruction encoded in the code itself.</p>
+<p>This is where I fell in love with Dynamics and Control.</p><div class="fig"><div class="fig-frame h-420"><span class="reticle"></span><img src="../images/projects/SPACE-Lab/Banner.jpg" alt="SPACE Lab drone autonomy" loading="lazy"></div><div class="fig-caption">FIG. 1 &mdash; SDSU SPACE LAB</div></div>
+</div>
+</section>
+<section class="row">
+<h2>Approach</h2>
+<div class="row-body">
+<p>Everything ran in Python against the Tello SDK, with OpenCV doing the vision. The work built up in three steps, each one flight-tested indoors before the next was added.</p><div class="stages"><div class="stage"><span class="label">COMMAND</span><span>Drive the airframe from Python over the Tello SDK &mdash; takeoff, translation, yaw, land.</span></div><div class="stage"><span class="label">DETECT</span><span>Find and decode the QR fiducial in the monocular camera stream with OpenCV.</span></div><div class="stage"><span class="label">POSE</span><span>Solve the fiducial&rsquo;s apparent shape and size for the position vector from the drone to the code, then close on a commanded standoff distance before executing.</span></div></div><h3>Timeline</h3><div class="data-table"><div class="data-row cols-2 is-head"><span>MONTH</span><span>MILESTONE</span></div><div class="data-row cols-2"><span class="label">Nov. 2023</span><span>Dr. ABY accepted me into his lab and tasked me with self-learning Python.</span></div><div class="data-row cols-2"><span class="label">Dec. 2023</span><span>Completed Python basics and used it to send commands to a DJI Tello EDU drone.</span></div><div class="data-row cols-2"><span class="label">Jan. 2024</span><span>Developed initial QR code detection and navigation using OpenCV. The drone was able to read commands from the QR code.</span></div><div class="data-row cols-2"><span class="label">Feb. 2024</span><span>Developed algorithm to detect QR code shape and size to estimate the position vector of the drone to the QR code.</span></div><div class="data-row cols-2"><span class="label">Mar. 2024</span><span>Conducted indoor flight tests and refined navigation algorithms.</span></div><div class="data-row cols-2"><span class="label">Apr. 2024</span><span>No progress due to classes.</span></div><div class="data-row cols-2"><span class="label">May 2024</span><span>No progress due to classes.</span></div><div class="data-row cols-2"><span class="label">Jun. 2024</span><span>Began learning how to use ORB-SLAM3 software for object mapping. Necessary because the drone had monocular forward vision and 2 downward facing lidars to detect its distance to the floor.</span></div><div class="data-row cols-2"><span class="label">Jul. 2024</span><span>Attempted implementing ORB-SLAM3 on the drone; however, the drone&rsquo;s Python package and ORB-SLAM3&rsquo;s Python bindings relied on incompatible Python versions.</span></div><div class="data-row cols-2"><span class="label">Aug. 2024</span><span>Left the project to focus on junior year course load.</span></div></div>
+</div>
+</section>
+<section class="row">
+<h2>My Contribution</h2>
+<div class="row-body">
+<div class="label" style="color:var(--highlight)">UNDERGRADUATE RESEARCHER</div><p>I was the undergraduate researcher on this work. I taught myself Python for it, wrote the drone command layer, the OpenCV detection, and the relative pose estimation, and ran the indoor flight tests.</p>
+<p>I left the project in Summer 2024 to focus on a difficult junior year, but the experience I gained here was invaluable and solidified my passion for aerospace engineering. It is important to note that Dr. Ahmad Bani Younes was on sabbatical in my junior year, which contributed to my decision to leave the project early.</p>
+</div>
+</section>
+<section class="row">
+<h2>Result</h2>
+<div class="row-body">
+<p>The drone flew under Python command, detected and decoded QR fiducials from its monocular stream, estimated its relative position to a code from that code&rsquo;s apparent geometry, and closed to a set standoff distance before running the instruction it had read. Short demonstrations and flight tests are below.</p><h3>Basic maneuvering with Python &middot; December 2023</h3><div class="embed"><iframe src="https://www.youtube.com/embed/K-fMs4HPjzg" title="Basic drone maneuvering with Python" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><h3>Learning OpenCV and putting it on the drone &middot; February 2024</h3><div class="embed"><iframe src="https://www.youtube.com/embed/VKuMW9-A5LQ" title="Implementing OpenCV on Python" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><h3>QR detection, standoff, and command execution &middot; March 2024</h3><div class="embed"><iframe src="https://www.youtube.com/embed/HsCx4OP-uHg" title="Drone QR code detection and running commands" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><h3>What did not work: ORB-SLAM3</h3><p>In mid-2024 I started on ORB-SLAM3, wanting a map to navigate against rather than a single fiducial &mdash; the Tello only has monocular forward vision and two downward lidars, so there was no other route to one. The integration failed on tooling, not on theory: the Tello&rsquo;s Python package and ORB-SLAM3&rsquo;s Python bindings required incompatible Python versions, and I left the project before resolving it.</p>
+<p>I never got SLAM running on this platform, so I do not claim it as working experience. What I took from the attempt was the build and dependency work, and a clear sense of where the integration cost sits in a vision pipeline.</p>
+</div>
+</section>
+<section class="row">
+<h2>Code</h2>
+<div class="row-body">
+<p>All sharable code can be found in the GitHub repository linked below.</p><a class="repo-card" href="https://github.com/scipk/Undergraduate-Drone-Autonomy" target="_blank" rel="noopener"><span class="stack-tight"><span class="label muted">GITHUB REPOSITORY</span><span class="repo-name">scipk/Undergraduate-Drone-Autonomy</span></span><span class="label" style="color:var(--highlight)">VIEW REPOSITORY &rarr;</span></a>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="shell mono">
+<span>&copy; <span data-year>2026</span> SCIPK.COM</span>
+<span>PARHAM KHODADI &middot; GUIDANCE, NAVIGATION &amp; CONTROL</span>
+</div>
+</footer>
+<script src="../assets/site.js"></script>
 </body>
 </html>
