@@ -16,7 +16,8 @@
       "title": "Graduated SDSU!",
       "message": "Received my Bachelor of Science in Aerospace Engineering, with a Physics minor.",
       "tags": [
-        "SDSU"
+        "SDSU",
+        "GRADUATION"
       ]
     },
     {
@@ -31,6 +32,25 @@
       ]
     },
     {
+      "id": "started-san-diego-state-university",
+      "date": "2023-08-17",
+      "title": "Started San Diego State University!",
+      "message": "Began my B.S. Aerospace Engineering, minor in Physics.",
+      "tags": [
+        "SDSU"
+      ]
+    },
+    {
+      "id": "graduated-santa-monica-college",
+      "date": "2023-06-13",
+      "title": "Graduated Santa Monica College!",
+      "message": "A.A. in General Science, Graduated with Honors",
+      "tags": [
+        "SMC",
+        "GRADUATION"
+      ]
+    },
+    {
       "id": "started-my-youtube-channel",
       "date": "2021-12-12",
       "title": "Started my YouTube Channel!",
@@ -38,6 +58,25 @@
       "tags": [
         "SCIPK",
         "YOUTUBE"
+      ]
+    },
+    {
+      "id": "started-santa-monica-college",
+      "date": "2020-06-22",
+      "title": "Started Santa Monica College!",
+      "message": "Started class Summer 2020.",
+      "tags": [
+        "SMC"
+      ]
+    },
+    {
+      "id": "graduated-beverly-hills-high-school",
+      "date": "2020-06-04",
+      "title": "Graduated Beverly Hills High School!",
+      "message": "https://youtu.be/46bh4l7hhsQ?si=JYaTVTDKl4Y9Opyb&t=3159",
+      "tags": [
+        "HIGHSCHOOL",
+        "GRADUATION"
       ]
     }
   ]
