@@ -6,28 +6,35 @@
     <atom:link href="https://scipk.com/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Notes on what I am building, what broke, and what I read.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 02 Sep 2026 09:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jun 2026 09:00:00 +0000</lastBuildDate>
 <!-- LOG:ITEMS:START -->
     <item>
-      <title>Starting in GLACIER Lab</title>
-      <link>https://scipk.com/log.html#starting-in-glacier-lab</link>
-      <guid isPermaLink="true">https://scipk.com/log.html#starting-in-glacier-lab</guid>
-      <pubDate>Wed, 02 Sep 2026 09:00:00 +0000</pubDate>
-      <description>First weeks of M.S. research at UCLA: robust control for spacecraft rendezvous, under Prof. Shahriar Talebi. Reading through the uncertainty formulations before touching any code.</description>
+      <title>Joined the GLACIER Lab!</title>
+      <link>https://scipk.com/log.html#joined-the-glacier-lab</link>
+      <guid isPermaLink="true">https://scipk.com/log.html#joined-the-glacier-lab</guid>
+      <pubDate>Wed, 24 Jun 2026 09:00:00 +0000</pubDate>
+      <description>Super excited to apply my knowledge.</description>
     </item>
     <item>
-      <title>Senior Design Day: BAM avoided the ball</title>
-      <link>https://scipk.com/log.html#senior-design-day-bam-avoided-the-ball</link>
-      <guid isPermaLink="true">https://scipk.com/log.html#senior-design-day-bam-avoided-the-ball</guid>
-      <pubDate>Wed, 06 May 2026 09:00:00 +0000</pubDate>
-      <description>The multirotor detected, predicted, and evaded a thrown baseball in front of the judges. It never returned to its original trajectory on its own - that failure is the next problem to solve.</description>
+      <title>Graduated SDSU!</title>
+      <link>https://scipk.com/log.html#graduated-sdsu</link>
+      <guid isPermaLink="true">https://scipk.com/log.html#graduated-sdsu</guid>
+      <pubDate>Sat, 16 May 2026 09:00:00 +0000</pubDate>
+      <description>Received my Bachelor of Science in Aerospace Engineering, with a Physics minor.</description>
     </item>
     <item>
-      <title>SciTech 2026: sixty-three years of a student branch</title>
-      <link>https://scipk.com/log.html#scitech-2026-sixty-three-years-of-a-student-bran</link>
-      <guid isPermaLink="true">https://scipk.com/log.html#scitech-2026-sixty-three-years-of-a-student-bran</guid>
-      <pubDate>Tue, 06 Jan 2026 09:00:00 +0000</pubDate>
-      <description>Our history of the AIAA student branch at San Diego State, founded in Spring 1963, is out. Interviews across six decades turned out to be harder than the writing.</description>
+      <title>Presented my paper on AIAA SDSU History!</title>
+      <link>https://scipk.com/log.html#presented-my-paper-on-aiaa-sdsu-history</link>
+      <guid isPermaLink="true">https://scipk.com/log.html#presented-my-paper-on-aiaa-sdsu-history</guid>
+      <pubDate>Fri, 16 Jan 2026 09:00:00 +0000</pubDate>
+      <description>My first publication! Huge shoutout to Ava Cook, Yuichiro Tobita, and Dr. Xiaofeng Liu for their support.</description>
+    </item>
+    <item>
+      <title>Started my YouTube Channel!</title>
+      <link>https://scipk.com/log.html#started-my-youtube-channel</link>
+      <guid isPermaLink="true">https://scipk.com/log.html#started-my-youtube-channel</guid>
+      <pubDate>Sun, 12 Dec 2021 09:00:00 +0000</pubDate>
+      <description>Excited to share my love for Aerospace Engineering, Control Systems, and other related topics with the world!</description>
     </item>
 <!-- LOG:ITEMS:END -->
   </channel>

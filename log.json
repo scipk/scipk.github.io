@@ -2,32 +2,43 @@
   "_comment": "Single source of truth for the log. Do not edit log.html or feed.xml by hand - run 'python3 tools/log.py' and they are both regenerated from this file.",
   "entries": [
     {
-      "date": "2026-09-02",
-      "title": "Starting in GLACIER Lab",
-      "message": "First weeks of M.S. research at UCLA: robust control for spacecraft rendezvous, under Prof. Shahriar Talebi. Reading through the uncertainty formulations before touching any code.",
-      "tags": [],
-      "id": "starting-in-glacier-lab"
-    },
-    {
-      "date": "2026-05-06",
-      "title": "Senior Design Day: BAM avoided the ball",
-      "message": "The multirotor detected, predicted, and evaded a thrown baseball in front of the judges. It never returned to its original trajectory on its own - that failure is the next problem to solve.",
+      "id": "joined-the-glacier-lab",
+      "date": "2026-06-24",
+      "title": "Joined the GLACIER Lab!",
+      "message": "Super excited to apply my knowledge.",
       "tags": [
-        "AE-403W",
-        "AUTONOMY",
-        "MATLAB/SIMULINK"
-      ],
-      "id": "senior-design-day-bam-avoided-the-ball"
+        "GLACIER-LAB"
+      ]
     },
     {
-      "date": "2026-01-06",
-      "title": "SciTech 2026: sixty-three years of a student branch",
-      "message": "Our history of the AIAA student branch at San Diego State, founded in Spring 1963, is out. Interviews across six decades turned out to be harder than the writing.",
+      "id": "graduated-sdsu",
+      "date": "2026-05-16",
+      "title": "Graduated SDSU!",
+      "message": "Received my Bachelor of Science in Aerospace Engineering, with a Physics minor.",
+      "tags": [
+        "SDSU"
+      ]
+    },
+    {
+      "id": "presented-my-paper-on-aiaa-sdsu-history",
+      "date": "2026-01-16",
+      "title": "Presented my paper on AIAA SDSU History!",
+      "message": "My first publication! Huge shoutout to Ava Cook, Yuichiro Tobita, and Dr. Xiaofeng Liu for their support.",
       "tags": [
         "PUBLICATION",
-        "AIAA"
-      ],
-      "id": "scitech-2026-sixty-three-years-of-a-student-bran"
+        "AIAA",
+        "SCITECH 2026"
+      ]
+    },
+    {
+      "id": "started-my-youtube-channel",
+      "date": "2021-12-12",
+      "title": "Started my YouTube Channel!",
+      "message": "Excited to share my love for Aerospace Engineering, Control Systems, and other related topics with the world!",
+      "tags": [
+        "SCIPK",
+        "YOUTUBE"
+      ]
     }
   ]
 }
