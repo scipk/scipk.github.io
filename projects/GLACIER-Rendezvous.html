@@ -66,61 +66,7 @@
 </section>
 
 <main class="shell page">
-<section class="row">
-<h2>Problem</h2>
-<div class="row-body">
-<p>A chaser spacecraft closing on a target has to drive relative position and relative velocity to zero using actuators whose behaviour is never known exactly. The linearized models this is normally designed against &mdash; the Clohessy&ndash;Wiltshire form of Hill&rsquo;s equations &mdash; are exact only for a circular reference orbit and for separations small compared with the orbit radius.</p>
-<p>That gap is the hard part. Mass properties shift as propellant is spent, thrust is never perfectly aligned, the reference orbit is not exactly circular, and the navigation solution feeding the controller carries its own error. A controller tuned to the nominal plant can lose the margin it was designed with by the time the true plant has moved. The problem I am working on is designing rendezvous control whose stability and performance hold across that uncertainty set, rather than holding only at the nominal model.</p><div class="fig"><div class="fig-frame is-empty h-420"><span class="reticle"></span><span>FIGURE &middot; LVLH GEOMETRY, CHASER AND TARGET</span></div></div>
-</div>
-</section>
-<section class="row">
-<h2>Approach</h2>
-<div class="row-body">
-<p>Relative motion is written in the target&rsquo;s LVLH frame, where the in-plane radial and along-track axes couple through the mean motion and the cross-track axis decouples into a simple oscillator. Uncertainty is carried explicitly in the plant description rather than absorbed into hand-tuned margin, so that what the synthesis returns is a guarantee over a set of plants and not over one. The design work runs in MATLAB and Simulink.</p><div class="stages"><div class="stage"><span class="label">MODEL</span><span>Linearized relative motion in the LVLH frame from the target&rsquo;s circular reference orbit.</span></div><div class="stage"><span class="label">UNCERTAINTY</span><span>Bound the deviation between the true and nominal plant: mass properties, actuator alignment, reference-orbit eccentricity, navigation error.</span></div><div class="stage"><span class="label">SYNTHESIS</span><span>Design the controller against the bounded set, then check the closed loop against the nonlinear dynamics.</span></div></div><div class="eq-block"><div class="telemetry telemetry-plain"><span class="code">CLOHESSY&ndash;WILTSHIRE RELATIVE MOTION</span><span class="muted">EQ. 1</span></div><div class="eq">ẍ − 3n²x − 2nẏ = u_x</div><div class="eq">ÿ + 2nẋ = u_y</div><div class="eq">z̈ + n²z = u_z</div><div class="eq-note">x is radial, y along-track, z cross-track, and n is the mean motion of the target&rsquo;s reference orbit. The in-plane axes are coupled through n; cross-track separates. This is the nominal plant that the robust design is built around.</div></div>
-</div>
-</section>
-<section class="row">
-<h2>My Contribution</h2>
-<div class="row-body">
-<div class="label" style="color:var(--highlight)">GRADUATE RESEARCHER</div><p>I joined GLACIER Lab in 2026 as an M.S. researcher on this problem. I am currently working through the uncertainty formulations and the relative-motion modelling before committing to a synthesis method and writing controller code.</p>
-<p>This is the newest work on this site and it is genuinely early. I would rather say that here than describe results I do not have yet.</p>
-</div>
-</section>
-<section class="row">
-<h2>Result</h2>
-<div class="row-body">
-<p>Research in progress. There is nothing quantified to report yet.</p>
-<p>When there is, this section carries it: closed-loop rendezvous trajectories in the LVLH frame, robustness margins across the uncertainty set, and the &Delta;V cost of buying that robustness. The axes below are the slot those plots drop into.</p><div class="fig">
-<div class="fig-frame h-340" style="padding:24px 24px 32px 48px;background-image:none">
-<span class="reticle"></span>
-<svg viewBox="0 0 640 300" preserveAspectRatio="none" aria-hidden="true" style="width:100%;height:100%">
-<g stroke="#6CABDD" stroke-width="1" opacity="0.16">
-<line x1="0" y1="60" x2="640" y2="60"></line><line x1="0" y1="120" x2="640" y2="120"></line>
-<line x1="0" y1="180" x2="640" y2="180"></line><line x1="0" y1="240" x2="640" y2="240"></line>
-<line x1="160" y1="0" x2="160" y2="300"></line><line x1="320" y1="0" x2="320" y2="300"></line>
-<line x1="480" y1="0" x2="480" y2="300"></line>
-</g>
-<line x1="0" y1="299" x2="640" y2="299" stroke="#6CABDD" stroke-width="1"></line>
-<line x1="1" y1="0" x2="1" y2="300" stroke="#6CABDD" stroke-width="1"></line>
-<line x1="0" y1="240" x2="640" y2="240" stroke="#F0A63C" stroke-width="1" stroke-dasharray="4 5"></line>
-</svg>
-<div style="position:absolute;left:8px;top:24px;bottom:32px;display:flex;align-items:center"><span class="fig-caption" style="writing-mode:vertical-rl;transform:rotate(180deg)">RANGE &middot; M</span></div>
-<div style="position:absolute;left:48px;right:24px;bottom:8px;display:flex;justify-content:space-between;gap:8px" class="fig-caption"><span>T &middot; 0</span><span>APPROACH</span><span>BRAKING</span><span>STATION KEEPING</span></div>
-<div style="position:absolute;right:24px;top:24px" class="fig-caption" ><span style="color:var(--highlight)">&mdash; &mdash; KEEP-OUT</span></div>
-<div style="position:absolute;inset:24px 24px 32px 48px;display:flex;align-items:center;justify-content:center;pointer-events:none">
-<span class="fig-caption" style="padding:8px 16px;background:rgba(8,10,17,0.85);border:1px dashed var(--hairline);border-radius:2px;text-align:center">NO RESULTS YET &mdash; RESEARCH IN PROGRESS</span>
-</div>
-</div>
-<div class="fig-caption">FIG. 1 &mdash; CLOSED-LOOP RANGE PROFILE (PENDING)</div>
-</div>
-</div>
-</section>
-<section class="row">
-<h2>Code</h2>
-<div class="row-body">
-<p>Nothing is public yet. Code from this project will be published here once it is far enough along to be worth reading, and once it is cleared for release.</p><p class="mono"><a href="https://shahriarta.github.io/" target="_blank" rel="noopener">PROF. SHAHRIAR TALEBI &rarr;</a></p><a class="repo-card" href="https://github.com/scipk" target="_blank" rel="noopener"><span class="stack-tight"><span class="label muted">GITHUB PROFILE</span><span class="repo-name">scipk</span></span><span class="label" style="color:var(--highlight)">VIEW REPOSITORY &rarr;</span></a>
-</div>
-</section>
+This is still WIP.
 </main>
 <footer class="site-footer">
 <div class="shell mono">
