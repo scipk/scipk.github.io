@@ -538,7 +538,7 @@ a.card:hover h2 { color: var(--accent); }
 
 /* ---------- data table (credentials, résumé evidence) ---------- */
 
-.data-table { display: flex; flex-direction: column; }
+.data-table { display: flex; flex-direction: column; border-top: 1px solid var(--hairline); }
 .data-row {
     display: grid;
     gap: var(--s2);
