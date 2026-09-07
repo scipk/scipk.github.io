@@ -189,18 +189,28 @@ tooling incompatibility. That is a legitimate engineering account and costs noth
 both generated from it, so an entry is never written twice and the page and the
 feed can never drift apart.
 
-**To add an entry:**
-
 ```bash
 python3 tools/log.py
 ```
 
-A form opens in the browser: date and message are required, title and tags are
-optional. Submitting writes the entry into `log.json` and rebuilds both
-`log.html` and `feed.xml`. Then commit and push.
+Opens a page in the browser listing every entry:
 
-`python3 tools/log.py --rebuild` regenerates both files without the form — use it
-after hand-editing `log.json`.
+- **Add** — the form at the top. Date and message are required; title and tags optional.
+- **Edit** — on any entry. Change date, title, message, or tags.
+- **Delete** — on any entry, behind a confirm.
+
+Every change writes to `log.json` and immediately rebuilds `log.html` and
+`feed.xml`. Then commit and push.
+
+`python3 tools/log.py --rebuild` regenerates both files without the browser — use
+it after hand-editing `log.json`.
+
+### Entry ids
+
+Each entry carries a stable `id`, minted once from its title when it is created
+and never changed afterwards. The id is the entry's `#anchor` on `log.html` and
+its `<guid>` in the feed, so **renaming an entry later cannot break its permalink
+or make RSS readers show it twice.** Do not edit an `id` by hand.
 
 **Never edit `log.html` or `feed.xml` directly.** Everything between the
 `LOG:ENTRIES` and `LOG:ITEMS` marker comments is overwritten on every rebuild.

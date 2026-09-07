@@ -5,7 +5,8 @@
       "date": "2026-09-02",
       "title": "Starting in GLACIER Lab",
       "message": "First weeks of M.S. research at UCLA: robust control for spacecraft rendezvous, under Prof. Shahriar Talebi. Reading through the uncertainty formulations before touching any code.",
-      "tags": []
+      "tags": [],
+      "id": "starting-in-glacier-lab"
     },
     {
       "date": "2026-05-06",
@@ -15,7 +16,8 @@
         "AE-403W",
         "AUTONOMY",
         "MATLAB/SIMULINK"
-      ]
+      ],
+      "id": "senior-design-day-bam-avoided-the-ball"
     },
     {
       "date": "2026-01-06",
@@ -24,7 +26,8 @@
       "tags": [
         "PUBLICATION",
         "AIAA"
-      ]
+      ],
+      "id": "scitech-2026-sixty-three-years-of-a-student-bran"
     }
   ]
 }
