@@ -1,688 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Parham Khodadi - M.S. Aerospace Engineering Student at UCLA. Specializing in dynamics, control systems, and autonomous navigation. View my projects, publications, and research.">
-    <meta name="keywords" content="aerospace engineering, dynamics, control systems, guidance navigation control, GNC, UCLA, spacecraft design, autonomous navigation, SLAM, drone">
-    <meta name="author" content="Parham Khodadi">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    
-    <title>Parham Khodadi - Aerospace Engineer | Dynamics & Control</title>
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://scipk.github.io/">
-    
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://scipk.github.io/">
-    <meta property="og:title" content="Parham Khodadi - Aerospace Engineer">
-    <meta property="og:description" content="M.S. Aerospace Engineering Student at UCLA specializing in dynamics and control engineering.">
-    <meta property="og:image" content="https://scipk.github.io/images/Parham-Khodadi.jpg">
-    <meta property="og:site_name" content="Parham Khodadi - Aerospace Engineer">
-    <meta property="og:locale" content="en_US">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Parham Khodadi - Aerospace Engineer">
-    <meta name="twitter:description" content="M.S. Aerospace Engineering at UCLA. Dynamics, control systems, and autonomous navigation specialist.">
-    <meta name="twitter:image" content="https://scipk.github.io/images/Parham-Khodadi.jpg">
-    
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Parham Khodadi",
-      "url": "https://scipk.github.io",
-      "image": "https://scipk.github.io/images/Parham-Khodadi.jpg",
-      "jobTitle": "M.S. Aerospace Engineering Student",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "University of California, Los Angeles",
-        "url": "https://www.ucla.edu"
-      },
-      "education": [
-        {
-          "@type": "EducationalOccupationalCredential",
-          "name": "M.S. Aerospace Engineering",
-          "educationalLevel": "Master's degree",
-          "credentialCategory": "degree",
-          "recognizedBy": {
-            "@type": "Organization",
-            "name": "University of California, Los Angeles"
-          }
-        },
-        {
-          "@type": "EducationalOccupationalCredential",
-          "name": "B.S. Aerospace Engineering with Physics minor",
-          "educationalLevel": "Bachelor's degree",
-          "credentialCategory": "degree",
-          "recognizedBy": {
-            "@type": "Organization",
-            "name": "San Diego State University"
-          }
-        }
-      ],
-      "sameAs": [
-        "https://github.com/scipk",
-        "https://linkedin.com/in/parham-khodadi",
-        "https://www.youtube.com/@scipk"
-      ],
-      "email": "pkhodadi@ucla.edu",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Los Angeles",
-        "addressRegion": "CA",
-        "addressCountry": "US"
-      },
-      "knowsAbout": [
-        "Aerospace Engineering",
-        "Dynamics and Control",
-        "Spacecraft Design",
-        "Autonomous Navigation",
-        "Guidance Navigation and Control",
-        "SLAM",
-        "Unmanned Aerial Systems",
-        "Propulsion Systems",
-        "Flight Dynamics",
-        "Orbital Mechanics"
-      ]
-    }
-    </script>
-    
-    <link rel="icon" href="images/logo.png" type="image/png">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            line-height: 1.7;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            flex-direction: row;
-        }
-
-        .header-text h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .header-logo {
-            width: 40px;
-            height: 40px;
-            object-fit: contain;
-        }
-
-        .subtitle {
-            color: var(--light-blue);
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1.125rem;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .social-links a {
-            padding: 0.75rem 1.5rem;
-            background: var(--light-blue);
-            color: var(--white);
-            text-decoration: none;
-            font-size: 1.275rem;
-            border-radius: 7.5px;
-            transition: all 0.3s;
-            border: 2px solid var(--light-blue);
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .social-links a img {
-            width: 24px;
-            height: 24px;
-            filter: brightness(0) invert(1) !important;
-        }
-
-        .social-links a:hover {
-            background: transparent;
-            color: var(--light-blue);
-        }
-
-        .quick-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .quick-link {
-            padding: 1.2rem 3rem;
-            background: var(--white);
-            color: var(--navy);
-            text-decoration: none;
-            font-size: 1.9rem;
-            border-radius: 6px;
-            font-weight: 500;
-            transition: all 0.3s;
-            border: 2px solid var(--white);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        .quick-link:hover {
-            background: var(--light-blue);
-            border-color: var(--light-blue);
-            color: var(--white);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-        }
-
-        .profile-image {
-            width: 312px;
-            height: 312px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--light-blue);
-        }
-
-        section {
-            margin-bottom: 3rem;
-        }
-
-        .section-header {
-            display: none;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 1rem;
-        }
-
-        .section-description {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .bio p {
-            margin-bottom: 1rem;
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.85);
-        }
-
-        .bio a {
-            color: var(--light-blue);
-            text-decoration: none;
-            border-bottom: 1px solid var(--light-blue);
-        }
-
-        .bio a:hover {
-            color: var(--white);
-        }
-
-        /* Contact Section */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-item {
-            background: rgba(0, 40, 94, 0.3);
-            padding: 1.5rem;
-            border-radius: 10px;
-            text-align: center;
-            border: 1px solid rgba(108, 173, 223, 0.3);
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--light-blue);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 1.5rem;
-        }
-
-        .contact-icon img {
-            width: 28px;
-            height: 28px;
-            filter: brightness(0) invert(1) !important;
-        }
-
-        .contact-label {
-            color: var(--light-blue);
-            font-size: 0.85rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-value {
-            color: var(--white);
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
-
-        .contact-value a {
-            color: var(--white);
-            text-decoration: none;
-        }
-
-        .contact-value a:hover {
-            text-decoration: underline;
-        }
-
-        .contact-footer {
-            text-align: center;
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
-            font-style: italic;
-        }
-
-        .achievements-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .achievement-item {
-            background: rgba(0, 40, 94, 0.25);
-            border: 1px solid rgba(108, 173, 223, 0.3);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .achievement-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-        }
-
-        .achievement-image {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            display: block;
-        }
-
-        .achievement-content {
-            padding: 1.25rem;
-            text-align: left;
-        }
-
-        .achievement-content h3 {
-            margin: 0 0 0.5rem;
-            font-size: 1.15rem;
-            color: var(--white);
-        }
-
-        .achievement-content p {
-            margin: 0;
-            color: rgba(255, 255, 255, 0.82);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* Publications */
-        .publication-item {
-            margin-bottom: 2rem;
-            padding: 2rem;
-            background: linear-gradient(135deg, rgba(0, 40, 94, 0.4) 0%, rgba(0, 40, 94, 0.2) 100%);
-            border-radius: 12px;
-            border: 1px solid rgba(108, 173, 223, 0.25);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .publication-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: linear-gradient(180deg, var(--light-blue) 0%, rgba(108, 173, 223, 0.5) 100%);
-        }
-
-        .publication-item:hover {
-            border-color: rgba(108, 173, 223, 0.5);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-        }
-
-        .publication-venue {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--light-blue);
-            font-size: 0.95rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .publication-venue img {
-            width: 16px;
-            height: 16px;
-            filter: invert(70%) sepia(50%) saturate(500%) hue-rotate(170deg) brightness(100%) contrast(90%);
-        }
-
-        .publication-title {
-            display: inline-block;
-            font-size: 1.3rem;
-            color: var(--white);
-            margin-bottom: 1rem;
-            font-weight: 600;
-            line-height: 1.4;
-            text-decoration: none;
-            padding: 0.75rem 1.25rem;
-            background: var(--light-blue);
-            border-radius: 8px;
-            border: 2px solid var(--light-blue);
-            transition: all 0.3s ease;
-        }
-
-        .publication-title:hover {
-            background: transparent;
-            color: var(--light-blue);
-        }
-
-        .publication-authors {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: rgba(255, 255, 255, 0.85);
-            font-size: 0.95rem;
-            margin-bottom: 1.25rem;
-            font-style: italic;
-        }
-
-        .publication-authors img {
-            width: 16px;
-            height: 16px;
-            opacity: 0.7;
-            filter: brightness(0) invert(1);
-        }
-
-        .publication-description {
-            color: rgba(255, 255, 255, 0.75);
-            line-height: 1.8;
-            font-size: 1rem;
-        }
-
-        /* YouTube Section */
-        .youtube-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .youtube-embed {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 8px;
-            border: 2px solid rgba(108, 173, 223, 0.3);
-        }
-
-        .youtube-embed iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .channel-link {
-            display: block;
-            width: fit-content;
-            margin: 0 auto;
-            padding: 0.75rem 1.5rem;
-            background: #FF0000;
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-
-        .channel-link:hover {
-            background: #CC0000;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            body {
-                padding: 2rem 1.5rem;
-            }
-
-            header {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .header-text h1 {
-                font-size: 2rem;
-                justify-content: center;
-            }
-
-            .header-logo {
-                width: 35px;
-                height: 35px;
-            }
-
-            .profile-image {
-                margin-top: 1rem;
-                width: 250px;
-                height: 250px;
-                font-size: 4rem;
-            }
-
-            .social-links {
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-
-            .quick-links {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .quick-link {
-                text-align: center;
-            }
-
-            .youtube-grid,
-            .contact-grid,
-            .achievements-grid {
-                grid-template-columns: 1fr;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parham Khodadi — Guidance, Navigation & Control</title>
+<meta name="description" content="Parham Khodadi, M.S. Aerospace Engineering at UCLA. Robust control for spacecraft rendezvous in the GLACIER Lab. GNC projects, simulations, and publications.">
+<meta name="author" content="Parham Khodadi">
+<link rel="canonical" href="https://scipk.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://scipk.com/">
+<meta property="og:title" content="Parham Khodadi — Guidance, Navigation & Control">
+<meta property="og:description" content="Parham Khodadi, M.S. Aerospace Engineering at UCLA. Robust control for spacecraft rendezvous in the GLACIER Lab. GNC projects, simulations, and publications.">
+<meta property="og:image" content="https://scipk.com/images/Parham-Khodadi.jpg">
+<meta property="og:site_name" content="Parham Khodadi — Guidance, Navigation &amp; Control">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Parham Khodadi — Guidance, Navigation & Control">
+<meta name="twitter:description" content="Parham Khodadi, M.S. Aerospace Engineering at UCLA. Robust control for spacecraft rendezvous in the GLACIER Lab. GNC projects, simulations, and publications.">
+<meta name="twitter:image" content="https://scipk.com/images/Parham-Khodadi.jpg">
+<link rel="icon" href="images/logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&amp;family=IBM+Plex+Sans:wght@400&amp;display=swap">
+<link rel="stylesheet" href="styles.css">
+<link rel="alternate" type="application/rss+xml" title="SciPK Log" href="https://scipk.com/feed.xml">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Parham Khodadi",
+  "url": "https://scipk.com",
+  "image": "https://scipk.com/images/Parham-Khodadi.jpg",
+  "jobTitle": "M.S. Aerospace Engineering Student",
+  "worksFor": {"@type": "Organization", "name": "University of California, Los Angeles", "url": "https://www.ucla.edu"},
+  "alumniOf": {"@type": "Organization", "name": "San Diego State University"},
+  "sameAs": ["https://github.com/scipk", "https://linkedin.com/in/parham-khodadi", "https://www.youtube.com/@scipk"],
+  "email": "pkhodadi@ucla.edu",
+  "address": {"@type": "PostalAddress", "addressLocality": "Los Angeles", "addressRegion": "CA", "addressCountry": "US"},
+  "knowsAbout": ["Guidance Navigation and Control", "Spacecraft Rendezvous", "Robust Control",
+    "Orbital Mechanics", "Flight Dynamics", "Autonomous Navigation", "State Estimation", "Aerospace Engineering"]
+}
+</script>
 </head>
 <body>
-    <header>
-        <div class="header-text">
-            <h1>
-                <img src="images/logo.png" alt="Logo" class="header-logo">
-                Parham Khodadi
-            </h1>
-            <p class="subtitle">M.S. Aerospace Engineering Student @ University of California, Los Angeles</p>
-            <div class="social-links">
-                <a href="https://github.com/scipk" target="_blank" rel="noopener noreferrer">
-                    <img src="icons/github.svg" alt="GitHub" loading="lazy">
-                    GitHub
-                </a>
-                <a href="https://linkedin.com/in/parham-khodadi" target="_blank" rel="noopener noreferrer">
-                    <img src="icons/linkedin.svg" alt="LinkedIn" loading="lazy">
-                    LinkedIn
-                </a>
-                <a href="https://www.youtube.com/@scipk" target="_blank" rel="noopener noreferrer">
-                    <img src="icons/youtube.svg" alt="YouTube" loading="lazy">
-                    YouTube
-                </a>
-            </div>
-            <div class="quick-links">
-                <a href="projects.html" class="quick-link">Projects</a>
-                <a href="cv.pdf" class="quick-link" target="_blank">CV</a>
-            </div>
-        </div>
-        <img src="images/Parham-Khodadi.jpg" alt="Parham Khodadi - Aerospace Engineer" class="profile-image">
-    </header>
-    
-    <main>
-        <section class="bio">
-        <h2>Guidance, Navigation & Control</h2>
-            <p class="section-description">
-                I am pursuing my M.S. in Aerospace Engineering at the University of California, Los Angeles, currently researching robust control for spacecraft rendezvous in the GLACIER Lab under Professor <a href="https://shahriarta.github.io/">Shahriar Talebi</a>. I recently graduated with my B.S. in Aerospace Engineering (Physics minor) from San Diego State University.
-            </p>
-
-            <p>Outside of research, I make engineering edutainment videos on <a href="https://youtube.com/@scipk">SciPK</a>, my YouTube channel, where I make explainers and builds aimed at anyone with a taste for tinkering. I travel often, and I love soccer and basketball. My teams are Manchester City and the Los Angeles Lakers.</p>
-        </section>
-
-        <section class="contact">
-            <h2>Get in Touch</h2>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <img src="icons/location.svg" alt="Location icon" loading="lazy">
-                    </div>
-                    <div class="contact-label">Location</div>
-                    <div class="contact-value">Los Angeles, CA</div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <img src="icons/school.svg" alt="Education icon" loading="lazy">
-                    </div>
-                    <div class="contact-label">Education</div>
-                    <div class="contact-value">UCLA M.S., SDSU B.S.</div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <img src="icons/email.svg" alt="Email icon" loading="lazy">
-                    </div>
-                    <div class="contact-label">Email</div>
-                    <div class="contact-value"><a href="mailto:pkhodadi@ucla.edu">pkhodadi@ucla.edu</a></div>
-                </div>
-            </div>
-            
-            <p class="contact-footer">
-                Open to internship opportunities, research collaborations, and exciting aerospace projects
-            </p>
-        </section>
-
-        <section class="achievements">
-            <h2>Awards & Leadership</h2>
-            <p class="section-description">
-                Selected recent accomplishments and awards. For a more comprehensive list, please refer to my CV.
-            </p>
-            <div class="achievements-grid">
-                <div class="achievement-item">
-                    <img src="images/OutstandingContribution.JPG" alt="Outstanding Contribution Award" class="achievement-image" loading="lazy">
-                    <div class="achievement-content">
-                        <h3>Outstanding Contribution Award</h3>
-                        <p>2026 Outstanding Contribution to the AIAA Student Chapter at SDSU</p>
-                    </div>
-                </div>
-                <div class="achievement-item">
-                    <img src="images/RHF.JPG" alt="Reuben H. Fleet Scholarship" class="achievement-image" loading="lazy">
-                    <div class="achievement-content">
-                        <h3>Reuben H. Fleet Scholarship</h3>
-                        <p>2025-2026 AIAA San Diego</p>
-                    </div>
-                </div>
-                <div class="achievement-item">
-                    <img src="images/AIAA.JPG" alt="AIAA History Committee" class="achievement-image" loading="lazy">
-                    <div class="achievement-content">
-                        <h3>AIAA History Committee</h3>
-                        <p>Member of the AIAA History Committee</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="publications">
-            <h2>Publications</h2>
-            <div class="publication-item">
-            <span class="publication-venue">
-                <img src="icons/calendar.svg" alt="Calendar icon" loading="lazy">
-                AIAA SciTech 2026
-            </span>
-            <a href="./projects/AIAA-SDSU-History.html" class="publication-title">AIAA SDSU Student Branch History</a>
-            <p class="publication-authors">
-                <img src="icons/users.svg" alt="Authors icon" loading="lazy">
-                Parham Khodadi, Ava Cook, Yuichiro Tobita, and Xiaofeng Liu
-            </p>
-            <p class="publication-description">
-                This paper conveys the history of the AIAA student branch at San Diego State University, founded in Spring 1963, and pays tribute to all those who made an impact in and on the club's development and success over the decades.
-            </p>
-            <p style="margin-top: 1rem; color: rgba(108, 173, 223, 0.9); font-size: 0.9rem;">
-                DOI: <a href="https://doi.org/10.2514/6.2026-2727" style="color: var(--light-blue);" target="_blank" rel="noopener noreferrer">10.2514/6.2026-2727</a>
-            </p>
-            </div>
-        </section>
-
-        <section class="youtube">
-            <h2>YouTube - SciPK</h2>
-            <p class="section-description">
-                This is my YouTube channel, SciPK, where I create content related to aerospace engineering and other STEM topics. My videos span from personal projects to video essays about historical aerospace developments and modern space exploration.
-            </p>
-            <div class="youtube-grid">
-                <div class="youtube-embed">
-                    <iframe 
-                        src="https://www.youtube.com/embed/w2OuJgLzhCE" 
-                        title="Magnetoplasmadynamic Thruster - SciPK"
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen
-                        loading="lazy">
-                    </iframe>
-                </div>
-                <div class="youtube-embed">
-                    <iframe 
-                        src="https://www.youtube.com/embed/vrn4BuFm0WY" 
-                        title="Aerospace Engineering at SDSU - SciPK"
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen
-                        loading="lazy">
-                    </iframe>
-                </div>
-            </div>
-            <a href="https://www.youtube.com/@scipk" target="_blank" rel="noopener noreferrer" class="channel-link">🎬 Visit my YouTube Channel</a>
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2025 Parham Khodadi. All rights reserved.</p>
-    </footer>
+<header class="site-header">
+<div class="shell">
+<a class="brand" href="index.html"><img src="assets/scipk-logo.png" alt=""><span>SCIPK</span></a>
+<nav class="site-nav" aria-label="Primary">
+<a class="mono" href="projects.html">PROJECTS</a>
+<a class="mono" href="sims.html">SIMS</a>
+<a class="mono" href="scipk.html">SCIPK</a>
+<a class="mono" href="about.html">ABOUT</a>
+</nav>
+<div class="social">
+<a href="https://github.com/scipk" aria-label="GitHub" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+<a class="is-linkedin" href="https://linkedin.com/in/parham-khodadi" aria-label="LinkedIn" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+<a class="is-youtube" href="https://www.youtube.com/@scipk" aria-label="YouTube" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor" stroke="none"></polygon></svg></a>
+</div>
+</div>
+</header>
+<section class="hero">
+<div class="hero-ornament"><svg viewBox="0 0 420 300" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+  <g stroke="currentColor" stroke-width="1" opacity="0.35">
+    <line x1="42" y1="30" x2="42" y2="270"></line><line x1="126" y1="30" x2="126" y2="270"></line>
+    <line x1="294" y1="30" x2="294" y2="270"></line><line x1="378" y1="30" x2="378" y2="270"></line>
+    <line x1="30" y1="60" x2="390" y2="60"></line><line x1="30" y1="90" x2="390" y2="90"></line>
+    <line x1="30" y1="210" x2="390" y2="210"></line><line x1="30" y1="240" x2="390" y2="240"></line>
+  </g>
+  <g stroke="currentColor" stroke-width="1">
+    <line x1="20" y1="150" x2="400" y2="150"></line><line x1="210" y1="20" x2="210" y2="280"></line>
+  </g>
+  <g stroke="currentColor" stroke-width="1" opacity="0.45" stroke-dasharray="3 4">
+    <line x1="210" y1="150" x2="60" y2="40"></line><line x1="210" y1="150" x2="60" y2="260"></line>
+    <line x1="210" y1="150" x2="70" y2="80"></line><line x1="210" y1="150" x2="70" y2="220"></line>
+  </g>
+  <g stroke="currentColor" stroke-width="1.5" fill="none">
+    <path d="M114 64 L126 76 M126 64 L114 76"></path><path d="M114 224 L126 236 M126 224 L114 236"></path>
+    <path d="M64 144 L76 156 M76 144 L64 156"></path><path d="M179 144 L191 156 M191 144 L179 156"></path>
+    <circle cx="156" cy="110" r="6"></circle><circle cx="156" cy="190" r="6"></circle>
+    <circle cx="252" cy="150" r="6"></circle>
+  </g>
+</svg></div>
+<div class="shell">
+<div class="hero-split">
+<div class="hero-text">
+<span class="eyebrow">M.S. AEROSPACE ENGINEERING &middot; UCLA</span>
+<h1>Parham Khodadi</h1>
+<div class="hero-role">Guidance, Navigation &amp; Control</div>
+<p>I design and validate control systems for spacecraft rendezvous and autonomous flight, from linearized models through hardware-in-the-loop test.</p>
+<div class="btn-row" style="padding-top:8px">
+<a class="btn" href="projects.html">PROJECTS</a>
+<a class="btn-ghost" href="resume.html">R&Eacute;SUM&Eacute;</a>
+</div>
+</div>
+<div class="hero-figure"><div class="fig"><div class="fig-frame h-360"><span class="reticle"></span><img src="images/Parham-Khodadi.jpg" alt="Parham Khodadi" loading="lazy"></div></div></div>
+</div>
+</div>
+</section>
+<main class="shell page">
+<section class="stack">
+<h2>Flagship Projects</h2>
+<div class="grid">
+<a class="card" href="projects/GLACIER-Rendezvous.html">
+<div class="telemetry"><span><span class="code">GLACIER LAB</span> &middot; 2026&ndash; &middot; RENDEZVOUS CONTROL</span></div>
+<div class="fig"><div class="fig-frame is-empty h-240"><span class="reticle"></span><span>RESULT IMAGE &middot; CLOSED-LOOP RENDEZVOUS TRAJECTORY, LVLH FRAME</span></div></div>
+<p>Robust control for spacecraft rendezvous. GLACIER Lab, UCLA, under Prof. Shahriar Talebi.</p>
+</a>
+<a class="card" href="projects/AE-403W.html">
+<div class="telemetry"><span><span class="code">AE-403W</span> &middot; SPR 2026 &middot; AUTONOMY</span></div>
+<div class="fig"><div class="fig-frame h-240"><span class="reticle"></span><img src="images/projects/AE403W/thumbnail.png" alt="Baseball Avoidance Multirotor" loading="lazy"></div></div>
+<p>Real-time detection, prediction, and avoidance of a thrown baseball on a quadrotor. NASA Langley BAM challenge. Project lead.</p>
+</a>
+</div>
+</section>
+<div class="divider"><svg viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+  <g stroke="currentColor" stroke-width="1" opacity="0.4" stroke-dasharray="4 5">
+    <line x1="0" y1="10" x2="1200" y2="10"></line><line x1="0" y1="50" x2="1200" y2="50"></line>
+    <line x1="0" y1="90" x2="1200" y2="90"></line>
+  </g>
+  <g stroke="currentColor" stroke-width="1" opacity="0.28">
+    <line x1="200" y1="0" x2="200" y2="100"></line><line x1="500" y1="0" x2="500" y2="100"></line>
+    <line x1="800" y1="0" x2="800" y2="100"></line><line x1="1100" y1="0" x2="1100" y2="100"></line>
+  </g>
+  <path d="M0 10 C 260 10 340 16 460 44 C 560 68 640 86 900 90 L1200 90" stroke="currentColor" stroke-width="1.4" fill="none"></path>
+</svg></div>
+<section class="stack">
+<h2>Simulation Sandbox</h2>
+<div class="sim" data-orbit-sim data-status="LIVE &middot; IN-BROWSER SOLVER" data-note="The conic solved from four Keplerian elements, Earth at the focus. Move eccentricity first &mdash; the view rescales so the whole orbit stays in frame."></div>
+<p class="mono"><a href="sims/two-body-orbit.html">OPEN FULL SIMULATION PAGE &rarr;</a></p>
+</section>
+<div class="divider"><svg viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+  <g stroke="currentColor" stroke-width="1" opacity="0.5"><line x1="0" y1="50" x2="1200" y2="50"></line></g>
+  <g stroke="currentColor" stroke-width="1.2" fill="none">
+    <path d="M180 50 C 340 50 420 30 560 4"></path><path d="M180 50 C 340 50 420 70 560 96"></path>
+    <path d="M700 50 C 840 50 920 34 1060 10"></path><path d="M700 50 C 840 50 920 66 1060 90"></path>
+    <path d="M96 44 L108 56 M108 44 L96 56"></path><path d="M174 44 L186 56 M186 44 L174 56"></path>
+    <path d="M694 44 L706 56 M706 44 L694 56"></path>
+    <circle cx="420" cy="50" r="5"></circle><circle cx="960" cy="50" r="5"></circle>
+  </g>
+</svg></div>
+<section class="stack">
+<h2>Publications</h2>
+<div class="row rule">
+<h2 class="label muted" style="flex:0 1 200px;font-size:11px">AIAA SCITECH 2026</h2>
+<div class="row-body stack-tight">
+<div><a href="projects/AIAA-SDSU-History.html">AIAA SDSU Student Branch History</a></div>
+<div class="label muted">DOI <a href="https://doi.org/10.2514/6.2026-2727" target="_blank" rel="noopener">10.2514/6.2026-2727</a></div>
+</div>
+</div>
+</section>
+<section class="stack">
+<h2>Awards</h2>
+<div class="grid-wide grid"><div class="stack-tight"><div class="fig"><div class="fig-frame h-280"><span class="reticle"></span><img src="images/OutstandingContribution.JPG" alt="Outstanding Contribution Award" loading="lazy"></div></div><span>Outstanding Contribution Award</span><span class="muted">2026 Outstanding Contribution to the AIAA Student Chapter at SDSU</span></div><div class="stack-tight"><div class="fig"><div class="fig-frame h-280"><span class="reticle"></span><img src="images/RHF.JPG" alt="Reuben H. Fleet Scholarship" loading="lazy"></div></div><span>Reuben H. Fleet Scholarship</span><span class="muted">2025&ndash;2026 AIAA San Diego</span></div><div class="stack-tight"><div class="fig"><div class="fig-frame h-280"><span class="reticle"></span><img src="images/AIAA.JPG" alt="AIAA History Committee" loading="lazy"></div></div><span>AIAA History Committee</span><span class="muted">Member of the AIAA History Committee</span></div></div>
+</section>
+<section class="panel" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:48px">
+<div style="flex:1 1 380px;min-width:0" class="stack-tight">
+<span class="label muted">YOUTUBE &middot; <span class="key">SCIPK</span></span>
+<p class="section-title" style="line-height:1.35">Sharing the fun of Aerospace and Controls problem solving and explaining the world.</p>
+</div>
+<div class="btn-row" style="flex:0 0 auto">
+<a class="btn" href="scipk.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor" stroke="none"></polygon></svg> THE CHANNEL</a>
+<a class="btn-ghost" href="https://www.youtube.com/@scipk" target="_blank" rel="noopener">SUBSCRIBE</a>
+</div>
+</section>
+<section class="stack">
+<h2>Contact</h2>
+<div class="defs">
+<div class="def"><span class="label">EMAIL</span><span><a href="mailto:pkhodadi@ucla.edu">pkhodadi@ucla.edu</a></span></div>
+<div class="def"><span class="label">LOCATION</span><span>Los Angeles, California</span></div>
+<div class="def"><span class="label">EDUCATION</span><span>M.S. Aerospace Engineering, UCLA &mdash; Guidance, Navigation &amp; Control</span></div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="shell mono">
+<span>&copy; <span data-year>2026</span> SCIPK.COM</span>
+<span>PARHAM KHODADI &middot; GUIDANCE, NAVIGATION &amp; CONTROL</span>
+</div>
+</footer>
+<script src="assets/orbit-sim.js"></script>
+<script src="assets/site.js"></script>
 </body>
 </html>
