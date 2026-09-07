@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SciPK YouTube Channel | Parham Khodadi</title>
-<meta name="description" content="SciPK: engineering edutainment on YouTube. Projects, video essays, and the backstory behind the channel.">
+<title>SIM-01 · Two-Body Orbit Sketch — Parham Khodadi</title>
+<meta name="description" content="An in-browser two-body orbit solver: the conic from four Keplerian elements, with Earth at the focus.">
 <meta name="author" content="Parham Khodadi">
-<link rel="canonical" href="https://scipk.com/projects/SciPK-YouTube.html">
+<link rel="canonical" href="https://scipk.com/sims/two-body-orbit.html">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://scipk.com/projects/SciPK-YouTube.html">
-<meta property="og:title" content="SciPK YouTube Channel | Parham Khodadi">
-<meta property="og:description" content="SciPK: engineering edutainment on YouTube. Projects, video essays, and the backstory behind the channel.">
-<meta property="og:image" content="https://scipk.com/assets/scipk-logo.png">
+<meta property="og:url" content="https://scipk.com/sims/two-body-orbit.html">
+<meta property="og:title" content="SIM-01 · Two-Body Orbit Sketch — Parham Khodadi">
+<meta property="og:description" content="An in-browser two-body orbit solver: the conic from four Keplerian elements, with Earth at the focus.">
+<meta property="og:image" content="https://scipk.com/images/Parham-Khodadi.jpg">
 <meta property="og:site_name" content="Parham Khodadi — Guidance, Navigation &amp; Control">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SciPK YouTube Channel | Parham Khodadi">
-<meta name="twitter:description" content="SciPK: engineering edutainment on YouTube. Projects, video essays, and the backstory behind the channel.">
-<meta name="twitter:image" content="https://scipk.com/assets/scipk-logo.png">
+<meta name="twitter:title" content="SIM-01 · Two-Body Orbit Sketch — Parham Khodadi">
+<meta name="twitter:description" content="An in-browser two-body orbit solver: the conic from four Keplerian elements, with Earth at the focus.">
+<meta name="twitter:image" content="https://scipk.com/images/Parham-Khodadi.jpg">
 <link rel="icon" href="../images/logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,9 +30,9 @@
 <a class="brand" href="../index.html"><img src="../assets/scipk-logo.png" alt=""><span>SCIPK</span></a>
 <nav class="site-nav" aria-label="Primary">
 <a class="mono" href="../projects.html">PROJECTS</a>
-<a class="mono" href="../sims.html">SIMS</a>
+<a class="mono" href="../sims.html" aria-current="page">SIMS</a>
 <a class="mono" href="../log.html">LOG</a>
-<a class="mono" href="../scipk.html" aria-current="page">SCIPK</a>
+<a class="mono" href="../scipk.html">SCIPK</a>
 <a class="mono" href="../about.html">ABOUT</a>
 </nav>
 <div class="social">
@@ -43,31 +43,41 @@
 </div>
 </header>
 <section class="hero hero-detail">
-<div class="hero-ornament"><svg viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
-  <g stroke="currentColor" stroke-width="1" opacity="0.4" stroke-dasharray="4 5">
-    <line x1="0" y1="10" x2="1200" y2="10"></line><line x1="0" y1="50" x2="1200" y2="50"></line>
-    <line x1="0" y1="90" x2="1200" y2="90"></line>
-  </g>
-  <g stroke="currentColor" stroke-width="1" opacity="0.28">
-    <line x1="200" y1="0" x2="200" y2="100"></line><line x1="500" y1="0" x2="500" y2="100"></line>
-    <line x1="800" y1="0" x2="800" y2="100"></line><line x1="1100" y1="0" x2="1100" y2="100"></line>
-  </g>
-  <path d="M0 10 C 260 10 340 16 460 44 C 560 68 640 86 900 90 L1200 90" stroke="currentColor" stroke-width="1.4" fill="none"></path>
-</svg></div>
 <div class="shell">
-<a class="back-link mono" href="../scipk.html">&larr; SCIPK</a>
+<a class="back-link mono" href="../sims.html">&larr; ALL SIMULATIONS</a>
 <div class="stack">
-<div class="telemetry telemetry-plain"><span><span class="code">SCIPK</span> &middot; SCIENCE COMMUNICATION &middot; YOUTUBE</span></div>
-<h1>&ldquo;SciPK&rdquo; YouTube Channel</h1>
-<p>Science communication, videography, and video editing.</p>
-<div class="tags"><span class="tag">SCIENCE COMMUNICATION</span><span class="tag">CONTENT CREATION</span><span class="tag">VIDEOGRAPHY</span><span class="tag">VIDEO EDITING</span></div>
+<div class="telemetry telemetry-plain"><span><span class="code">SIM-01</span> &middot; ORBITAL MECHANICS &middot; KEPLERIAN &middot; EQUATORIAL PLANE</span></div>
+<h1>Two-Body Orbit Sketch</h1>
+<p>The conic solved from four Keplerian elements, with Earth at the focus. Start with eccentricity &mdash; the view rescales itself so the whole orbit stays in frame.</p>
 </div>
 </div>
 </section>
 
 <main class="shell page">
+
+<div class="sim" data-orbit-sim data-status="LIVE &middot; IN-BROWSER SOLVER" data-note="Move eccentricity first: the conic stretches about the focus while the view rescales so the whole orbit stays in frame. Periapsis and apoapsis altitudes and the orbital period update from the elements."></div>
+
 <section class="row">
-This page is work in progress.
+<h2>Model &amp; Assumptions</h2>
+<div class="row-body">
+
+<div class="eq-block">
+<div class="telemetry telemetry-plain"><span class="code">CONIC FROM ORBITAL ELEMENTS</span><span class="muted">EQ. 1</span></div>
+<div class="eq">r(&nu;) = a(1 &minus; e&sup2;) / (1 + e cos &nu;)</div>
+<div class="eq">T = 2&pi; &radic;(a&sup3; / &mu;)</div>
+<div class="eq-note">a is the semi-major axis, e the eccentricity, &omega; the argument of periapsis (rotating the conic in plane), and &nu; the true anomaly locating the spacecraft on it. &mu; = 398 600.4418 km&sup3;/s&sup2;.</div>
+</div>
+
+<ul class="bullets">
+<li>Two-body gravity only &mdash; no J2, drag, or third-body perturbations.</li>
+<li>Planar motion: inclination and RAAN are not drawn, so the conic is shown in its own plane.</li>
+<li>Geometry is exact for the elements shown; the marker is placed by true anomaly, not propagated in time.</li>
+<li>Periapsis below the surface is flagged rather than clipped &mdash; the conic is still drawn.</li>
+</ul>
+
+<a class="repo-card" href="https://github.com/scipk/scipk.github.io/blob/main/assets/orbit-sim.js" target="_blank" rel="noopener"><span class="stack-tight"><span class="label muted">SOLVER SOURCE</span><span class="repo-name">scipk/scipk.github.io</span></span><span class="label" style="color:var(--highlight)">VIEW REPOSITORY &rarr;</span></a>
+
+</div>
 </section>
 </main>
 <footer class="site-footer">
@@ -76,6 +86,7 @@ This page is work in progress.
 <span>PARHAM KHODADI &middot; GUIDANCE, NAVIGATION &amp; CONTROL</span>
 </div>
 </footer>
+<script src="../assets/orbit-sim.js"></script>
 <script src="../assets/site.js"></script>
 </body>
 </html>

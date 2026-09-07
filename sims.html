@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulations — Parham Khodadi</title>
+<meta name="description" content="Control and dynamics problems solved live in the browser. Each simulation states its model and assumptions.">
+<meta name="author" content="Parham Khodadi">
+<link rel="canonical" href="https://scipk.com/sims.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://scipk.com/sims.html">
+<meta property="og:title" content="Simulations — Parham Khodadi">
+<meta property="og:description" content="Control and dynamics problems solved live in the browser. Each simulation states its model and assumptions.">
+<meta property="og:image" content="https://scipk.com/images/Parham-Khodadi.jpg">
+<meta property="og:site_name" content="Parham Khodadi — Guidance, Navigation &amp; Control">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Simulations — Parham Khodadi">
+<meta name="twitter:description" content="Control and dynamics problems solved live in the browser. Each simulation states its model and assumptions.">
+<meta name="twitter:image" content="https://scipk.com/images/Parham-Khodadi.jpg">
+<link rel="icon" href="images/logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&amp;family=IBM+Plex+Sans:wght@400&amp;display=swap">
+<link rel="stylesheet" href="styles.css">
+<link rel="alternate" type="application/rss+xml" title="SciPK Log" href="https://scipk.com/feed.xml">
+</head>
+<body>
+<header class="site-header">
+<div class="shell">
+<a class="brand" href="index.html"><img src="assets/scipk-logo.png" alt=""><span>SCIPK</span></a>
+<nav class="site-nav" aria-label="Primary">
+<a class="mono" href="projects.html">PROJECTS</a>
+<a class="mono" href="sims.html" aria-current="page">SIMS</a>
+<a class="mono" href="log.html">LOG</a>
+<a class="mono" href="scipk.html">SCIPK</a>
+<a class="mono" href="about.html">ABOUT</a>
+</nav>
+<div class="social">
+<a href="https://github.com/scipk" aria-label="GitHub" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+<a class="is-linkedin" href="https://linkedin.com/in/parham-khodadi" aria-label="LinkedIn" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+<a class="is-youtube" href="https://www.youtube.com/@scipk" aria-label="YouTube" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor" stroke="none"></polygon></svg></a>
+</div>
+</div>
+</header>
+<section class="hero hero-compact">
+<div class="hero-ornament"><svg viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+  <g stroke="currentColor" stroke-width="1" opacity="0.5"><line x1="0" y1="50" x2="1200" y2="50"></line></g>
+  <g stroke="currentColor" stroke-width="1.2" fill="none">
+    <path d="M180 50 C 340 50 420 30 560 4"></path><path d="M180 50 C 340 50 420 70 560 96"></path>
+    <path d="M700 50 C 840 50 920 34 1060 10"></path><path d="M700 50 C 840 50 920 66 1060 90"></path>
+    <path d="M96 44 L108 56 M108 44 L96 56"></path><path d="M174 44 L186 56 M186 44 L174 56"></path>
+    <path d="M694 44 L706 56 M706 44 L694 56"></path>
+    <circle cx="420" cy="50" r="5"></circle><circle cx="960" cy="50" r="5"></circle>
+  </g>
+</svg></div>
+<div class="shell stack">
+<span class="eyebrow">IN-BROWSER SOLVERS</span>
+<h1>Simulations</h1>
+<p>Control and dynamics problems solved live in the browser. Each one opens in its own page with the model and assumptions written out.</p>
+</div>
+</section>
+<main class="shell page">
+<div class="callout mono">
+<span class="code">WORK IN PROGRESS</span>
+<span class="muted">NEW SIMULATIONS ARE ADDED TO THIS GRID AS THEY ARE BUILT</span>
+</div>
+
+<div class="grid grid-narrow">
+
+<a class="card" href="sims/two-body-orbit.html" target="_blank" rel="noopener">
+<div class="telemetry"><span class="code">SIM-01 &middot; ORBITAL MECHANICS</span><span>LIVE</span></div>
+<div style="height:180px;color:var(--accent);opacity:0.5"><svg viewBox="0 0 420 300" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+  <g stroke="currentColor" stroke-width="1" opacity="0.35">
+    <line x1="42" y1="30" x2="42" y2="270"></line><line x1="126" y1="30" x2="126" y2="270"></line>
+    <line x1="294" y1="30" x2="294" y2="270"></line><line x1="378" y1="30" x2="378" y2="270"></line>
+    <line x1="30" y1="60" x2="390" y2="60"></line><line x1="30" y1="90" x2="390" y2="90"></line>
+    <line x1="30" y1="210" x2="390" y2="210"></line><line x1="30" y1="240" x2="390" y2="240"></line>
+  </g>
+  <g stroke="currentColor" stroke-width="1">
+    <line x1="20" y1="150" x2="400" y2="150"></line><line x1="210" y1="20" x2="210" y2="280"></line>
+  </g>
+  <g stroke="currentColor" stroke-width="1" opacity="0.45" stroke-dasharray="3 4">
+    <line x1="210" y1="150" x2="60" y2="40"></line><line x1="210" y1="150" x2="60" y2="260"></line>
+    <line x1="210" y1="150" x2="70" y2="80"></line><line x1="210" y1="150" x2="70" y2="220"></line>
+  </g>
+  <g stroke="currentColor" stroke-width="1.5" fill="none">
+    <path d="M114 64 L126 76 M126 64 L114 76"></path><path d="M114 224 L126 236 M126 224 L114 236"></path>
+    <path d="M64 144 L76 156 M76 144 L64 156"></path><path d="M179 144 L191 156 M191 144 L179 156"></path>
+    <circle cx="156" cy="110" r="6"></circle><circle cx="156" cy="190" r="6"></circle>
+    <circle cx="252" cy="150" r="6"></circle>
+  </g>
+</svg></div>
+<h2>Two-Body Orbit Sketch</h2>
+<p>The conic solved from four Keplerian elements, Earth at the focus.</p>
+<span class="card-cta">OPEN SIMULATION &rarr;</span>
+</a>
+
+<div class="card card-slot">
+<span class="label">NEXT SLOT</span>
+<span>More solvers are being built. Each one gets its own page with the model and assumptions stated up front.</span>
+</div>
+
+</div>
+</main>
+<footer class="site-footer">
+<div class="shell mono">
+<span>&copy; <span data-year>2026</span> SCIPK.COM</span>
+<span>PARHAM KHODADI &middot; GUIDANCE, NAVIGATION &amp; CONTROL</span>
+</div>
+</footer>
+<script src="assets/site.js"></script>
+</body>
+</html>
