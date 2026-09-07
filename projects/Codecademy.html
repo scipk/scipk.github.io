@@ -1,331 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Codecademy Projects - Parham Khodadi</title>
-    <link rel="icon" href="../images/logo.png" type="image/png">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --dark-gray: #2c2c2b;
-            --navy: #00285E;
-            --light-blue: #6CADDF;
-            --white: #FFFFFF;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: var(--white);
-            background: var(--dark-gray);
-        }
-
-        header {
-            background: var(--dark-gray);
-            padding: 1.5rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--white);
-        }
-
-        .back-link {
-            color: var(--navy);
-            text-decoration: none;
-            padding: 0.5rem 1.5rem;
-            border: 2px solid var(--white);
-            border-radius: 5px;
-            transition: all 0.3s;
-            background: var(--white);
-            font-weight: 500;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        .back-link:hover {
-            background: var(--light-blue);
-            border-color: var(--light-blue);
-            color: var(--white);
-        }
-
-        .hero {
-            background: rgba(0, 40, 94, 0.5);
-            color: var(--white);
-            padding: 4rem 2rem;
-            text-align: center;
-            border-bottom: 2px solid var(--light-blue);
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero-meta {
-            font-size: 1.1rem;
-            color: var(--light-blue);
-        }
-
-        .project-tags {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .tag {
-            background: var(--light-blue);
-            color: var(--white);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .content-section {
-            background: rgba(0, 40, 94, 0.3);
-            padding: 3rem;
-            margin-bottom: 2rem;
-            border-radius: 10px;
-            border: 1px solid rgba(108, 173, 223, 0.3);
-        }
-
-        .content-section h2 {
-            color: var(--white);
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid var(--light-blue);
-        }
-
-        .content-section p {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.85);
-        }
-
-        .content-section ul {
-            margin-left: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .content-section li {
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.85);
-        }
-
-        .certifications-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .certification-card {
-            display: block;
-            background: rgba(0, 40, 94, 0.5);
-            padding: 1.1rem 1.4rem;
-            border-radius: 8px;
-            border: 1px solid rgba(108, 173, 223, 0.5);
-            transition: all 0.25s;
-            text-decoration: none;
-        }
-
-        .certification-card:hover {
-            transform: translateY(-3px);
-            border-color: var(--light-blue);
-            box-shadow: 0 6px 16px rgba(108, 173, 223, 0.25);
-            background: rgba(0, 40, 94, 0.75);
-        }
-
-        .certification-card h3 {
-            color: var(--light-blue);
-            font-size: 1rem;
-            font-weight: 600;
-            line-height: 1.4;
-        }
-
-        .download-btn {
-            display: inline-block;
-            padding: 0.75rem 1.75rem;
-            background: var(--white);
-            color: var(--navy);
-            text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s;
-            font-weight: 500;
-            border: 2px solid var(--white);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        .download-btn:hover {
-            background: var(--light-blue);
-            border-color: var(--light-blue);
-            color: var(--white);
-        }
-
-        .btn-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .content-section { padding: 1.5rem; }
-            .certifications-grid { grid-template-columns: 1fr; }
-            main { padding: 3rem 1rem; }
-            nav { flex-direction: column; gap: 1rem; padding: 0 1rem; }
-            .hero { padding: 3rem 1rem; }
-            .hero-meta { font-size: 1rem; }
-            .project-tags { gap: 0.4rem; }
-            .tag { padding: 0.4rem 0.8rem; font-size: 0.85rem; }
-            .btn-row { flex-direction: column; }
-            .download-btn { width: 100%; text-align: center; }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 { font-size: 1.75rem; }
-            .content-section h2 { font-size: 1.5rem; }
-            .content-section p, .content-section li { font-size: 1rem; }
-            .back-link { padding: 0.4rem 1rem; font-size: 0.9rem; }
-            .logo { font-size: 1.1rem; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Codecademy — C++, Python, Git, Linux | Parham Khodadi</title>
+<meta name="description" content="Self-directed programming coursework: C++ for systems work, Python for scripting and data analysis, with Git, Linux, and linear algebra.">
+<meta name="author" content="Parham Khodadi">
+<link rel="canonical" href="https://scipk.com/projects/Codecademy.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://scipk.com/projects/Codecademy.html">
+<meta property="og:title" content="Codecademy — C++, Python, Git, Linux | Parham Khodadi">
+<meta property="og:description" content="Self-directed programming coursework: C++ for systems work, Python for scripting and data analysis, with Git, Linux, and linear algebra.">
+<meta property="og:image" content="https://scipk.com/images/Parham-Khodadi.jpg">
+<meta property="og:site_name" content="Parham Khodadi — Guidance, Navigation &amp; Control">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Codecademy — C++, Python, Git, Linux | Parham Khodadi">
+<meta name="twitter:description" content="Self-directed programming coursework: C++ for systems work, Python for scripting and data analysis, with Git, Linux, and linear algebra.">
+<meta name="twitter:image" content="https://scipk.com/images/Parham-Khodadi.jpg">
+<link rel="icon" href="../images/logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&amp;family=IBM+Plex+Sans:wght@400&amp;display=swap">
+<link rel="stylesheet" href="../styles.css">
+<link rel="alternate" type="application/rss+xml" title="SciPK Log" href="https://scipk.com/feed.xml">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Parham Khodadi</div>
-            <a href="../projects.html" class="back-link">← Back to Projects</a>
-        </nav>
-    </header>
+<header class="site-header">
+<div class="shell">
+<a class="brand" href="../index.html"><img src="../assets/scipk-logo.png" alt=""><span>SCIPK</span></a>
+<nav class="site-nav" aria-label="Primary">
+<a class="mono" href="../projects.html">PROJECTS</a>
+<a class="mono" href="../sims.html">SIMS</a>
+<a class="mono" href="../scipk.html">SCIPK</a>
+<a class="mono" href="../about.html" aria-current="page">ABOUT</a>
+</nav>
+<div class="social">
+<a href="https://github.com/scipk" aria-label="GitHub" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+<a class="is-linkedin" href="https://linkedin.com/in/parham-khodadi" aria-label="LinkedIn" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+<a class="is-youtube" href="https://www.youtube.com/@scipk" aria-label="YouTube" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor" stroke="none"></polygon></svg></a>
+</div>
+</div>
+</header>
+<section class="hero hero-detail">
+<div class="hero-ornament"><svg viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+  <g stroke="currentColor" stroke-width="1" opacity="0.4" stroke-dasharray="4 5">
+    <line x1="0" y1="10" x2="1200" y2="10"></line><line x1="0" y1="50" x2="1200" y2="50"></line>
+    <line x1="0" y1="90" x2="1200" y2="90"></line>
+  </g>
+  <g stroke="currentColor" stroke-width="1" opacity="0.28">
+    <line x1="200" y1="0" x2="200" y2="100"></line><line x1="500" y1="0" x2="500" y2="100"></line>
+    <line x1="800" y1="0" x2="800" y2="100"></line><line x1="1100" y1="0" x2="1100" y2="100"></line>
+  </g>
+  <path d="M0 10 C 260 10 340 16 460 44 C 560 68 640 86 900 90 L1200 90" stroke="currentColor" stroke-width="1.4" fill="none"></path>
+</svg></div>
+<div class="shell">
+<a class="back-link mono" href="../about.html">&larr; ABOUT &middot; CREDENTIALS</a>
+<div class="stack">
+<div class="telemetry telemetry-plain"><span><span class="code">CREDENTIAL</span> &middot; 2026 &middot; CODECADEMY</span></div>
+<h1>Codecademy</h1>
+<p>Self-directed learning in C++ and Python.</p>
+<div class="tags"><span class="tag">C++</span><span class="tag">PYTHON</span><span class="tag">GIT</span><span class="tag">LINUX</span><span class="tag">LINEAR ALGEBRA</span></div>
+</div>
+</div>
+</section>
 
-    <div class="hero">
-        <h1>Codecademy</h1>
-        <p class="hero-meta">Self-Directed Learning in C++ and Python</p>
-        <div class="project-tags">
-            <span class="tag">C++</span>
-            <span class="tag">Python</span>
-            <span class="tag">Git</span>
-            <span class="tag">Linux</span>
-            <span class="tag">Linear Algebra</span>
-        </div>
-    </div>
-
-    <main>
-        <!-- Overview -->
-        <div class="content-section">
-            <h2>Overview</h2>
-            <p>Self-directed programming coursework taken mostly in the summer after graduating from SDSU (May-June 2026) — focused on C++ for systems work and Python for scripting and data analysis, with supporting coursework in Git, Linux, and linear algebra.</p>
-            <div class="btn-row">
-                <a href="https://www.codecademy.com/profiles/SciPK" target="_blank" class="download-btn">Codecademy Profile →</a>
-                <a href="https://github.com/scipk/CodecademyProjects" target="_blank" class="download-btn">GitHub Repo →</a>
-            </div>
-        </div>
-
-        <!-- Skills -->
-        <div class="content-section">
-            <h2>Skills</h2>
-            <ul>
-                <li><strong>C++:</strong> OOP, memory management, STL containers, templates, smart pointers, modern practices</li>
-                <li><strong>Python:</strong> Scripting, data handling, rapid prototyping for scientific computing</li>
-                <li><strong>Git:</strong> Version control and collaborative workflows</li>
-                <li><strong>Linux:</strong> CLI navigation and environment management</li>
-                <li><strong>Linear Algebra:</strong> Vectors, matrices, transformations, eigenvalues</li>
-            </ul>
-        </div>
-        
-        <!-- Certifications -->
-        <div class="content-section">
-            <h2>Certifications</h2>
-            <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-bottom: 0;">Click any card to view the certificate.</p>
-            <div class="certifications-grid">
-                
-                <a class="certification-card" href="https://www.codecademy.com/profiles/SciPK/certificates/34c14a8d82ce7e5eb8077bd356946169" target="_blank" rel="noopener">
-                    <h3>Linear Algebra</h3>
-                </a>
-                
-                <a class="certification-card" href="https://www.codecademy.com/profiles/SciPK/certificates/310a1e2137024ab6a2f0eee85f27ce36" target="_blank" rel="noopener">
-                    <h3>Learn Advanced C++</h3>
-                </a>
-                
-                <a class="certification-card" href="https://www.codecademy.com/profiles/SciPK/certificates/2a55279781274c7d873439633177ecbf" target="_blank" rel="noopener">
-                    <h3>Learn OOP with C++</h3>
-                </a>
-
-                <a class="certification-card" href="https://www.codecademy.com/profiles/SciPK/certificates/6c152bd262967f8c941c9707ed636bda" target="_blank" rel="noopener">
-                    <h3>Learn Python 3</h3>
-                </a>
-                
-                <a class="certification-card" href="https://www.codecademy.com/profiles/SciPK/certificates/ddc94032dd07fd43ee02f994e8f72af9" target="_blank" rel="noopener">
-                    <h3>C++ for Programmers</h3>
-                </a>
-
-                <a class="certification-card" href="https://www.codecademy.com/profiles/SciPK/certificates/66b188947bf947bca3a7c811ff9b51b5" target="_blank" rel="noopener">
-                    <h3>Learn C++: References and Pointers</h3>
-                </a>
-
-                <a class="certification-card" href="https://www.codecademy.com/profiles/SciPK/certificates/54de574543f242baaf263227f82073bf" target="_blank" rel="noopener">
-                    <h3>Introduction to Linux</h3>
-                </a>
-
-                <a class="certification-card" href="https://www.codecademy.com/profiles/SciPK/certificates/53f1ee480e524cd7b329b5854507c089" target="_blank" rel="noopener">
-                    <h3>Learn Git: Introduction</h3>
-                </a>
-
-                <a class="certification-card" href="https://www.codecademy.com/profiles/SciPK/certificates/214fd9535e024b808ce7ddc8c6d50ae3" target="_blank" rel="noopener">
-                    <h3>Learn Intermediate C++</h3>
-                </a>
-
-                <a class="certification-card" href="https://www.codecademy.com/profiles/SciPK/certificates/673043efde0445f3af62466be6544679" target="_blank" rel="noopener">
-                    <h3>Learn C++: Classes and Objects</h3>
-                </a>
-
-                <a class="certification-card" href="https://www.codecademy.com/profiles/SciPK/certificates/67907c97d4e04faabfb6dc06e6459139" target="_blank" rel="noopener">
-                    <h3>Learn C++: Vectors</h3>
-                </a>
-
-                <a class="certification-card" href="https://www.codecademy.com/profiles/SciPK/certificates/284f66fe8c5745f886598714a6d9938b" target="_blank" rel="noopener">
-                    <h3>Learn C++: Functions</h3>
-                </a>
-
-                <a class="certification-card" href="https://www.codecademy.com/profiles/SciPK/certificates/3de27fdca0a541318be302cd5f0ab55d" target="_blank" rel="noopener">
-                    <h3>Learn C++: Loops</h3>
-                </a>
-
-                <a class="certification-card" href="https://www.codecademy.com/profiles/SciPK/certificates/edc9d8b145f845159ba1a10533c3b074" target="_blank" rel="noopener">
-                    <h3>Learn C++: Introduction</h3>
-                </a>
-
-            </div>
-        </div>
-    </main>
+<main class="shell page">
+<section class="row">
+<h2>Overview</h2>
+<div class="row-body">
+<p>Self-directed programming coursework taken mostly in the summer after graduating from SDSU (May&ndash;June 2026) &mdash; focused on C++ for systems work and Python for scripting and data analysis, with supporting coursework in Git, Linux, and linear algebra.</p><div class="btn-row"><a class="btn-ghost" href="https://www.codecademy.com/profiles/SciPK" target="_blank" rel="noopener">CODECADEMY PROFILE</a><a class="btn-ghost" href="https://github.com/scipk/CodecademyProjects" target="_blank" rel="noopener">GITHUB REPO</a></div>
+</div>
+</section>
+<section class="row">
+<h2>Skills</h2>
+<div class="row-body">
+<ul class="bullets"><li><strong>C++:</strong> OOP, memory management, STL containers, templates, smart pointers, modern practices</li><li><strong>Python:</strong> Scripting, data handling, rapid prototyping for scientific computing</li><li><strong>Git:</strong> Version control and collaborative workflows</li><li><strong>Linux:</strong> CLI navigation and environment management</li><li><strong>Linear Algebra:</strong> Vectors, matrices, transformations, eigenvalues</li></ul>
+</div>
+</section>
+<section class="row">
+<h2>Certificates</h2>
+<div class="row-body">
+<p>Click any entry to view the certificate.</p><div class="data-table"><div class="data-row cols-2"><span><a href="https://www.codecademy.com/profiles/SciPK/certificates/34c14a8d82ce7e5eb8077bd356946169" target="_blank" rel="noopener">Linear Algebra</a></span><span class="muted">Codecademy</span></div><div class="data-row cols-2"><span><a href="https://www.codecademy.com/profiles/SciPK/certificates/310a1e2137024ab6a2f0eee85f27ce36" target="_blank" rel="noopener">Learn Advanced C++</a></span><span class="muted">Codecademy</span></div><div class="data-row cols-2"><span><a href="https://www.codecademy.com/profiles/SciPK/certificates/2a55279781274c7d873439633177ecbf" target="_blank" rel="noopener">Learn OOP with C++</a></span><span class="muted">Codecademy</span></div><div class="data-row cols-2"><span><a href="https://www.codecademy.com/profiles/SciPK/certificates/6c152bd262967f8c941c9707ed636bda" target="_blank" rel="noopener">Learn Python 3</a></span><span class="muted">Codecademy</span></div><div class="data-row cols-2"><span><a href="https://www.codecademy.com/profiles/SciPK/certificates/ddc94032dd07fd43ee02f994e8f72af9" target="_blank" rel="noopener">C++ for Programmers</a></span><span class="muted">Codecademy</span></div><div class="data-row cols-2"><span><a href="https://www.codecademy.com/profiles/SciPK/certificates/66b188947bf947bca3a7c811ff9b51b5" target="_blank" rel="noopener">Learn C++: References and Pointers</a></span><span class="muted">Codecademy</span></div><div class="data-row cols-2"><span><a href="https://www.codecademy.com/profiles/SciPK/certificates/54de574543f242baaf263227f82073bf" target="_blank" rel="noopener">Introduction to Linux</a></span><span class="muted">Codecademy</span></div><div class="data-row cols-2"><span><a href="https://www.codecademy.com/profiles/SciPK/certificates/53f1ee480e524cd7b329b5854507c089" target="_blank" rel="noopener">Learn Git: Introduction</a></span><span class="muted">Codecademy</span></div><div class="data-row cols-2"><span><a href="https://www.codecademy.com/profiles/SciPK/certificates/214fd9535e024b808ce7ddc8c6d50ae3" target="_blank" rel="noopener">Learn Intermediate C++</a></span><span class="muted">Codecademy</span></div><div class="data-row cols-2"><span><a href="https://www.codecademy.com/profiles/SciPK/certificates/673043efde0445f3af62466be6544679" target="_blank" rel="noopener">Learn C++: Classes and Objects</a></span><span class="muted">Codecademy</span></div><div class="data-row cols-2"><span><a href="https://www.codecademy.com/profiles/SciPK/certificates/67907c97d4e04faabfb6dc06e6459139" target="_blank" rel="noopener">Learn C++: Vectors</a></span><span class="muted">Codecademy</span></div><div class="data-row cols-2"><span><a href="https://www.codecademy.com/profiles/SciPK/certificates/284f66fe8c5745f886598714a6d9938b" target="_blank" rel="noopener">Learn C++: Functions</a></span><span class="muted">Codecademy</span></div><div class="data-row cols-2"><span><a href="https://www.codecademy.com/profiles/SciPK/certificates/3de27fdca0a541318be302cd5f0ab55d" target="_blank" rel="noopener">Learn C++: Loops</a></span><span class="muted">Codecademy</span></div><div class="data-row cols-2"><span><a href="https://www.codecademy.com/profiles/SciPK/certificates/edc9d8b145f845159ba1a10533c3b074" target="_blank" rel="noopener">Learn C++: Introduction</a></span><span class="muted">Codecademy</span></div></div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="shell mono">
+<span>&copy; <span data-year>2026</span> SCIPK.COM</span>
+<span>PARHAM KHODADI &middot; GUIDANCE, NAVIGATION &amp; CONTROL</span>
+</div>
+</footer>
+<script src="../assets/site.js"></script>
 </body>
 </html>
