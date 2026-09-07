@@ -1,438 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SciPK YouTube - Parham Khodadi</title>
-    <link rel="icon" href="../images/logo.png" type="image/png">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --dark-gray: #2c2c2b;
-            --navy: #00285E;
-            --light-blue: #6CADDF;
-            --white: #FFFFFF;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: var(--white);
-            background: var(--dark-gray);
-        }
-
-        header {
-            background: var(--dark-gray);
-            padding: 1.5rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--white);
-        }
-
-        .back-link {
-            color: var(--navy);
-            text-decoration: none;
-            padding: 0.5rem 1.5rem;
-            border: 2px solid var(--white);
-            border-radius: 5px;
-            transition: all 0.3s;
-            background: var(--white);
-            font-weight: 500;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        .back-link:hover {
-            background: var(--light-blue);
-            border-color: var(--light-blue);
-            color: var(--white);
-        }
-
-        .hero {
-            background: rgba(0, 40, 94, 0.5);
-            color: var(--white);
-            padding: 4rem 2rem;
-            text-align: center;
-            border-bottom: 2px solid var(--light-blue);
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero-meta {
-            font-size: 1.1rem;
-            color: var(--light-blue);
-        }
-
-        .project-tags {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .tag {
-            background: var(--light-blue);
-            color: var(--white);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .content-section {
-            background: rgba(0, 40, 94, 0.3);
-            padding: 3rem;
-            margin-bottom: 2rem;
-            border-radius: 10px;
-            border: 1px solid rgba(108, 173, 223, 0.3);
-        }
-
-        .content-section h2 {
-            color: var(--white);
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid var(--light-blue);
-        }
-
-        .content-section p {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.85);
-        }
-
-        .content-section ul {
-            margin-left: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .content-section li {
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.85);
-        }
-
-        .media-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .media-item {
-            border-radius: 10px;
-            overflow: hidden;
-            border: 2px solid rgba(108, 173, 223, 0.3);
-        }
-
-        .media-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .media-item video {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .media-caption {
-            background: rgba(0, 40, 94, 0.5);
-            padding: 1rem;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.8);
-            text-align: center;
-        }
-
-        .video-embed {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 10px;
-            margin: 2rem 0;
-            border: 2px solid rgba(108, 173, 223, 0.3);
-        }
-
-        .video-embed iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .code-block {
-            background: rgba(0, 0, 0, 0.5);
-            color: var(--light-blue);
-            padding: 1.5rem;
-            border-radius: 10px;
-            overflow-x: auto;
-            margin: 1.5rem 0;
-            font-family: 'Courier New', monospace;
-            font-size: 0.95rem;
-            border: 1px solid rgba(108, 173, 223, 0.3);
-        }
-
-        .download-section {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .download-btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: var(--white);
-            color: var(--navy);
-            text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s;
-            font-weight: 500;
-            border: 2px solid var(--white);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        .download-btn:hover {
-            background: var(--light-blue);
-            border-color: var(--light-blue);
-            color: var(--white);
-        }
-
-        .model-viewer {
-            width: 100%;
-            height: 500px;
-            background: linear-gradient(135deg, var(--navy) 0%, var(--light-blue) 100%);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1.5rem;
-            margin: 2rem 0;
-            border: 2px solid rgba(108, 173, 223, 0.3);
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .content-section {
-                padding: 1.5rem;
-            }
-
-            .media-grid {
-                grid-template-columns: 1fr;
-            }
-
-            main {
-                padding: 3rem 1rem;
-            }
-
-            nav {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 0 1rem;
-            }
-
-            .hero {
-                padding: 3rem 1rem;
-            }
-
-            .hero-meta {
-                font-size: 1rem;
-            }
-
-            .project-tags {
-                gap: 0.4rem;
-            }
-
-            .tag {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.85rem;
-            }
-
-            .download-section {
-                flex-direction: column;
-            }
-
-            .download-btn {
-                width: 100%;
-                text-align: center;
-            }
-
-            .model-viewer {
-                height: 300px;
-                font-size: 1.2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 1.75rem;
-            }
-
-            .content-section h2 {
-                font-size: 1.5rem;
-            }
-
-            .content-section p,
-            .content-section li {
-                font-size: 1rem;
-            }
-
-            .back-link {
-                padding: 0.4rem 1rem;
-                font-size: 0.9rem;
-            }
-
-            .logo {
-                font-size: 1.1rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SciPK YouTube Channel | Parham Khodadi</title>
+<meta name="description" content="SciPK: engineering edutainment on YouTube. Projects, video essays, and the backstory behind the channel.">
+<meta name="author" content="Parham Khodadi">
+<link rel="canonical" href="https://scipk.com/projects/SciPK-YouTube.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://scipk.com/projects/SciPK-YouTube.html">
+<meta property="og:title" content="SciPK YouTube Channel | Parham Khodadi">
+<meta property="og:description" content="SciPK: engineering edutainment on YouTube. Projects, video essays, and the backstory behind the channel.">
+<meta property="og:image" content="https://scipk.com/assets/scipk-logo.png">
+<meta property="og:site_name" content="Parham Khodadi — Guidance, Navigation &amp; Control">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SciPK YouTube Channel | Parham Khodadi">
+<meta name="twitter:description" content="SciPK: engineering edutainment on YouTube. Projects, video essays, and the backstory behind the channel.">
+<meta name="twitter:image" content="https://scipk.com/assets/scipk-logo.png">
+<link rel="icon" href="../images/logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&amp;family=IBM+Plex+Sans:wght@400&amp;display=swap">
+<link rel="stylesheet" href="../styles.css">
+<link rel="alternate" type="application/rss+xml" title="SciPK Log" href="https://scipk.com/feed.xml">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Parham Khodadi</div>
-            <a href="../projects.html" class="back-link">← Back to Projects</a>
-        </nav>
-    </header>
+<header class="site-header">
+<div class="shell">
+<a class="brand" href="../index.html"><img src="../assets/scipk-logo.png" alt=""><span>SCIPK</span></a>
+<nav class="site-nav" aria-label="Primary">
+<a class="mono" href="../projects.html">PROJECTS</a>
+<a class="mono" href="../sims.html">SIMS</a>
+<a class="mono" href="../scipk.html" aria-current="page">SCIPK</a>
+<a class="mono" href="../about.html">ABOUT</a>
+</nav>
+<div class="social">
+<a href="https://github.com/scipk" aria-label="GitHub" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+<a class="is-linkedin" href="https://linkedin.com/in/parham-khodadi" aria-label="LinkedIn" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+<a class="is-youtube" href="https://www.youtube.com/@scipk" aria-label="YouTube" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor" stroke="none"></polygon></svg></a>
+</div>
+</div>
+</header>
+<section class="hero hero-detail">
+<div class="hero-ornament"><svg viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+  <g stroke="currentColor" stroke-width="1" opacity="0.4" stroke-dasharray="4 5">
+    <line x1="0" y1="10" x2="1200" y2="10"></line><line x1="0" y1="50" x2="1200" y2="50"></line>
+    <line x1="0" y1="90" x2="1200" y2="90"></line>
+  </g>
+  <g stroke="currentColor" stroke-width="1" opacity="0.28">
+    <line x1="200" y1="0" x2="200" y2="100"></line><line x1="500" y1="0" x2="500" y2="100"></line>
+    <line x1="800" y1="0" x2="800" y2="100"></line><line x1="1100" y1="0" x2="1100" y2="100"></line>
+  </g>
+  <path d="M0 10 C 260 10 340 16 460 44 C 560 68 640 86 900 90 L1200 90" stroke="currentColor" stroke-width="1.4" fill="none"></path>
+</svg></div>
+<div class="shell">
+<a class="back-link mono" href="../scipk.html">&larr; SCIPK</a>
+<div class="stack">
+<div class="telemetry telemetry-plain"><span><span class="code">SCIPK</span> &middot; SCIENCE COMMUNICATION &middot; YOUTUBE</span></div>
+<h1>&ldquo;SciPK&rdquo; YouTube Channel</h1>
+<p>Science communication, videography, and video editing.</p>
+<div class="tags"><span class="tag">SCIENCE COMMUNICATION</span><span class="tag">CONTENT CREATION</span><span class="tag">VIDEOGRAPHY</span><span class="tag">VIDEO EDITING</span></div>
+</div>
+</div>
+</section>
 
-    <div class="hero">
-        <h1>"SciPK" YouTube Channel</h1>
-        <p class="hero-meta">Science Communication</p>
-        <div class="project-tags">
-            <span class="tag">Science Communication</span>
-            <span class="tag">Content Creation</span>
-            <span class="tag">Videography</span>
-            <span class="tag">Video Editing</span>
-        </div>
-    </div>
-
-    <main>
-        <!-- Overview Section -->
-        <div class="content-section">
-            <h2>Project Overview</h2>
-            <p>
-                I love sharing my passion for STEM with others! On my YouTube channel "SciPK", I create engaging and
-                informative videos that explore various STEM projects, concepts, history, and people.
-                My goal is to make STEM loved by the masses through enjoyable, yet educational content.
-                The types of content I share are:
-            </p>
-            <ul>
-                <li>Projects: Where I make something cool and discuss it.</li>
-                <li>Video Essays: Where I explain a STEM subject, such as history, a person, an object, or a phenomena.</li>
-            </ul>
-        </div>
-        
-        <!-- Backstory Section -->
-        <div class="content-section">
-            <h2>Backstory</h2>
-            <p>
-                My cousin (AbrahamThePharmacist on YouTube) used to make Persian comedy skits when I was a kid. I lived in England briefly, and he'd put me in his videos.
-                After he graduated medical school, he shifted his channel to be medical focused. He inspired me to start my own channel around STEM topics.
-                When he would include me in his comedy skits, I learned that I enjoy videography.
-                My love for public speaking comes from my time doing theater in high school. Granted, it was for the easy A, but I found I enjoyed being on stage.
-                Combining these two skills with my passion for Engineering, I started SciPK to share my love for STEM with others.
-            </p>
-        </div>
-
-        <!-- YouTube Channel + Stats Section -->
-        <div class="content-section" id="youtube-section">
-            <h2>YouTube Channel</h2>
-
-            <p>
-                Visit the channel:
-                <a class="download-btn" href="https://www.youtube.com/channel/UCUmX3yVgNFuj6SkFds7cLmA" target="_blank" rel="noopener">SciPK on YouTube</a>
-            </p>
-
-            <div id="socialblade-embed" style="margin-top:1rem;">
-                <div class="video-embed" style="margin-top:0;">
-                    <iframe id="socialblade-frame"
-                            src="https://socialblade.com/youtube/channel/UCUmX3yVgNFuj6SkFds7cLmA"
-                            title="SocialBlade channel stats"
-                            frameborder="0"
-                            style="border:0;width:100%;height:100%;">
-                    </iframe>
-                </div>
-                <p style="margin-top:0.75rem;color:rgba(255,255,255,0.75);font-size:0.9rem;">
-                    Live channel statistics via SocialBlade.
-                </p>
-            </div>
-
-            <script>
-            (function () {
-                const container = document.getElementById('yt-stats');
-                if (!container) return;
-                const apiKey = container.getAttribute('data-api-key').trim();
-                const channelId = container.getAttribute('data-channel-id').trim();
-                const subsEl = document.getElementById('yt-subs');
-                const videosEl = document.getElementById('yt-videos');
-                const viewsEl = document.getElementById('yt-views');
-                const socialBlade = document.getElementById('socialblade-frame');
-
-                if (!channelId) {
-                    // no channel id set
-                    if (socialBlade) socialBlade.style.display = 'none';
-                    return;
-                }
-
-                // always point SocialBlade to the right channel id for fallback
-                if (socialBlade) socialBlade.src = socialBlade.src.replace('YOUR_CHANNEL_ID', channelId);
-
-                if (!apiKey) {
-                    // no API key provided, rely on the SocialBlade embed
-                    return;
-                }
-
-                // Fetch basic channel statistics from YouTube Data API v3
-                const url = `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${encodeURIComponent(channelId)}&key=${encodeURIComponent(apiKey)}`;
-                fetch(url).then(res => res.json()).then(data => {
-                    const stats = data && data.items && data.items[0] && data.items[0].statistics;
-                    if (!stats) throw new Error('No statistics returned');
-                    subsEl.textContent = stats.subscriberCount ? Number(stats.subscriberCount).toLocaleString() : '—';
-                    videosEl.textContent = stats.videoCount ? Number(stats.videoCount).toLocaleString() : '—';
-                    viewsEl.textContent = stats.viewCount ? Number(stats.viewCount).toLocaleString() : '—';
-                    if (socialBlade) socialBlade.style.display = 'none';
-                }).catch(err => {
-                    console.warn('Failed to load YouTube stats:', err);
-                    // keep socialblade iframe visible as fallback
-                });
-            })();
-            </script>
-        </div>
-    </main>
+<main class="shell page">
+<section class="row">
+<h2>Overview</h2>
+<div class="row-body">
+<p>I love sharing my passion for STEM with others! On my YouTube channel &ldquo;SciPK&rdquo;, I create engaging and informative videos that explore various STEM projects, concepts, history, and people. My goal is to make STEM loved by the masses through enjoyable, yet educational content. The types of content I share are:</p><ul class="bullets"><li>Projects: Where I make something cool and discuss it.</li><li>Video Essays: Where I explain a STEM subject, such as history, a person, an object, or a phenomena.</li></ul>
+</div>
+</section>
+<section class="row">
+<h2>Backstory</h2>
+<div class="row-body">
+<p>My cousin (AbrahamThePharmacist on YouTube) used to make Persian comedy skits when I was a kid. I lived in England briefly, and he&rsquo;d put me in his videos. After he graduated medical school, he shifted his channel to be medical focused. He inspired me to start my own channel around STEM topics. When he would include me in his comedy skits, I learned that I enjoy videography. My love for public speaking comes from my time doing theater in high school. Granted, it was for the easy A, but I found I enjoyed being on stage. Combining these two skills with my passion for Engineering, I started SciPK to share my love for STEM with others.</p>
+</div>
+</section>
+<section class="row">
+<h2>The channel</h2>
+<div class="row-body">
+<p>Visit the channel, or see the featured videos on the SciPK page.</p><div class="btn-row"><a class="btn-ghost" href="https://www.youtube.com/@scipk" target="_blank" rel="noopener">SCIPK ON YOUTUBE</a></div><p class="mono"><a href="../scipk.html">FEATURED VIDEOS &amp; CHANNEL PAGE &rarr;</a></p>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="shell mono">
+<span>&copy; <span data-year>2026</span> SCIPK.COM</span>
+<span>PARHAM KHODADI &middot; GUIDANCE, NAVIGATION &amp; CONTROL</span>
+</div>
+</footer>
+<script src="../assets/site.js"></script>
 </body>
 </html>
