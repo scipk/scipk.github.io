@@ -1,0 +1,30 @@
+{
+  "_comment": "Single source of truth for the log. Do not edit log.html or feed.xml by hand - run 'python3 tools/log.py' and they are both regenerated from this file.",
+  "entries": [
+    {
+      "date": "2026-09-02",
+      "title": "Starting in GLACIER Lab",
+      "message": "First weeks of M.S. research at UCLA: robust control for spacecraft rendezvous, under Prof. Shahriar Talebi. Reading through the uncertainty formulations before touching any code.",
+      "tags": []
+    },
+    {
+      "date": "2026-05-06",
+      "title": "Senior Design Day: BAM avoided the ball",
+      "message": "The multirotor detected, predicted, and evaded a thrown baseball in front of the judges. It never returned to its original trajectory on its own - that failure is the next problem to solve.",
+      "tags": [
+        "AE-403W",
+        "AUTONOMY",
+        "MATLAB/SIMULINK"
+      ]
+    },
+    {
+      "date": "2026-01-06",
+      "title": "SciTech 2026: sixty-three years of a student branch",
+      "message": "Our history of the AIAA student branch at San Diego State, founded in Spring 1963, is out. Interviews across six decades turned out to be harder than the writing.",
+      "tags": [
+        "PUBLICATION",
+        "AIAA"
+      ]
+    }
+  ]
+}

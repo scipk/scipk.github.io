@@ -7,26 +7,28 @@
     <description>Notes on what I am building, what broke, and what I read.</description>
     <language>en-us</language>
     <lastBuildDate>Wed, 02 Sep 2026 09:00:00 +0000</lastBuildDate>
+<!-- LOG:ITEMS:START -->
     <item>
       <title>Starting in GLACIER Lab</title>
-      <link>https://scipk.com/log.html#glacier-lab</link>
-      <guid isPermaLink="true">https://scipk.com/log.html#glacier-lab</guid>
+      <link>https://scipk.com/log.html#starting-in-glacier-lab</link>
+      <guid isPermaLink="true">https://scipk.com/log.html#starting-in-glacier-lab</guid>
       <pubDate>Wed, 02 Sep 2026 09:00:00 +0000</pubDate>
       <description>First weeks of M.S. research at UCLA: robust control for spacecraft rendezvous, under Prof. Shahriar Talebi. Reading through the uncertainty formulations before touching any code.</description>
     </item>
     <item>
       <title>Senior Design Day: BAM avoided the ball</title>
-      <link>https://scipk.com/log.html#senior-design-day</link>
-      <guid isPermaLink="true">https://scipk.com/log.html#senior-design-day</guid>
+      <link>https://scipk.com/log.html#senior-design-day-bam-avoided-the-ball</link>
+      <guid isPermaLink="true">https://scipk.com/log.html#senior-design-day-bam-avoided-the-ball</guid>
       <pubDate>Wed, 06 May 2026 09:00:00 +0000</pubDate>
-      <description>The multirotor detected, predicted, and evaded a thrown baseball in front of the judges. It never returned to its original trajectory on its own — that failure is the next problem to solve.</description>
+      <description>The multirotor detected, predicted, and evaded a thrown baseball in front of the judges. It never returned to its original trajectory on its own - that failure is the next problem to solve.</description>
     </item>
     <item>
       <title>SciTech 2026: sixty-three years of a student branch</title>
-      <link>https://scipk.com/log.html#scitech-2026</link>
-      <guid isPermaLink="true">https://scipk.com/log.html#scitech-2026</guid>
+      <link>https://scipk.com/log.html#scitech-2026-sixty-three-years-of-a-student-bran</link>
+      <guid isPermaLink="true">https://scipk.com/log.html#scitech-2026-sixty-three-years-of-a-student-bran</guid>
       <pubDate>Tue, 06 Jan 2026 09:00:00 +0000</pubDate>
       <description>Our history of the AIAA student branch at San Diego State, founded in Spring 1963, is out. Interviews across six decades turned out to be harder than the writing.</description>
     </item>
+<!-- LOG:ITEMS:END -->
   </channel>
 </rss>
