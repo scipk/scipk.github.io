@@ -6,7 +6,6 @@ Sitemap: https://scipk.com/sitemap.xml
 # Allow indexing of images
 User-agent: Googlebot-Image
 Allow: /images/
-Allow: /icons/
 
 # Avoid crawling unnecessary files
 Disallow: *.pdf$
