@@ -31,6 +31,7 @@
 <nav class="site-nav" aria-label="Primary">
 <a class="mono" href="../projects.html" aria-current="page">PROJECTS</a>
 <a class="mono" href="../sims.html">SIMS</a>
+<a class="mono" href="../log.html">LOG</a>
 <a class="mono" href="../scipk.html">SCIPK</a>
 <a class="mono" href="../about.html">ABOUT</a>
 </nav>
@@ -74,7 +75,7 @@
 <section class="row">
 <h2>Approach</h2>
 <div class="row-body">
-<p>The system is divided into three main components: perception, prediction, and planning. The entire system was implemented entirely in MATLAB/Simulink.</p><div class="stages"><div class="stage"><span class="label">PERCEPTION</span><span>Detect the ball in the onboard camera stream.</span></div><div class="stage"><span class="label">PREDICTION</span><span>Propagate the ball state to find the intercept window.</span></div><div class="stage"><span class="label">PLANNING</span><span>Command the evasion that holds clearance and limits deviation.</span></div></div><div class="eq-block"><div class="telemetry telemetry-plain"><span class="code">PREDICTION &middot; BALLISTIC PROPAGATION</span><span class="muted">EQ. 1</span></div><div class="eq">r_ball(t) = r_0 + v_0 t + ½ g t²</div><div class="eq">‖ r_uav(t) − r_ball(t) ‖ ≥ d_safe</div><div class="eq-note">Ball state propagated from the first detection, with the planner constrained to hold minimum clearance across the predicted pass.</div></div>
+<p>The system is divided into three main components: perception, prediction, and planning. The entire system was implemented entirely in MATLAB/Simulink.</p><div class="stages"><div class="stage"><span class="label">PERCEPTION</span><span>Detect the ball in the onboard camera stream.</span></div><div class="stage"><span class="label">PREDICTION</span><span>Propagate the ball state to find the intercept window.</span></div><div class="stage"><span class="label">PLANNING</span><span>Command the evasion that holds clearance and limits deviation.</span></div></div>
 </div>
 </section>
 <section class="row">
@@ -86,29 +87,7 @@
 <section class="row">
 <h2>Result</h2>
 <div class="row-body">
-<p>The final program implementation successfully avoided the baseball; however, it was not able to return to its original path autonomously on any tested trajectories.</p><div class="fig">
-<div class="fig-frame h-340" style="padding:24px 24px 32px 48px;background-image:none">
-<span class="reticle"></span>
-<svg viewBox="0 0 640 300" preserveAspectRatio="none" aria-hidden="true" style="width:100%;height:100%">
-<g stroke="#6CABDD" stroke-width="1" opacity="0.16">
-<line x1="0" y1="60" x2="640" y2="60"></line><line x1="0" y1="120" x2="640" y2="120"></line>
-<line x1="0" y1="180" x2="640" y2="180"></line><line x1="0" y1="240" x2="640" y2="240"></line>
-<line x1="160" y1="0" x2="160" y2="300"></line><line x1="320" y1="0" x2="320" y2="300"></line>
-<line x1="480" y1="0" x2="480" y2="300"></line>
-</g>
-<line x1="0" y1="299" x2="640" y2="299" stroke="#6CABDD" stroke-width="1"></line>
-<line x1="1" y1="0" x2="1" y2="300" stroke="#6CABDD" stroke-width="1"></line>
-<line x1="0" y1="240" x2="640" y2="240" stroke="#F0A63C" stroke-width="1" stroke-dasharray="4 5"></line>
-</svg>
-<div style="position:absolute;left:8px;top:24px;bottom:32px;display:flex;align-items:center"><span class="fig-caption" style="writing-mode:vertical-rl;transform:rotate(180deg)">CLEARANCE &middot; M</span></div>
-<div style="position:absolute;left:48px;right:24px;bottom:8px;display:flex;justify-content:space-between;gap:8px" class="fig-caption"><span>T &middot; 0 S</span><span>DETECTION</span><span>EVASION</span><span>END OF RUN</span></div>
-<div style="position:absolute;right:24px;top:24px" class="fig-caption" ><span style="color:var(--highlight)">&mdash; &mdash; d_safe</span></div>
-<div style="position:absolute;inset:24px 24px 32px 48px;display:flex;align-items:center;justify-content:center;pointer-events:none">
-<span class="fig-caption" style="padding:8px 16px;background:rgba(8,10,17,0.85);border:1px dashed var(--hairline);border-radius:2px;text-align:center">TRACE PENDING &mdash; DROP EXPORTED MATLAB RUN DATA</span>
-</div>
-</div>
-<div class="fig-caption">FIG. 3 &mdash; CLEARANCE TO PREDICTED BALL PATH ACROSS A RUN</div>
-</div><h3>Flight video</h3><div class="embed"><iframe src="https://www.youtube.com/embed/gcs61hTjBro" title="Baseball Avoidance Multirotor — the drone in action" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><h3>Class presentation</h3><div class="embed"><iframe src="https://www.youtube.com/embed/7Joigw_uIH0" title="Baseball Avoidance Multirotor — class presentation" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="fig"><div class="fig-frame h-420 is-contain"><span class="reticle"></span><img src="../images/projects/AE403W/AE403-Poster.png" alt="AE 403W senior design poster" loading="lazy"></div><div class="fig-caption">FIG. 4 &mdash; SENIOR DESIGN DAY POSTER</div></div>
+<p>The final program implementation successfully avoided the baseball; however, it was not able to return to its original path autonomously on any tested trajectories.</p><h3>Flight video</h3><div class="embed"><iframe src="https://www.youtube.com/embed/gcs61hTjBro" title="Baseball Avoidance Multirotor — the drone in action" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><h3>Class presentation</h3><div class="embed"><iframe src="https://www.youtube.com/embed/7Joigw_uIH0" title="Baseball Avoidance Multirotor — class presentation" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="fig"><div class="fig-frame h-420 is-contain"><span class="reticle"></span><img src="../images/projects/AE403W/AE403-Poster.png" alt="AE 403W senior design poster" loading="lazy"></div><div class="fig-caption">FIG. 3 &mdash; SENIOR DESIGN DAY POSTER</div></div>
 </div>
 </section>
 <section class="row">
