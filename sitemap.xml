@@ -18,12 +18,6 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://scipk.com/resume.html</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://scipk.com/about.html</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
@@ -93,7 +87,7 @@
     <loc>https://scipk.com/projects/MATH-543.html</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://scipk.com/projects/AIAA-SDSU-History.html</loc>
