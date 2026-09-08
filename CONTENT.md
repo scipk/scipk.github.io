@@ -216,3 +216,34 @@ or make RSS readers show it twice.** Do not edit an `id` by hand.
 `LOG:ENTRIES` and `LOG:ITEMS` marker comments is overwritten on every rebuild.
 Everything outside those markers — the page chrome, the channel metadata — is
 yours to edit and is left alone.
+
+---
+
+## 9. Analytics
+
+Cloudflare Web Analytics. The beacon is the last element before `</body>` on every
+page — cookieless, so no consent banner is required.
+
+Adding a page means adding the beacon to it. Check with:
+
+```bash
+grep -L cloudflareinsights *.html projects/*.html sims/*.html
+```
+
+Anything listed is missing the beacon.
+
+### Per-application links
+
+Traffic alone says someone visited. To know *which* application was opened, give
+each one its own tagged URL — the site ignores the query string, Cloudflare
+records it:
+
+```
+https://scipk.com/?ref=jpl-gnc-2027
+https://scipk.com/?ref=spacex-intern-fall
+```
+
+Two things to remember when reading those numbers: corporate mail scanners
+(Defender Safe Links, Proofpoint) pre-fetch URLs, so a hit landing seconds after
+you submit is a scanner and not a person; and anyone typing `scipk.com` by hand
+arrives untagged.
